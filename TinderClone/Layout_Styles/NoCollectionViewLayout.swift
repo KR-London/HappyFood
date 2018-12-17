@@ -8,13 +8,14 @@
 
 import UIKit
 
-class YesCollectionViewLayout: UICollectionViewFlowLayout {
+class NoCollectionViewLayout: UICollectionViewLayout {
     
     
-    /// used for calculating each cells' CGRect on screen.
+    ///Users/kate/Documents/TFood/TinderClone/YesCollectionViewCell.swift/ used for calculating each cells' CGRect on screen.
     /// CGRect will define the origin and size of the cell
-    let CELL_HEIGHT = 60.0
+    let CELL_HEIGHT = 100.0
     let CELL_WIDTH = 100.0
+    let CELL_SPACING = 25.0
     
     // dictionary yo hold the UICollectionViewLayoutAttributes for each cell
     // layout attributes will define teh cell's size and position (x,y,z index).
@@ -41,7 +42,7 @@ class YesCollectionViewLayout: UICollectionViewFlowLayout {
         {
             // Determine current content offsets.
             let xOffset = collectionView!.contentOffset.x
-            let yOffset = collectionView!.contentOffset.y
+            //let yOffset = collectionView!.contentOffset.y
             
             let indexPath = NSIndexPath(item:0,section:0)
             // update y position to follow user. I don't understand this comment
@@ -55,17 +56,17 @@ class YesCollectionViewLayout: UICollectionViewFlowLayout {
         // Acknowledge data source change, and disable for next time.
         dataSourceDidUpdate = false
         // cycle through every section of the data source
-        guard let numberOfItemsToDisplay = collectionView?.numberOfItems(inSection: 1) else{ return}
+        guard let numberOfItemsToDisplay = collectionView?.numberOfItems(inSection: 0) else{ return}
         
         /// I'm assumping that the collection view will only exist with 1 or more items...? Is this correct...?
         for item in 0...numberOfItemsToDisplay-1
         {
             /// build the UICollectionViewAttributes for the cell
             let cellIndex = NSIndexPath(item:item,section:1)
-            let xPos = Double(item)*CELL_WIDTH
-            let yPos = CELL_HEIGHT
+            let xPos = Double(item)*(CELL_WIDTH + CELL_SPACING) + CELL_SPACING
+            let yPos = CELL_HEIGHT - 90.0
             
-            var cellAttributes = UICollectionViewLayoutAttributes(forCellWith: cellIndex as IndexPath)
+            let  cellAttributes = UICollectionViewLayoutAttributes(forCellWith: cellIndex as IndexPath)
             cellAttributes.frame = CGRect(x:xPos, y:yPos, width: CELL_WIDTH, height: CELL_HEIGHT)
             cellAttributes.zIndex = 1
             
@@ -76,7 +77,7 @@ class YesCollectionViewLayout: UICollectionViewFlowLayout {
         
         //update content size
         
-        self.contentSize = CGSize(width:60, height:60)
+        self.contentSize = CGSize(width:160, height:160)
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

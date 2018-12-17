@@ -1,17 +1,15 @@
 //
-//  YesCollectionViewCell.swift
+//  noCollectionViewCell.swift
 //  TinderClone
 //
 //  Created by Kate Roberts on 26/09/2018.
 //  Copyright © 2018 Kate Roberts. All rights reserved.
 //
 
-
 import UIKit
 
-@IBDesignable
-class YesCollectionViewCell: UICollectionViewCell {
-    
+
+class noCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -22,18 +20,21 @@ class YesCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
+    
+    
     @IBOutlet var foodImage: UIImageView!
-    @IBOutlet var foodName: UILabel!
+   // @IBOutlet var foodName: UILabel!
     
     public func displayContent(image: String, title: String)
     {
         foodImage.image = UIImage(named: image)
-        foodName.text = title
+      //  foodName.text = title
+        print("No ribbon should display \(title)")
     }
     
     func setup(){
-        self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 5.0
+        self.layer.borderColor = UIColor.red.cgColor
         self.layer.cornerRadius = 5.0
     }
     

@@ -13,6 +13,9 @@
 		4406F23A21620B8F00155818 /* MaybeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23421620B8F00155818 /* MaybeCollectionViewController.swift */; };
 		4406F23B21620B8F00155818 /* YesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23521620B8F00155818 /* YesCollectionViewCell.swift */; };
 		4406F23C21620B8F00155818 /* MaybeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */; };
+		44110B1F21ADD8BC00151388 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44110B1E21ADD8BC00151388 /* CameraViewController.swift */; };
+		4451E2C621BABA37008BB36E /* NoCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */; };
+		4461FFE221B59DFD00354109 /* MaybeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */; };
 		446E748321412FD800B326D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E748221412FD800B326D9 /* AppDelegate.swift */; };
 		446E748521412FD800B326D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E748421412FD800B326D9 /* ViewController.swift */; };
 		446E748821412FD800B326D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446E748621412FD800B326D9 /* Main.storyboard */; };
@@ -23,7 +26,7 @@
 		4498109C2150F90200508599 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498109B2150F90200508599 /* CustomViewController.swift */; };
 		44D8B37F216216D60019077D /* YesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */; };
 		44D8B3832162403C0019077D /* FoodData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3822162403B0019077D /* FoodData.csv */; };
-		44D8B385216240790019077D /* apple.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B384216240790019077D /* apple.JPG */; };
+		44D8B385216240790019077D /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B384216240790019077D /* apple.jpg */; };
 		44D8B3872162407D0019077D /* bread.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3862162407C0019077D /* bread.JPG */; };
 		44D8B389216240810019077D /* broccili.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B388216240810019077D /* broccili.JPG */; };
 		44D8B38B216240850019077D /* carrot.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B38A216240840019077D /* carrot.JPG */; };
@@ -45,7 +48,6 @@
 		44D8B3AB216240EE0019077D /* tuna.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3AA216240EE0019077D /* tuna.JPG */; };
 		44D8B3AD216240F30019077D /* veggienugget.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3AC216240F20019077D /* veggienugget.JPG */; };
 		44D8B3AF216240F80019077D /* walnuts.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3AE216240F80019077D /* walnuts.JPG */; };
-		44E02FC02150E508005ABC65 /* noFoodTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E02FBF2150E508005ABC65 /* noFoodTableView.swift */; };
 		44EABBD3214D61AA006AB475 /* Snippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EABBD2214D61AA006AB475 /* Snippets.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,9 @@
 		4406F23421620B8F00155818 /* MaybeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewController.swift; sourceTree = "<group>"; };
 		4406F23521620B8F00155818 /* YesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewCell.swift; sourceTree = "<group>"; };
+		44110B1E21ADD8BC00151388 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCollectionViewLayout.swift; sourceTree = "<group>"; };
+		4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewLayout.swift; sourceTree = "<group>"; };
 		446E747F21412FD800B326D9 /* TinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446E748221412FD800B326D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		446E748421412FD800B326D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,11 +93,10 @@
 		446E74B021412FF300B326D9 /* pasta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pasta.jpg; sourceTree = "<group>"; };
 		446E74B121412FF300B326D9 /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
 		446E74B221412FF300B326D9 /* steak.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steak.jpg; sourceTree = "<group>"; };
-		446E74B321412FF300B326D9 /* strawberries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = strawberries.jpg; sourceTree = "<group>"; };
 		4498109B2150F90200508599 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44D8B3822162403B0019077D /* FoodData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodData.csv; sourceTree = "<group>"; };
-		44D8B384216240790019077D /* apple.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.JPG; sourceTree = "<group>"; };
+		44D8B384216240790019077D /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		44D8B3862162407C0019077D /* bread.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bread.JPG; sourceTree = "<group>"; };
 		44D8B388216240810019077D /* broccili.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broccili.JPG; sourceTree = "<group>"; };
 		44D8B38A216240840019077D /* carrot.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carrot.JPG; sourceTree = "<group>"; };
@@ -114,7 +118,6 @@
 		44D8B3AA216240EE0019077D /* tuna.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tuna.JPG; sourceTree = "<group>"; };
 		44D8B3AC216240F20019077D /* veggienugget.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = veggienugget.JPG; sourceTree = "<group>"; };
 		44D8B3AE216240F80019077D /* walnuts.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = walnuts.JPG; sourceTree = "<group>"; };
-		44E02FBF2150E508005ABC65 /* noFoodTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noFoodTableView.swift; sourceTree = "<group>"; };
 		44EABBD2214D61AA006AB475 /* Snippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,12 +139,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4451E2C821BABBF4008BB36E /* Cell_Styles */ = {
+			isa = PBXGroup;
+			children = (
+				4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */,
+				4406F23221620B8F00155818 /* noCollectionViewCell.swift */,
+				4406F23521620B8F00155818 /* YesCollectionViewCell.swift */,
+			);
+			path = Cell_Styles;
+			sourceTree = "<group>";
+		};
+		4451E2C921BABC3C008BB36E /* Layout_Styles */ = {
+			isa = PBXGroup;
+			children = (
+				4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */,
+				4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */,
+				44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */,
+			);
+			path = Layout_Styles;
+			sourceTree = "<group>";
+		};
+		4451E2CA21BABC4D008BB36E /* Ribbon_ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4406F23421620B8F00155818 /* MaybeCollectionViewController.swift */,
+				4406F23121620B8F00155818 /* NoCollectionViewController.swift */,
+				4406F23321620B8F00155818 /* YesCollectionViewController.swift */,
+			);
+			path = Ribbon_ViewControllers;
+			sourceTree = "<group>";
+		};
+		4451E2CB21BABC8E008BB36E /* Auxilliary_Files */ = {
+			isa = PBXGroup;
+			children = (
+				44EABBD2214D61AA006AB475 /* Snippets.swift */,
+				446E748221412FD800B326D9 /* AppDelegate.swift */,
+				446E748921412FD800B326D9 /* TinderClone.xcdatamodeld */,
+				44D8B3822162403B0019077D /* FoodData.csv */,
+			);
+			path = Auxilliary_Files;
+			sourceTree = "<group>";
+		};
 		446E747621412FD800B326D9 = {
 			isa = PBXGroup;
 			children = (
 				446E748121412FD800B326D9 /* TinderClone */,
 				446E749921412FD800B326D9 /* TinderCloneTests */,
 				446E748021412FD800B326D9 /* Products */,
+				446E74A721412FF300B326D9 /* FoodPictures */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,26 +202,17 @@
 		446E748121412FD800B326D9 /* TinderClone */ = {
 			isa = PBXGroup;
 			children = (
-				446E748221412FD800B326D9 /* AppDelegate.swift */,
 				446E748421412FD800B326D9 /* ViewController.swift */,
 				446E748621412FD800B326D9 /* Main.storyboard */,
 				4498109B2150F90200508599 /* CustomViewController.swift */,
-				4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */,
-				4406F23421620B8F00155818 /* MaybeCollectionViewController.swift */,
-				4406F23221620B8F00155818 /* noCollectionViewCell.swift */,
-				4406F23121620B8F00155818 /* NoCollectionViewController.swift */,
-				4406F23521620B8F00155818 /* YesCollectionViewCell.swift */,
-				44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */,
-				4406F23321620B8F00155818 /* YesCollectionViewController.swift */,
-				44EABBD2214D61AA006AB475 /* Snippets.swift */,
-				44E02FBF2150E508005ABC65 /* noFoodTableView.swift */,
+				44110B1E21ADD8BC00151388 /* CameraViewController.swift */,
+				4451E2C821BABBF4008BB36E /* Cell_Styles */,
+				4451E2C921BABC3C008BB36E /* Layout_Styles */,
+				4451E2CA21BABC4D008BB36E /* Ribbon_ViewControllers */,
 				446E748C21412FD800B326D9 /* Assets.xcassets */,
-				446E74A721412FF300B326D9 /* FoodPictures */,
 				446E748E21412FD800B326D9 /* LaunchScreen.storyboard */,
-				446E74B321412FF300B326D9 /* strawberries.jpg */,
 				446E749121412FD800B326D9 /* Info.plist */,
-				446E748921412FD800B326D9 /* TinderClone.xcdatamodeld */,
-				44D8B3822162403B0019077D /* FoodData.csv */,
+				4451E2CB21BABC8E008BB36E /* Auxilliary_Files */,
 			);
 			path = TinderClone;
 			sourceTree = "<group>";
@@ -193,7 +229,7 @@
 		446E74A721412FF300B326D9 /* FoodPictures */ = {
 			isa = PBXGroup;
 			children = (
-				44D8B384216240790019077D /* apple.JPG */,
+				44D8B384216240790019077D /* apple.jpg */,
 				446E74A821412FF300B326D9 /* chips.jpg */,
 				44D8B38C216240890019077D /* cheese.JPG */,
 				446E74A921412FF300B326D9 /* chocolate bar mars.jpg */,
@@ -275,15 +311,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Kate Roberts";
 				TargetAttributes = {
 					446E747E21412FD800B326D9 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					446E749521412FD800B326D9 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 446E747E21412FD800B326D9;
 					};
@@ -321,7 +359,7 @@
 				446E748D21412FD800B326D9 /* Assets.xcassets in Resources */,
 				44D8B3872162407D0019077D /* bread.JPG in Resources */,
 				44D8B3A9216240EA0019077D /* tomatosoup.JPG in Resources */,
-				44D8B385216240790019077D /* apple.JPG in Resources */,
+				44D8B385216240790019077D /* apple.jpg in Resources */,
 				44D8B391216240950019077D /* crisps.JPG in Resources */,
 				44D8B38B216240850019077D /* carrot.JPG in Resources */,
 				44D8B38D216240890019077D /* cheese.JPG in Resources */,
@@ -364,9 +402,11 @@
 				4406F23821620B8F00155818 /* noCollectionViewCell.swift in Sources */,
 				446E748521412FD800B326D9 /* ViewController.swift in Sources */,
 				446E748B21412FD800B326D9 /* TinderClone.xcdatamodeld in Sources */,
-				44E02FC02150E508005ABC65 /* noFoodTableView.swift in Sources */,
+				4451E2C621BABA37008BB36E /* NoCollectionViewLayout.swift in Sources */,
 				4406F23721620B8F00155818 /* NoCollectionViewController.swift in Sources */,
+				4461FFE221B59DFD00354109 /* MaybeCollectionViewLayout.swift in Sources */,
 				446E748321412FD800B326D9 /* AppDelegate.swift in Sources */,
+				44110B1F21ADD8BC00151388 /* CameraViewController.swift in Sources */,
 				44EABBD3214D61AA006AB475 /* Snippets.swift in Sources */,
 				4406F23B21620B8F00155818 /* YesCollectionViewCell.swift in Sources */,
 			);
@@ -424,6 +464,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -431,6 +472,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -481,6 +523,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -488,6 +531,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -522,11 +566,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = TinderClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.TinderClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -536,11 +581,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2E5MDC86ME;
 				INFOPLIST_FILE = TinderClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.TinderClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -555,7 +601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.TinderCloneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinderClone.app/TinderClone";
 			};
@@ -571,7 +617,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.TinderCloneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinderClone.app/TinderClone";
 			};

@@ -185,7 +185,7 @@ class ViewController: UIViewController{
         let delimiter = ","
         var items:[(image_file_name: String, name: String, rating: Int)]?
         
-        let optContent = try? String(contentsOf: contentsOfURL as URL!)
+        let optContent = try? String(contentsOf: contentsOfURL as URL)
         guard let content = optContent
             else
         {
@@ -217,7 +217,7 @@ class ViewController: UIViewController{
                         }
                         
                         // Store the value into the values array
-                        values.append(value as! String)
+                        values.append(value! as String)
                     }
                     
                     // Retrieve the unscanned remainder of the string
@@ -235,7 +235,7 @@ class ViewController: UIViewController{
                 ///image_file_name: String, name: String, rating: Int
                 // Put the values into the tuple and add it to the items array
                 let item = (image_file_name: values[0], name: values[1], rating: Int(values[2]) ?? 0 )
-                items?.append(item as! (image_file_name: String, name: String, rating: Int ))
+                items?.append(item )
             }
         }
         //print(items)
@@ -260,36 +260,42 @@ class ViewController: UIViewController{
     }
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-        if gesture.direction == UISwipeGestureRecognizerDirection.right {
+        if gesture.direction == UISwipeGestureRecognizer.Direction.right {
             print("Swipe Right")
-            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 1
-            updatePicture()
-        }
-        else if gesture.direction == UISwipeGestureRecognizerDirection.left {
-            print("Swipe Left")
-            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 3
-            updatePicture()
-        }
-        else if gesture.direction == UISwipeGestureRecognizerDirection.up {
-            print("Swipe Up")
-            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
-            updatePicture()
-        }
-        else if gesture.direction == UISwipeGestureRecognizerDirection.down {
-            print("Swipe Down")
-            
-            //self.storyboard
-            
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
             
             guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "trafficLightStoryboard") as? CustomViewController
                 else
-                {
-                    print("Couldn't find view controller")
-                    return
-                }
+            {
+                print("Couldn't find view controller")
+                return
+            }
             
             navigationController?.pushViewController(destinationVC, animated: true)
+ 
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
+            print("Swipe Left")
+  
+            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
+            updatePicture()
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
+            print("Swipe Up")
+ 
+            
+            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 1
+            updatePicture()
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
+            print("Swipe Down")
+            
+            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 3
+            updatePicture()
+            //self.storyboard
+            
+  
+      
             
             //onButtonTapped()
            // performSegue(withIdentifier: goToData, sender: self)
