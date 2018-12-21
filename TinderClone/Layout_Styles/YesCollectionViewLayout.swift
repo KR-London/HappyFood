@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YesCollectionViewLayout: UICollectionViewFlowLayout {
+class YesCollectionViewLayout: UICollectionViewLayout {
     
     ///Users/kate/Documents/TFood/TinderClone/YesCollectionViewCell.swift/ used for calculating each cells' CGRect on screen.
     /// CGRect will define the origin and size of the cell

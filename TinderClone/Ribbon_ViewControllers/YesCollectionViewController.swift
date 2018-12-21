@@ -40,8 +40,8 @@ class YesCollectionViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: yesReuseIdentifier)
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 1 }
-        yesCollectionView.dragDelegate = self
-        yesCollectionView.dropDelegate = self
+     yesCollectionView.dragDelegate = self
+      yesCollectionView.dropDelegate = self
         yesCollectionView.dragInteractionEnabled = true
         // Do any additional setup after loading the view.
     }
@@ -374,7 +374,7 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                     let foodArrayFull = try context.fetch(request)
                     draggedFood = foodArrayFull.filter{$0.name == pet}.first!
                     //print(draggedFood)
-                    foodArray.insert(draggedFood, at:  destinationIndexPath.row )
+                 foodArray.insert(draggedFood, at:  destinationIndexPath.row )
                    // foodArray.remove(at: 2*(item.sourceIndexPath?.section)! + item.sourceIndexPath!.row)
                 }
                 catch
@@ -383,14 +383,14 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                 }
                 
                 //foodArray.move
-                // foodArray.insert(pet, at: destinationIndexPath.section)
+               // foodArray.insert(pet, at: destinationIndexPath.section)
                 // yesCollectionView.insertItems(at: <#T##[IndexPath]#>)
                 DispatchQueue.main.async {
                     //  self.maybeCollectionView.moveItem(at: item.sourceIndexPath!, to: destinationIndexPath)
-                    
+                  //  super.kate
                     self.yesCollectionView.insertItems(at: [destinationIndexPath])
                     //self.yesCollectionView.deleteItems(at: [item.sourceIndexPath!])
-                   collectionView.deleteItems(at: [item.sourceIndexPath!])
+                   //collectionView.deleteItems(at: [item.sourceIndexPath!])
                     //reloadInputViews()
                 }
             }

@@ -12,7 +12,9 @@ class CustomViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       // CustomCollectionView.dragDelegate = self
+     //   CustomCollectionView.dropDelegate = self
+     //   CustomCollectionView.dragInteractionEnabled = true
         // Do any additional setup after loading the view.
     }
 
@@ -35,4 +37,8 @@ class CustomViewController: UIViewController {
     }
     */
 
+}
+
+func kateDragAndDrop(sourceIndexPath: IndexPath, destinationIndexPath: IndexPath, sourceViewController: ViewController, destinationViewController: ViewController){
+    
 }

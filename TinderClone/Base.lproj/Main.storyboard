@@ -254,18 +254,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Muc-iv-psr">
-                            <size key="itemSize" width="100" height="100"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mCj-Zs-CSM">
+                            <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="noCell" id="drh-EQ-QLk" customClass="noCollectionViewCell" customModule="TinderClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="25" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zi-Gg-IRN">
@@ -305,29 +305,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0bz-ul-1Gb">
-                            <size key="itemSize" width="100" height="100"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HCU-fT-2vN">
+                            <size key="itemSize" width="89" height="84"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="yesCell" id="43o-Df-Fhw" customClass="YesCollectionViewCell" customModule="TinderClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="yesCell" id="oDv-0h-6dV" customClass="YesCollectionViewCell" customModule="TinderClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="33" width="89" height="84"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="89" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APN-jt-QuZ">
-                                            <rect key="frame" x="39" y="20" width="41" height="60"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="11U-4j-t0A">
+                                            <rect key="frame" x="0.0" y="0.0" width="89" height="0.0"/>
                                         </imageView>
                                     </subviews>
                                 </view>
-                                <size key="customSize" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstItem="11U-4j-t0A" firstAttribute="top" secondItem="oDv-0h-6dV" secondAttribute="top" id="AvT-Z9-qFB"/>
+                                    <constraint firstAttribute="trailing" secondItem="11U-4j-t0A" secondAttribute="trailing" id="Gmg-ua-Feh"/>
+                                    <constraint firstItem="11U-4j-t0A" firstAttribute="leading" secondItem="oDv-0h-6dV" secondAttribute="leading" id="Oxd-i7-DM6"/>
+                                    <constraint firstAttribute="bottom" secondItem="11U-4j-t0A" secondAttribute="bottom" id="a4G-CS-Jmj"/>
+                                </constraints>
                                 <connections>
-                                    <outlet property="foodImage" destination="APN-jt-QuZ" id="red-i2-MKA"/>
+                                    <outlet property="foodImage" destination="11U-4j-t0A" id="gR5-9a-QiN"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -342,7 +346,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1X-8T-Fhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1393" y="511"/>
+            <point key="canvasLocation" x="-1394.4000000000001" y="510.94452773613199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lzM-ej-Yby">
