@@ -68,6 +68,15 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         {
             let plate = foodArray[cellContentsIndex-1]
             cell.displayContent(image: plate.image_file_name!, title: plate.name!)
+            if plate.name == "tick"
+            {
+                cell.layer.borderWidth = 0.0
+                cell.displayContent(image: "tick.png", title: "")
+            }
+            else
+            {
+                cell.displayContent(image: plate.image_file_name!, title: plate.name!)
+            }
         }
        // cell.foodName?.text = "Sec " + indexPath.section.description + "/Item " + indexPath.item.description
          //cell.foodName?.text = plate.name

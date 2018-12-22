@@ -134,9 +134,9 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
             return UICollectionViewDropProposal(operation: .copy, intent: .insertAtDestinationIndexPath)
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-
+        
         let destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath{
             destinationIndexPath = indexPath
@@ -146,71 +146,78 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
             let row = collectionView.numberOfItems(inSection: section)
             destinationIndexPath = IndexPath(row: row, section: section)
         }
-
+        
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
-                print("Hello drsgged item. I've been expecting you!")
+                //print("Hello drsgged item. I've been expecting you!")
+                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
                 do
                 {
                     let foodArrayFull = try context.fetch(request)
                     draggedFood = foodArrayFull.filter{$0.name == pet}.first!
+                    
                     foodArray.insert(draggedFood, at:  destinationIndexPath.row )
                 }
                 catch
                 {
                     print("Error fetching data \(error)")
                 }
+                
                 DispatchQueue.main.async {
                     self.noCollectionView.insertItems(at: [destinationIndexPath])
                 }
             }
-                        if let sourceIndexPath = item.sourceIndexPath{
-                            print("same app, same collection view")
-                            noCollectionView.moveItem(at: sourceIndexPath, to:  destinationIndexPath)
-                        }
-                        else{
-                            print("Different app")
-                        }
-                        let itemProvider = item.dragItem.itemProvider
-                        itemProvider.loadObject(ofClass: NSString.self){ string, error in
             
-            
-                        }
         }
-        
-//                coordinator.session.loadObjects(ofClass: NSString.self){ items in
-//                    let stringItems = items as! [String]
+    }
+
+//    func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
 //
-//                    var indexPaths = [IndexPath]()
+//        let destinationIndexPath: IndexPath
+//        if let indexPath = coordinator.destinationIndexPath{
+//            destinationIndexPath = indexPath
+//        }
+//        else{
+//            let section = collectionView.numberOfSections - 1
+//            let row = collectionView.numberOfItems(inSection: section)
+//            destinationIndexPath = IndexPath(row: row, section: section)
+//        }
 //
-//                    for (index,item) in stringItems.enumerated(){
-//                        let indexPath = IndexPath(row: destinationIndexPath.row + index, section: destinationIndexPath.section)
-//                        self.foodArray.insert(foodArr item, at: indexPath.row)
-//                    }
-//
+//        for item in coordinator.items{
+//            if let pet = item.dragItem.localObject as? String{
+//                print("Hello drsgged item. I've been expecting you!")
+//                var draggedFood: Food
+//                let request : NSFetchRequest<Food> = Food.fetchRequest()
+//                do
+//                {
+//                    let foodArrayFull = try context.fetch(request)
+//                    draggedFood = foodArrayFull.filter{$0.name == pet}.first!
+//                    foodArray.insert(draggedFood, at:  destinationIndexPath.row )
 //                }
-//
-//                for item in coordinator.items {
-//
-//                    if (false){}
-//
-//                    else {
-//                        print("different app")
+//                catch
+//                {
+//                    print("Error fetching data \(error)")
+//                }
+//                DispatchQueue.main.async {
+//                    self.noCollectionView.insertItems(at: [destinationIndexPath])
+//                }
+//            }
+//                        if let sourceIndexPath = item.sourceIndexPath{
+//                            print("same app, same collection view")
+//                            noCollectionView.moveItem(at: sourceIndexPath, to:  destinationIndexPath)
+//                        }
+//                        else{
+//                            print("Different app")
+//                        }
 //                        let itemProvider = item.dragItem.itemProvider
-//                       string , error in
-//                            if let string = string as? String{
-//                                var selectedFood = Food()
-//                                selectedFood.name = string
-//                            }
+//                        itemProvider.loadObject(ofClass: NSString.self){ string, error in
+//
 //
 //                        }
-//             }
-//
-//
-//    }
-}
+//        }
+//}
 }
 
 //func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]

@@ -33,7 +33,7 @@ class YesCollectionViewController: UICollectionViewController {
         foodArray = foodArray.filter{ $0.rating == 1 }
         yesCollectionView.dragDelegate = self
         yesCollectionView.dropDelegate = self
-        yesCollectionView.dragInteractionEnabled = true
+        yesCollectionView.dragInteractionEnabled = false
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -143,7 +143,7 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
         
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
-                print("Hello drsgged item. I've been expecting you!")
+                //print("Hello drsgged item. I've been expecting you!")
                 delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromGreenRibbon")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
