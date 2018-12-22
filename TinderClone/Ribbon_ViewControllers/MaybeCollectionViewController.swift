@@ -14,51 +14,24 @@ let reuseIdentifier = "maybeCell"
 
 @IBDesignable
 class MaybeCollectionViewController: UICollectionViewController, CommunicationChannel {
-    
-    
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Food]!
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
+    var foodsTriedThisWeek: [(String, IndexPath)]!
+    
     @IBOutlet var maybeCollectionView : UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //collectionView?.dataSource = self
-        //collectionView?.delegate = self
-        //self.collectionView!.register(MaybeCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 2 }
         maybeCollectionView.dragDelegate = self
         maybeCollectionView.dropDelegate = self
         maybeCollectionView.dragInteractionEnabled = true
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -69,14 +42,11 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        //return 8
         return 2
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        //self.collectionView!.register(MaybeCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "maybeCell", for: indexPath) as! MaybeCollectionViewCell
         
         let cellContentsIndex = 2*indexPath.section + 1 + indexPath.row
@@ -135,10 +105,10 @@ extension MaybeCollectionViewController: UICollectionViewDragDelegate{
         let item = self.foodArray[2*indexPath.section + indexPath.row].name
         let itemProvider = NSItemProvider(object: item! as String as NSItemProviderWriting)
         
-        //// add alternative with the encoding - or in fact replace this whoe lot with the encoding version.
-      //po  foodArray.remove(at: 2*indexPath.section + indexPath.row)
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
+        foodsTriedThisWeek = [( item ?? "no idea", indexPath)]
+        print(foodsTriedThisWeek)
         return [dragItem]
     }
 }
@@ -165,10 +135,8 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        // let dataSource = dataSourceF
+
        let destinationIndexPath: IndexPath
-//        for item in coordinator.items
-//        {
         if let indexPath = coordinator.destinationIndexPath{
             destinationIndexPath = indexPath
         }
@@ -179,19 +147,14 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
         }
         
         for item in coordinator.items{
-            //            guard let myObject = item.dragItem.localObject
-            //                else{
-            //                    return
-            //            }
             if let pet = item.dragItem.localObject as? String{
-                print("Hello drsgged item. I've been expecting you!")
+               // print("Hello drsgged item. I've been expecting you!")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
                 do
                 {
                     let foodArrayFull = try context.fetch(request)
                     draggedFood = foodArrayFull.filter{$0.name == pet}.first!
-                    //print(draggedFood)
                     foodArray.insert(draggedFood, at: 2*destinationIndexPath.section + destinationIndexPath.row )
                     foodArray.remove(at: 2*(item.sourceIndexPath?.section)! + item.sourceIndexPath!.row)
                 }
@@ -199,15 +162,8 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
                 {
                     print("Error fetching data \(error)")
                 }
-               
-                //foodArray.move
-               // foodArray.insert(pet, at: destinationIndexPath.section)
-                // yesCollectionView.insertItems(at: <#T##[IndexPath]#>)
                 DispatchQueue.main.async {
-                  //  self.maybeCollectionView.moveItem(at: item.sourceIndexPath!, to: destinationIndexPath)
                     self.maybeCollectionView.insertItems(at: [destinationIndexPath])
-                    //self.maybeCollectionView.deleteItems(at: [item.sourceIndexPath!])
-                    //reloadInputViews()
                 }
             }
             
@@ -219,7 +175,39 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     }
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-        print("Message Received!")
+        print("Message Received from \(sourceViewController)")
+     //  let indexRemoved = foodArray.
+        print(foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row])
+       // let triedFood = foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row]
+        //var triedFood = Food()
+//        triedFood.name = foodsTriedThisWeek[0].0
+//        triedFood.image_file_name = "blueberry.jpg"
+//        triedFood.rating = 0
+        
+        let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek[0].0 }[0].image_file_name
+        var rating = 2
+        if sourceViewController == "sentFromGreenRibbon" { rating = 1}
+        if sourceViewController == "sentFromRedRibbon" { rating = 2}
+        
+        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+                menuItem.image_file_name = triedFoodImage
+                menuItem.name = foodsTriedThisWeek[0].0
+                menuItem.rating = Int16(rating)
+                 foodArray.append(menuItem)
+        }
+       
+        
+       // foodArray.append(triedFood)
+        foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row].name = "tick"
+        foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
+        //foodArray = foodArray.
+        //foodArray = foodArray.insert(<#T##newElement: Food##Food#>, at: 2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row)
+        let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+       // self.maybeCollectionView.insertItems(at: [foodsTriedThisWeek[0].1])
+        cell.displayContent(image: "tick.png", title: foodsTriedThisWeek[0].0)
+        cell.layer.borderWidth = 0.0
+        print("Hello")
     }
 }
 

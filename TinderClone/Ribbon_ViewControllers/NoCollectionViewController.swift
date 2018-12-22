@@ -36,8 +36,8 @@ class NoCollectionViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: yesReuseIdentifier)
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 3 }
-        delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
-        print("Message sent from No ribbon")
+      // delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
+        //print("Message sent from No ribbon")
         //noCollectionView.dragDelegate = self
         noCollectionView.dropDelegate = self
        // noCollectionView.dragInteractionEnabled = true

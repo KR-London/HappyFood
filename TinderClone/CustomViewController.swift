@@ -14,23 +14,23 @@ protocol CommunicationChannel : class {
 
 class CustomViewController: UIViewController, CommunicationChannel {
     
-    weak var communicationChannelRedToAmber: CommunicationChannel?
+    weak var communicationChannel: CommunicationChannel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EmbedGreen" {
-            let dvc = segue.destination as! YesCollectionViewController
-             dvc.delegate = self
-        } else if segue.identifier == "EmbedAmber" {
+        if segue.identifier == "EmbedAmber" {
             let  dvc = segue.destination as! MaybeCollectionViewController
-            communicationChannelRedToAmber = dvc
+            communicationChannel = dvc
+        } else if segue.identifier == "EmbedGreen" {
+            let dvc = segue.destination as! YesCollectionViewController
+            dvc.delegate = self
         } else if segue.identifier == "EmbedRed" {
             let  dvc = segue.destination as! NoCollectionViewController
              dvc.delegate = self
-            print(dvc.delegate!)
+            //print(dvc.delegate!)
             //communicationChannel = dvc
         }
     }
@@ -41,7 +41,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
     
      func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
      {
-        communicationChannelRedToAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+        communicationChannel?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
     }
     
 

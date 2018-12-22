@@ -27,6 +27,7 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(datafilepath)
         preloadData()
         loadItems()
         unratedFood = foodArray.filter{$0.rating == 0}
@@ -261,7 +262,7 @@ class ViewController: UIViewController{
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
-            print("Swipe Right")
+            //print("Swipe Right")
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
             
             guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "trafficLightStoryboard") as? CustomViewController
@@ -275,20 +276,20 @@ class ViewController: UIViewController{
  
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
-            print("Swipe Left")
+            //print("Swipe Left")
   
             foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
             updatePicture()
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
-            print("Swipe Up")
+           // print("Swipe Up")
  
             
             foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 1
             updatePicture()
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
-            print("Swipe Down")
+           // print("Swipe Down")
             
             foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 3
             updatePicture()
