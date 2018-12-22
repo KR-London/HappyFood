@@ -37,7 +37,7 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
        // let width = UIScreen.main.bounds.width
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
         layout.itemSize = CGSize(width: 100, height: 100)
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -214,7 +214,7 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
         //foodArray = foodArray.insert(<#T##newElement: Food##Food#>, at: 2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row)
         let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
        // self.maybeCollectionView.insertItems(at: [foodsTriedThisWeek[0].1])
-        cell.displayContent(image: "tick.png", title: foodsTriedThisWeek[0].0)
+        cell.displayContent(image: "tick.png", title: "")
         cell.layer.borderWidth = 0.0
         print("Hello")
     }

@@ -25,6 +25,14 @@ class CustomViewController: UIViewController, CommunicationChannel {
       //  self.view.sa
      //   backgroundColor = UIColor.init(patternImage:backgroundStripes! )
         
+       
+        
+        let mix = UIImage(named: "mix")
+        let scribblesImageView = UIImageView(image: mix!)
+        scribblesImageView.frame = CGRect(x: 0, y:-40, width: self.view.frame.width, height: 1.15*self.view.frame.height)
+        view.addSubview(scribblesImageView)
+        //view.sendSubviewToBack(scribblesImageView)
+        
         let imageName = "stripes.png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image!)
