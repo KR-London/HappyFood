@@ -17,6 +17,7 @@ var pets  =   ["1.png","Tomato.png", "Tasty.png", "Satsuma.png", "Jam.png", "Cre
 @IBDesignable
 class YesCollectionViewController: UICollectionViewController {
 
+    weak var delegate: CommunicationChannel?
     fileprivate var longPressGesture: UILongPressGestureRecognizer!
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -27,7 +28,7 @@ class YesCollectionViewController: UICollectionViewController {
     @IBOutlet var yesCollectionView : UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromGreenRibbon")
        // collectionView?.dataSource = self
        // collectionView?.delegate = self
       //  self.collectionView!.register(YesCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -331,7 +332,8 @@ extension YesCollectionViewController: UICollectionViewDragDelegate{
 extension YesCollectionViewController: UICollectionViewDropDelegate{
     
     func  collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
-        if collectionView.hasActiveDrag{
+        
+      if collectionView.hasActiveDrag{
             if session.items.count > 1 {
                 return UICollectionViewDropProposal(operation: .cancel)
             }
@@ -345,12 +347,8 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-        // let dataSource = dataSourceF
-        
         
         let destinationIndexPath: IndexPath
-        //        for item in coordinator.items
-        //        {
         if let indexPath = coordinator.destinationIndexPath{
             destinationIndexPath = indexPath
         }
@@ -361,10 +359,6 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
         }
         
         for item in coordinator.items{
-            //            guard let myObject = item.dragItem.localObject
-            //                else{
-            //                    return
-            //            }
             if let pet = item.dragItem.localObject as? String{
                 print("Hello drsgged item. I've been expecting you!")
                 var draggedFood: Food
@@ -373,25 +367,16 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                 {
                     let foodArrayFull = try context.fetch(request)
                     draggedFood = foodArrayFull.filter{$0.name == pet}.first!
-                    //print(draggedFood)
+  
                  foodArray.insert(draggedFood, at:  destinationIndexPath.row )
-                   // foodArray.remove(at: 2*(item.sourceIndexPath?.section)! + item.sourceIndexPath!.row)
                 }
                 catch
                 {
                     print("Error fetching data \(error)")
                 }
                 
-                //foodArray.move
-               // foodArray.insert(pet, at: destinationIndexPath.section)
-                // yesCollectionView.insertItems(at: <#T##[IndexPath]#>)
                 DispatchQueue.main.async {
-                    //  self.maybeCollectionView.moveItem(at: item.sourceIndexPath!, to: destinationIndexPath)
-                  //  super.kate
                     self.yesCollectionView.insertItems(at: [destinationIndexPath])
-                    //self.yesCollectionView.deleteItems(at: [item.sourceIndexPath!])
-                   //collectionView.deleteItems(at: [item.sourceIndexPath!])
-                    //reloadInputViews()
                 }
             }
             

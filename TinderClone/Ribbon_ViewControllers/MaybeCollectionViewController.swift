@@ -13,7 +13,9 @@ import MobileCoreServices
 let reuseIdentifier = "maybeCell"
 
 @IBDesignable
-class MaybeCollectionViewController: UICollectionViewController {
+class MaybeCollectionViewController: UICollectionViewController, CommunicationChannel {
+    
+    
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
@@ -214,6 +216,10 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
+    }
+    
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        print("Message Received!")
     }
 }
 

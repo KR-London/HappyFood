@@ -157,13 +157,13 @@
                                             <constraint firstAttribute="height" constant="150" id="iuq-uI-DRC"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="yBE-ym-WNv" kind="embed" id="ppM-Pb-SEo"/>
+                                            <segue destination="yBE-ym-WNv" kind="embed" identifier="EmbedGreen" id="ppM-Pb-SEo"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZ6-n1-uRf">
                                         <rect key="frame" x="0.0" y="170" width="375" height="263"/>
                                         <connections>
-                                            <segue destination="Jgg-xb-08k" kind="embed" id="UH2-e6-IYo"/>
+                                            <segue destination="Jgg-xb-08k" kind="embed" identifier="EmbedAmber" id="UH2-e6-IYo"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEi-Zg-yae">
@@ -172,7 +172,7 @@
                                             <constraint firstAttribute="height" constant="150" id="M3l-Cj-PTJ"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="OlJ-Xk-XvR" kind="embed" id="aBU-Vg-avY"/>
+                                            <segue destination="OlJ-Xk-XvR" kind="embed" identifier="EmbedRed" id="aBU-Vg-avY"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -269,7 +269,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zi-Gg-IRN">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="0.0"/>
                                         </imageView>
                                     </subviews>
                                 </view>

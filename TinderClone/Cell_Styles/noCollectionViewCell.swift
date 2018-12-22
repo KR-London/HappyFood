@@ -29,7 +29,7 @@ class noCollectionViewCell: UICollectionViewCell {
     {
         foodImage.image = UIImage(named: image)
       //  foodName.text = title
-        print("No ribbon should display \(title)")
+       // print("No ribbon should display \(title)")
     }
     
     func setup(){

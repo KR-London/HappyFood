@@ -8,37 +8,41 @@
 
 import UIKit
 
-class CustomViewController: UIViewController {
+protocol CommunicationChannel : class {
+    func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
+}
+
+class CustomViewController: UIViewController, CommunicationChannel {
+    
+    weak var communicationChannelRedToAmber: CommunicationChannel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // CustomCollectionView.dragDelegate = self
-     //   CustomCollectionView.dropDelegate = self
-     //   CustomCollectionView.dragInteractionEnabled = true
-        // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EmbedGreen" {
+            let dvc = segue.destination as! YesCollectionViewController
+             dvc.delegate = self
+        } else if segue.identifier == "EmbedAmber" {
+            let  dvc = segue.destination as! MaybeCollectionViewController
+            communicationChannelRedToAmber = dvc
+        } else if segue.identifier == "EmbedRed" {
+            let  dvc = segue.destination as! NoCollectionViewController
+             dvc.delegate = self
+            print(dvc.delegate!)
+            //communicationChannel = dvc
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func dismissTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+     func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
+     {
+        communicationChannelRedToAmber?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-func kateDragAndDrop(sourceIndexPath: IndexPath, destinationIndexPath: IndexPath, sourceViewController: ViewController, destinationViewController: ViewController){
     
+
 }
