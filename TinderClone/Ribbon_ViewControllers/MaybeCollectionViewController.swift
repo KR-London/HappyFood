@@ -31,6 +31,20 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         maybeCollectionView.dragDelegate = self
         maybeCollectionView.dropDelegate = self
         maybeCollectionView.dragInteractionEnabled = true
+        
+        
+        //MARK: Layout hack
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+       // let width = UIScreen.main.bounds.width
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .horizontal
+        collectionView!.collectionViewLayout = layout
+        
+        
     }
 
     // MARK: UICollectionViewDataSource
@@ -176,14 +190,9 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         print("Message Received from \(sourceViewController)")
-     //  let indexRemoved = foodArray.
+
         print(foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row])
-       // let triedFood = foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row]
-        //var triedFood = Food()
-//        triedFood.name = foodsTriedThisWeek[0].0
-//        triedFood.image_file_name = "blueberry.jpg"
-//        triedFood.rating = 0
-        
+
         let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek[0].0 }[0].image_file_name
         var rating = 2
         if sourceViewController == "sentFromGreenRibbon" { rating = 1}

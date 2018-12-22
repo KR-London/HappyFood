@@ -27,7 +27,7 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(datafilepath)
+      //  print(datafilepath)
         preloadData()
         loadItems()
         unratedFood = foodArray.filter{$0.rating == 0}

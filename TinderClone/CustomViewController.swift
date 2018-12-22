@@ -18,6 +18,19 @@ class CustomViewController: UIViewController, CommunicationChannel {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ///self.view.backgroundColor = UIColor.init(patternImage:#imageLiteral(resourceName: "stripes.png") )
+        
+      //  var backgroundStripes = UIImage(named: "stripes.png")
+        //backgroundStripes = backgroundStripes?.resizeImage(targetSize: CGSize(width: self.view!.frame.width, height: self.view!.frame.height))
+      //  self.view.sa
+     //   backgroundColor = UIColor.init(patternImage:backgroundStripes! )
+        
+        let imageName = "stripes.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRect(x: 0, y: -30, width: self.view.frame.width , height: 1.2*self.view.frame.height)
+        view.addSubview(imageView)
+        view.sendSubviewToBack(imageView)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,6 +46,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
             //print(dvc.delegate!)
             //communicationChannel = dvc
         }
+       //  imageView.sendSubviewToBack(view)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,4 +59,20 @@ class CustomViewController: UIViewController, CommunicationChannel {
     }
     
 
+}
+extension UIImage {
+    func resizeImage(targetSize: CGSize) -> UIImage {
+        let size = self.size
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        let newSize = widthRatio > heightRatio ?  CGSize(width: size.width * heightRatio, height: size.height * heightRatio) : CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        self.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
 }

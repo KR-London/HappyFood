@@ -25,6 +25,8 @@
 		446E749B21412FD800B326D9 /* TinderCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E749A21412FD800B326D9 /* TinderCloneTests.swift */; };
 		4498109C2150F90200508599 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498109B2150F90200508599 /* CustomViewController.swift */; };
 		44B0541021CE2FBC000BE527 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B0540F21CE2FBC000BE527 /* tick.png */; };
+		44B0541221CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B0541121CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png */; };
+		44B0541421CE850F000BE527 /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B0541321CE850F000BE527 /* stripes.png */; };
 		44D8B37F216216D60019077D /* YesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */; };
 		44D8B3832162403C0019077D /* FoodData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3822162403B0019077D /* FoodData.csv */; };
 		44D8B385216240790019077D /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B384216240790019077D /* apple.jpg */; };
@@ -96,6 +98,8 @@
 		446E74B221412FF300B326D9 /* steak.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steak.jpg; sourceTree = "<group>"; };
 		4498109B2150F90200508599 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		44B0540F21CE2FBC000BE527 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		44B0541121CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2018-11-29 at 12.32.47.png"; sourceTree = "<group>"; };
+		44B0541321CE850F000BE527 /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
 		44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44D8B3822162403B0019077D /* FoodData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodData.csv; sourceTree = "<group>"; };
 		44D8B384216240790019077D /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 		446E74A721412FF300B326D9 /* FoodPictures */ = {
 			isa = PBXGroup;
 			children = (
+				44B0541121CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png */,
+				44B0541321CE850F000BE527 /* stripes.png */,
 				44B0540F21CE2FBC000BE527 /* tick.png */,
 				44D8B384216240790019077D /* apple.jpg */,
 				446E74A821412FF300B326D9 /* chips.jpg */,
@@ -359,7 +365,9 @@
 				446E749021412FD800B326D9 /* LaunchScreen.storyboard in Resources */,
 				44D8B397216240AC0019077D /* noodles.JPG in Resources */,
 				44D8B399216240B80019077D /* nuts.JPG in Resources */,
+				44B0541221CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png in Resources */,
 				446E748D21412FD800B326D9 /* Assets.xcassets in Resources */,
+				44B0541421CE850F000BE527 /* stripes.png in Resources */,
 				44D8B3872162407D0019077D /* bread.JPG in Resources */,
 				44D8B3A9216240EA0019077D /* tomatosoup.JPG in Resources */,
 				44D8B385216240790019077D /* apple.jpg in Resources */,
