@@ -68,7 +68,7 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         {
             let plate = foodArray[cellContentsIndex-1]
             cell.displayContent(image: plate.image_file_name!, title: plate.name!)
-            if plate.name == "tick"
+            if plate.image_file_name == "tick.png"
             {
                 cell.layer.borderWidth = 0.0
                 cell.displayContent(image: "tick.png", title: "")
@@ -77,6 +77,10 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
             {
                 cell.displayContent(image: plate.image_file_name!, title: plate.name!)
             }
+        }
+        else
+        {
+            cell.layer.borderWidth = 0.0
         }
        // cell.foodName?.text = "Sec " + indexPath.section.description + "/Item " + indexPath.item.description
          //cell.foodName?.text = plate.name
@@ -125,14 +129,75 @@ extension MaybeCollectionViewController: UICollectionViewDragDelegate{
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
     {
-        let item = self.foodArray[2*indexPath.section + indexPath.row].name
-        let itemProvider = NSItemProvider(object: item! as String as NSItemProviderWriting)
+    
+        if 2*indexPath.section + indexPath.row >= self.foodArray.count
+        {return []  }
+        
+        let item = self.foodArray[2*indexPath.section + indexPath.row].image_file_name
+        
+//            /// if I'm dragging a tick, I'm going to interpret that as the user not wanting the tick
+//        if item == "tick.png"
+//        {
+//            // get the stats on this tick
+//            let indexPathOfThisTick = foodsTriedThisWeek[0].1
+//            var imageFileNameForTheFoodBehindThisTick = String()
+//
+//            let request : NSFetchRequest<Food> = Food.fetchRequest()
+//            do
+//            {
+//                var foodArrayFull = try context.fetch(request)
+//
+//                //// look up the image file name in the underlying database
+//                let updatedVersionOfThisFood = foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.filter{$0.image_file_name != "tick.png" }.first!
+//                imageFileNameForTheFoodBehindThisTick = updatedVersionOfThisFood.image_file_name!
+//
+//                /// remove the previously updated to avoid duplication
+//                updatedVersionOfThisFood.rating = 4
+//              //foodArrayFull = Array(foodArrayFull.drop{$0 == updatedVersionOfThisFood})
+//               // context.delete(re)
+//
+//                /// change the database entry to have the tick entry restored back to previous state
+//                foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.first!.image_file_name = imageFileNameForTheFoodBehindThisTick
+//
+//                /// update the cell
+//                let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+//                cell.displayContent(image: imageFileNameForTheFoodBehindThisTick, title: "foodsTriedThisWeek[0].0")
+//                cell.layer.borderWidth = 5.0
+//
+//
+//                /// If this works correctly, I won;t have any duplicate entries now
+//
+//
+//
+//
+//
+//            }
+//            catch
+//            {
+//                print("Error fetching data \(error)")
+//            }
+//
+//            /// change the tick into the correct picture
+//
+//
+//
+//            /// delete the alterantive entry from food array full. how do i do this without crashing....?
+//
+//            /// clean up foods tried this week
+//           foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+//
+//            return []
+//        }
+        
+       // let item = self.foodArray[2*indexPath.section + indexPath.row].image_file_name
+        let itemProvider = NSItemProvider(object: item! as! String as NSItemProviderWriting)
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        foodsTriedThisWeek = [( item ?? "no idea", indexPath)]
+        foodsTriedThisWeek = [( self.foodArray[2*indexPath.section + indexPath.row].name ?? "no idea", indexPath)]
         print(foodsTriedThisWeek)
         return [dragItem]
+        
     }
 }
 
@@ -158,6 +223,9 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
+        
+        
+        
 
        let destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath{
@@ -177,7 +245,7 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
                 do
                 {
                     let foodArrayFull = try context.fetch(request)
-                    draggedFood = foodArrayFull.filter{$0.name == pet}.first!
+                    draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.first!
                     foodArray.insert(draggedFood, at: 2*destinationIndexPath.section + destinationIndexPath.row )
                     foodArray.remove(at: 2*(item.sourceIndexPath?.section)! + item.sourceIndexPath!.row)
                 }
@@ -200,32 +268,69 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         print("Message Received from \(sourceViewController)")
 
-        print(foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row])
-
-        let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek[0].0 }[0].image_file_name
-        var rating = 2
-        if sourceViewController == "sentFromGreenRibbon" { rating = 1}
-        if sourceViewController == "sentFromRedRibbon" { rating = 2}
+        if sourceViewController == "deletetick"
+        {
+//            // get the stats on this tick
+//            let indexPathOfThisTick = foodsTriedThisWeek[0].1
+//            var imageFileNameForTheFoodBehindThisTick = String()
+//
+//            let request : NSFetchRequest<Food> = Food.fetchRequest()
+//            do
+//            {
+//                var foodArrayFull = try context.fetch(request)
+//
+//                //// look up the image file name in the underlying database
+//                let updatedVersionOfThisFood = foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.filter{$0.image_file_name != "tick.png" }.first!
+//                imageFileNameForTheFoodBehindThisTick = updatedVersionOfThisFood.image_file_name!
+//
+//                /// remove the previously updated to avoid duplication
+//                foodArrayFull = Array(foodArrayFull.drop{$0 == updatedVersionOfThisFood})
+//
+//                /// change the database entry to have the tick entry restored back to previous state
+//                foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.first!.image_file_name = imageFileNameForTheFoodBehindThisTick
+//
+//                /// If this works correctly, I won;t have any duplicate entries now
+//
+//            }
+//            catch
+//            {
+//                print("Error fetching data \(error)")
+//            }
+//
+//            /// change the tick into the correct picture
+//
+//            let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+//            cell.displayContent(image: "imageFileNameForTheFoodBehindThisTick", title: "foodsTriedThisWeek[0].0")
+//            cell.layer.borderWidth = 5.0
+//
+//            /// delete the alterantive entry from food array full. how do i do this without crashing....?
+//
+//            /// clean up foods tried this week
+//            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+        }
+        else{
+            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek[0].0 }[0].image_file_name
+            var rating = 2
+            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
+            if sourceViewController == "sentFromRedRibbon" { rating = 2}
         
-        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            /// here I create a new entry in the database for the tried food, with an updated rating
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
                 menuItem.image_file_name = triedFoodImage
                 menuItem.name = foodsTriedThisWeek[0].0
                 menuItem.rating = Int16(rating)
                  foodArray.append(menuItem)
-        }
-       
+            }
         
-       // foodArray.append(triedFood)
-        foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row].name = "tick"
-        foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
-        //foodArray = foodArray.
-        //foodArray = foodArray.insert(<#T##newElement: Food##Food#>, at: 2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row)
-        let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
-       // self.maybeCollectionView.insertItems(at: [foodsTriedThisWeek[0].1])
-        cell.displayContent(image: "tick.png", title: "")
-        cell.layer.borderWidth = 0.0
-        print("Hello")
+            /// here I update the picture with 'tick' image - but i leave the other data untouched, because I want to be able to restore it if this tick was placed in error.
+            foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
+
+            let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+
+            cell.displayContent(image: "tick.png", title: "")
+            cell.layer.borderWidth = 0.0
+        }
     }
 }
 

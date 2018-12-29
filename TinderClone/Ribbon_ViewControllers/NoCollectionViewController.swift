@@ -150,14 +150,29 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
                 //print("Hello drsgged item. I've been expecting you!")
+                if pet == "" {return}
+                if pet == "tick.png"
+                {
+                    print("Oh no you don't!")
+                    return
+                }
+                
+                
                 delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
                 do
                 {
                     let foodArrayFull = try context.fetch(request)
-                    draggedFood = foodArrayFull.filter{$0.name == pet}.first!
                     
+                    //// this is a crash point potentially
+                    /// that double filter makes no sense
+                    let filteredFood = foodArrayFull.filter{$0.image_file_name == pet}.filter{$0.name != "tick" }
+                    
+                    if filteredFood.count < 1 { return }
+                    
+                    draggedFood = filteredFood.first!
+                 
                     foodArray.insert(draggedFood, at:  destinationIndexPath.row )
                 }
                 catch

@@ -143,6 +143,13 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
         
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
+                if pet == "" {return}
+                if pet == "tick.png"
+                {
+                    //delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "deletetick")
+                    print("Oh no you don't!")
+                    return
+                }
                 //print("Hello drsgged item. I've been expecting you!")
                 delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromGreenRibbon")
                 var draggedFood: Food
@@ -150,9 +157,8 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                 do
                 {
                     let foodArrayFull = try context.fetch(request)
-                    draggedFood = foodArrayFull.filter{$0.name == pet}.first!
-  
-                 foodArray.insert(draggedFood, at:  destinationIndexPath.row )
+                    draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.filter{$0.image_file_name != "tick.png" }.first!
+                        foodArray.insert(draggedFood, at:  destinationIndexPath.row )
                 }
                 catch
                 {

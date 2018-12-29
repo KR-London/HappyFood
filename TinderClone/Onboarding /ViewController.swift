@@ -13,7 +13,12 @@ import CoreData
 
 class ViewController: UIViewController{
 
-    //MARK: Define my variables to work with the database
+    @IBAction func resetButton(_ sender: Any) {
+        preloadData()
+    }
+    //@IBAction func buttonRHSpressed(_ sender: Any) {
+//      //  performSegue.withIdentifier("goToMotivation")
+//        //transitionToRibbonsStoryboard()//    }//MARK: Define my variables to work with the database
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Food]!
@@ -27,12 +32,13 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  print(datafilepath)
+        print(datafilepath)
         preloadData()
         loadItems()
         unratedFood = foodArray.filter{$0.rating == 0}
         if unratedFood.count == 0
         {
+            transitionToRibbonsStoryboard()
            // noUnratedFood()
 //                let alert = UIAlertController(title: "You've rated all the food!", message: "Would you like to reload the blank database?", preferredStyle: .actionSheet)
 //                let action = UIAlertAction(title: "Reload", style: .default){ (action) in self.preloadData(); print("I'm in the closure") }
@@ -94,15 +100,23 @@ class ViewController: UIViewController{
         
        
         if unratedFood.count == 0 {
+            
+            transitionToRibbonsStoryboard()
 //            let alert =
 //            UIAlertAction("You've rated all the foods!")
             noUnratedFood()
-            
+            return
             
         }
-        /// load a picuture of a random one of these
+        if unratedFood.count > 1
+        { /// load a picuture of a random one of these
         currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
         currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
+        }
+        else
+        {
+            currentlyPicturedFood = unratedFood[0]
+        }
         foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
     }
     
@@ -263,16 +277,20 @@ class ViewController: UIViewController{
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
             //print("Swipe Right")
-            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
             
-            guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "trafficLightStoryboard") as? CustomViewController
-                else
-            {
-                print("Couldn't find view controller")
-                return
-            }
-            
-            navigationController?.pushViewController(destinationVC, animated: true)
+            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
+            updatePicture()
+            /// This was the segue code
+//            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//
+//            guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "trafficLightStoryboard") as? CustomViewController
+//                else
+//            {
+//                print("Couldn't find view controller")
+//                return
+//            }
+//
+//            navigationController?.pushViewController(destinationVC, animated: true)
  
         }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
@@ -303,6 +321,21 @@ class ViewController: UIViewController{
         }
     }
 
+    func transitionToRibbonsStoryboard(){
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "tellMeMotivation") as? MotivationViewController
+            else
+        {
+            print("Couldn't find view controller")
+            return
+        }
+        
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
 }
+
+
 
 
