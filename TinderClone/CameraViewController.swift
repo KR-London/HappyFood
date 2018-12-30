@@ -8,8 +8,20 @@
 
 import UIKit
 import CoreData
+import Foundation
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    @IBOutlet weak var testIamge: UIImageView!
+    
+    
+    @IBAction func takeAnotherPhoto(_ sender: UIButton) {
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
@@ -30,6 +42,24 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(imagePicker, animated: true, completion: nil)
         //cameraImage = imagePicker
         
+        /// define swipe directions
+        
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
 
         // Do any additional setup after loading the view.
     }
@@ -53,6 +83,26 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             
         }
     }
+    
+//    let fileDirectory  : URL =  {
+//        return FileManager.default
+//    }
+//    func saveImageToDocuments(image: UIImage, fileNameWithExtension: String){
+//        let imagePath =  FileManager.default.urls(for: .documentDirectory,
+//                                        in: .userDomainMask).first?.appendingPathComponent("\(fileNameWithExtension)")
+//        let imageData = UIImage.pngData(image)
+//        try! imageData()?.write(to: imagePath!)
+//
+//         if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+//                menuItem.image_file_name = "dopey.png"
+//                menuItem.name = "dopey"
+//                menuItem.rating = Int16(2)
+//                saveItems()
+//        }
+//        testIamge.image = UIImage(named: "dopey.png" )
+//
+//    }
 
     /*
     // MARK: - Navigation
@@ -69,50 +119,31 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
     
     
-                                                                                //    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-                                                                                //        if gesture.direction == UISwipeGestureRecognizer.Direction.right {
-                                                                                //            print("Swipe Right")
-                                                                                //            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                                                                                //
-                                                                                //            guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "trafficLightStoryboard") as? CustomViewController
-                                                                                //                else
-                                                                                //            {
-                                                                                //                print("Couldn't find view controller")
-                                                                                //                return
-                                                                                //            }
-                                                                                //
-                                                                                //            navigationController?.pushViewController(destinationVC, animated: true)
-                                                                                //
-                                                                                //        }
-                                                                                //        else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
-                                                                                //            print("Swipe Left")
-                                                                                //
-                                                                                //            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 2
-                                                                                //            updatePicture()
-                                                                                //        }
-                                                                                //        else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
-                                                                                //            print("Swipe Up")
-                                                                                //
-                                                                                //
-                                                                                //            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 1
-                                                                                //            updatePicture()
-                                                                                //        }
-                                                                                //        else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
-                                                                                //            print("Swipe Down")
-                                                                                //
-                                                                                //            foodArray[foodArray.index(of: currentlyPicturedFood)!].rating = 3
-                                                                                //            updatePicture()
-                                                                                //            //self.storyboard
-                                                                                //
-                                                                                //
-                                                                                //            
-                                                                                //
-                                                                                //            //onButtonTapped()
-                                                                                //            // performSegue(withIdentifier: goToData, sender: self)
-                                                                                //        }
-                                                                                //    }
-
-}
+@objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == UISwipeGestureRecognizer.Direction.right {
+            cameraImage.image = nil
+        
+         }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
+             if let newPic = cameraImage.image{
+            let seconds = String(Date.timeIntervalSinceReferenceDate).filter{$0 != "."}
+            appsAndBiscuits(imageName: seconds, image: newPic, rating:  2)
+            }
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.up {
+             if let newPic = cameraImage.image{
+            let seconds = String(Date.timeIntervalSinceReferenceDate).filter{$0 != "."}
+            appsAndBiscuits(imageName: seconds, image: newPic, rating:  1)
+            }
+        }
+        else if gesture.direction == UISwipeGestureRecognizer.Direction.down {
+            
+            if let newPic = cameraImage.image{
+            let seconds = String(Date.timeIntervalSinceReferenceDate).filter{$0 != "."}
+            appsAndBiscuits(imageName: seconds, image: newPic, rating:  3)
+            }
+        }
+    }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
@@ -122,4 +153,35 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
+}
+    
+    
+    func appsAndBiscuits(imageName: String, image: UIImage, rating: Int){
+        
+        /// create an instance of filemanager
+        let fileManager = FileManager.default
+        
+        /// get the image path
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imageName)
+        
+        /// get the png data for this image
+        
+        let data = UIImage.pngData(image)
+        
+        fileManager.createFile(atPath: imagePath as String, contents: data(), attributes: nil)
+        
+        
+        //cameraImage.image = UIImage(contentsOfFile: imagePath)
+        
+        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+            menuItem.image_file_name = imagePath
+            menuItem.name = imageName
+            menuItem.rating = Int16(rating)
+            saveItems()
+        }
+        
+        cameraImage.image = nil
+    }
+
 }

@@ -26,8 +26,8 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItems()
-        foodArray = foodArray.filter{ $0.rating == 2 }
+//        loadItems()
+//        foodArray = foodArray.filter{ $0.rating == 2 }
         maybeCollectionView.dragDelegate = self
         maybeCollectionView.dropDelegate = self
         maybeCollectionView.dragInteractionEnabled = true
@@ -45,6 +45,13 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         collectionView!.collectionViewLayout = layout
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadItems()
+        foodArray = foodArray.filter{ $0.rating == 2 }
+        reloadInputViews()
     }
 
     // MARK: UICollectionViewDataSource

@@ -201,11 +201,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.249032"
+            timestampString = "567802415.5536931"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,7 +217,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.2490931"
+            timestampString = "567801406.491605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -233,7 +233,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.249149"
+            timestampString = "567801406.491662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -249,7 +249,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.2492"
+            timestampString = "567801406.491704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -376,11 +376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.249326"
+            timestampString = "567802415.55414"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "collectionView(_:itemsForBeginning:at:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -392,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.249377"
+            timestampString = "567802415.554415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "collectionView(_:performDropWith:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -408,11 +408,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.249426"
+            timestampString = "567802415.5546761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
             landmarkName = "collectionView(_:performDropWith:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -615,7 +615,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/CustomViewController.swift"
-            timestampString = "567247790.248235"
+            timestampString = "567777280.979226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -647,7 +647,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.2497571"
+            timestampString = "567801406.491876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
@@ -695,7 +695,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/CustomViewController.swift"
-            timestampString = "567247790.248379"
+            timestampString = "567777280.979519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -711,7 +711,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.249831"
+            timestampString = "567801406.491925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
@@ -727,7 +727,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.249884"
+            timestampString = "567801406.491962"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
@@ -775,7 +775,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.249956"
+            timestampString = "567801406.491998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -791,11 +791,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.250006"
+            timestampString = "567802415.5550849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "canHandle(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -807,11 +807,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.250055"
+            timestampString = "567802415.5553499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "collectionView(_:dropSessionDidUpdate:withDestinationIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -823,11 +823,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.250103"
+            timestampString = "567802415.555616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "collectionView(_:dropSessionDidUpdate:withDestinationIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -839,11 +839,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.25015"
+            timestampString = "567802415.555878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "collectionView(_:performDropWith:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -855,7 +855,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.2501971"
+            timestampString = "567801406.492067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
@@ -871,7 +871,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.250244"
+            timestampString = "567801406.492105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
@@ -887,7 +887,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.25029"
+            timestampString = "567801406.492139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -903,7 +903,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/YesCollectionViewController.swift"
-            timestampString = "567334869.2503361"
+            timestampString = "567801406.492174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -919,11 +919,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.2503819"
+            timestampString = "567802415.556188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "updateSourceCellWithASmiley(sourceIndexPath:sourceViewController:)"
             landmarkType = "7">
             <Locations>
@@ -967,11 +967,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.250429"
+            timestampString = "567802415.5564491"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "updateSourceCellWithASmiley(sourceIndexPath:sourceViewController:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -983,11 +983,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.250475"
+            timestampString = "567802415.556703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "collectionView(_:performDropWith:)"
             landmarkType = "7">
             <Locations>
@@ -1223,11 +1223,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TinderClone/Ribbon_ViewControllers/MaybeCollectionViewController.swift"
-            timestampString = "567334869.251685"
+            timestampString = "567802415.557041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "dragItems(for:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1309,6 +1309,54 @@
             startingLineNumber = "18"
             endingLineNumber = "18"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinderClone/CameraViewController.swift"
+            timestampString = "567877166.3794399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "appsAndBiscuits(imageName:image:rating:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinderClone/CameraViewController.swift"
+            timestampString = "567877166.379827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "appsAndBiscuits(imageName:image:rating:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TinderClone/CameraViewController.swift"
+            timestampString = "567877166.3801039"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "handleGesture(gesture:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
