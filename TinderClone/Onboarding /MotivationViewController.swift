@@ -38,7 +38,9 @@ class MotivationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         motivationInputField.delegate = self
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            self.performSegue(withIdentifier: "goToRibbonsOnboarding", sender: self)
+        }
 
         // Do any additional setup after loading the view.
     }

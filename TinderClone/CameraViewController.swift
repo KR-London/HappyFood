@@ -12,15 +12,15 @@ import Foundation
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    @IBOutlet weak var testIamge: UIImageView!
-    
-    
     @IBAction func takeAnotherPhoto(_ sender: UIButton) {
-        
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func segueTrigger(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "trafficLightStoryboard") as! CustomViewController
+        self.present(newViewController, animated: true, completion: nil)
+    }
     
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -39,8 +39,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
+        
         present(imagePicker, animated: true, completion: nil)
-        //cameraImage = imagePicker
+        
+        ///imagePickerController(imagePicker, didFinishPickingMediaWithInfo: <#T##[UIImagePickerController.InfoKey : Any]#>)
         
         /// define swipe directions
         
@@ -70,7 +72,9 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
         if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         {
-            cameraImage.image = userPickedImage
+            let maskingImage = UIImage(named: "mask2.png")
+            cameraImage.image = maskImage(image: userPickedImage, mask: maskingImage!)
+           // cameraImage.image = userPickedImage
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
@@ -182,6 +186,25 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
         }
         
         cameraImage.image = nil
+    }
+    
+    func maskImage(image:UIImage, mask:(UIImage))->UIImage{
+        
+        let imageReference = image.cgImage
+        let maskReference = mask.cgImage
+        
+        let imageMask = CGImage(maskWidth: maskReference!.width,
+                                height: maskReference!.height,
+                                bitsPerComponent: maskReference!.bitsPerComponent,
+                                bitsPerPixel: maskReference!.bitsPerPixel,
+                                bytesPerRow: maskReference!.bytesPerRow,
+                                provider: maskReference!.dataProvider!, decode: nil, shouldInterpolate: true)
+        
+        let maskedReference = imageReference!.masking(imageMask!)
+        
+        let maskedImage = UIImage(cgImage:maskedReference!)
+        
+        return maskedImage
     }
 
 }

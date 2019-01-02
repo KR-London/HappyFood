@@ -24,7 +24,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.addChild(greenView)
-        scrollView.contentSize = CGSize(width: 375, height: 1000)
+        scrollView.contentSize = CGSize(width: 375, height: 800)
         ///self.view.backgroundColor = UIColor.init(patternImage:#imageLiteral(resourceName: "stripes.png") )
         self.view.addSubview(stackView)
       //  var backgroundStripes = UIImage(named: "stripes.png")
@@ -50,7 +50,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EmbedAmber" {
-            let  dvc = segue.destination as! MaybeCollectionViewController
+            let  dvc = segue.destination as! Maybe2CollectionViewController
             communicationChannel = dvc
         } else if segue.identifier == "EmbedGreen" {
             let dvc = segue.destination as! YesCollectionViewController
@@ -60,6 +60,11 @@ class CustomViewController: UIViewController, CommunicationChannel {
              dvc.delegate = self
             //print(dvc.delegate!)
             //communicationChannel = dvc
+        }
+        else if segue.identifier == "EmbedAmber2"{
+            let  dvc = segue.destination as! Maybe2CollectionViewController
+            dvc.delegate = self
+            dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
         }
        //  imageView.sendSubviewToBack(view)
     }
@@ -73,7 +78,24 @@ class CustomViewController: UIViewController, CommunicationChannel {
         communicationChannel?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
     }
     
-
+    func maskImage(image:UIImage, mask:(UIImage))->UIImage{
+        
+        let imageReference = image.cgImage
+        let maskReference = mask.cgImage
+        
+        let imageMask = CGImage(maskWidth: maskReference!.width,
+                                height: maskReference!.height,
+                                bitsPerComponent: maskReference!.bitsPerComponent,
+                                bitsPerPixel: maskReference!.bitsPerPixel,
+                                bytesPerRow: maskReference!.bytesPerRow,
+                                provider: maskReference!.dataProvider!, decode: nil, shouldInterpolate: true)
+        
+        let maskedReference = imageReference!.masking(imageMask!)
+        
+        let maskedImage = UIImage(cgImage:maskedReference!)
+        
+        return maskedImage
+    }
 }
 extension UIImage {
     func resizeImage(targetSize: CGSize) -> UIImage {
@@ -90,4 +112,9 @@ extension UIImage {
         
         return newImage!
     }
+    
+
 }
+
+
+

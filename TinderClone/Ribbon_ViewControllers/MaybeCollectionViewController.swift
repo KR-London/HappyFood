@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MobileCoreServices
 
-let reuseIdentifier = "maybeCell"
+let MaybeReuseIdentifier = "maybeCell"
 
 @IBDesignable
 class MaybeCollectionViewController: UICollectionViewController, CommunicationChannel {
@@ -46,8 +46,10 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
+    
         
         collectionView!.collectionViewLayout = layout
+    
         
         
     }
@@ -55,7 +57,25 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadItems()
-        foodArray = foodArray.filter{ $0.rating == 2 }
+        
+        foodArray = foodArray.filter{ $0.rating == 2}
+        
+        //print(foodArray.flatMap{$0.name})
+        
+        var temp = [Food]()
+        
+        for i in 0...(foodArray.count-1)
+        {
+            if i % 2 == 0
+            {
+                temp = temp + [foodArray[i]]
+               // print( temp.flatMap{$0.name} )
+            }
+        }
+        
+        foodArray = temp
+        
+        
         reloadInputViews()
     }
 

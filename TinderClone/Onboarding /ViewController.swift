@@ -32,7 +32,7 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(datafilepath)
+        print(datafilepath!)
         preloadData()
         loadItems()
         unratedFood = foodArray.filter{$0.rating == 0}
@@ -59,7 +59,10 @@ class ViewController: UIViewController{
         {
             currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
             currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
-            foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+            let image = UIImage(named: currentlyPicturedFood.image_file_name!)
+            let maskingImage = UIImage(named: "mask2.png")
+            foodImage.image = maskImage(image: image!, mask: maskingImage!)
+            //foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
         }
         
         /// define swipe directions
@@ -117,7 +120,11 @@ class ViewController: UIViewController{
         {
             currentlyPicturedFood = unratedFood[0]
         }
-        foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+       // foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+        
+        let image = UIImage(named: currentlyPicturedFood.image_file_name!)
+        let maskingImage = UIImage(named: "mask2.png")
+        foodImage.image = maskImage(image: image!, mask: maskingImage!)
     }
     
     func loadItems(){
@@ -322,17 +329,45 @@ class ViewController: UIViewController{
     }
 
     func transitionToRibbonsStoryboard(){
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "tellMeMotivation") as? MotivationViewController
-            else
-        {
-            print("Couldn't find view controller")
-            return
+       // performSegue(withIdentifier: "GoToMotivation", sender: self)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            self.performSegue(withIdentifier: "goToMotivation", sender: self)
         }
         
-        navigationController?.pushViewController(destinationVC, animated: true)
+//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//
+//        guard let destinationVC = mainStoryBoard.instantiateViewController(withIdentifier: "tellMeMotivation") as? MotivationViewController
+//            else
+//        {
+//            print("Couldn't find view controller")
+//            return
+//        }
+//
+//        navigationController?.pushViewController(destinationVC, animated: true)
     }
+    
+    
+    func maskImage(image:UIImage, mask:(UIImage))->UIImage{
+        
+        let imageReference = image.cgImage
+        let maskReference = mask.cgImage
+        
+        let imageMask = CGImage(maskWidth: maskReference!.width,
+                                height: maskReference!.height,
+                                bitsPerComponent: maskReference!.bitsPerComponent,
+                                bitsPerPixel: maskReference!.bitsPerPixel,
+                                bytesPerRow: maskReference!.bytesPerRow,
+                                provider: maskReference!.dataProvider!, decode: nil, shouldInterpolate: true)
+        
+        let maskedReference = imageReference!.masking(imageMask!)
+        
+        let maskedImage = UIImage(cgImage:maskedReference!)
+        
+        return maskedImage
+    }
+
     
 }
 
