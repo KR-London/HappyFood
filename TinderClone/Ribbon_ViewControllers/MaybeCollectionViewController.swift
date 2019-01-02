@@ -26,6 +26,7 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.yellow
 //        loadItems()
 //        foodArray = foodArray.filter{ $0.rating == 2 }
         maybeCollectionView.dragDelegate = self
@@ -37,7 +38,7 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
        // let width = UIScreen.main.bounds.width
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 100, height: 100)
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -58,12 +59,12 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return (foodArray.count+1)/2
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return foodArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

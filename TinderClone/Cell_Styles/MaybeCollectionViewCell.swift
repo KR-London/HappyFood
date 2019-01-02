@@ -27,7 +27,7 @@ class MaybeCollectionViewCell: UICollectionViewCell {
     public func displayContent(image: String, title: String)
     {
         foodImage.image = UIImage(named: image)
-        foodName.text = title
+        //foodName.text = title
         //print("Maybe ribbon should display \(title)")
     }
     

@@ -28,7 +28,7 @@ class NoCollectionViewController: UICollectionViewController {
     @IBOutlet var noCollectionView : UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor.red
         //collectionView?.addInteraction( UIDragInteraction )
 
         

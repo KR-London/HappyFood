@@ -14,6 +14,12 @@
 		4406F23B21620B8F00155818 /* YesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23521620B8F00155818 /* YesCollectionViewCell.swift */; };
 		4406F23C21620B8F00155818 /* MaybeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */; };
 		44110B1F21ADD8BC00151388 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44110B1E21ADD8BC00151388 /* CameraViewController.swift */; };
+		443095C321DC057400E04A46 /* IMG_0856 2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095C221DC057400E04A46 /* IMG_0856 2.JPG */; };
+		443095C521DC05D400E04A46 /* triangles.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095C421DC05D300E04A46 /* triangles.JPG */; };
+		443095C721DC07CB00E04A46 /* chaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 443095C621DC07CB00E04A46 /* chaos.jpg */; };
+		443095C921DC0F3600E04A46 /* tutorial_background_2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */; };
+		443095CB21DC107300E04A46 /* chaos_xen_edit.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 443095CA21DC107300E04A46 /* chaos_xen_edit.JPEG */; };
+		443095CD21DC10DD00E04A46 /* camera_customJPG.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095CC21DC10DD00E04A46 /* camera_customJPG.JPG */; };
 		444DCDA921D36B5B004408D9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444DCDA821D36B5B004408D9 /* Launch Screen.storyboard */; };
 		4451E2C621BABA37008BB36E /* NoCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */; };
 		4461FFE221B59DFD00354109 /* MaybeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */; };
@@ -76,6 +82,12 @@
 		4406F23521620B8F00155818 /* YesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewCell.swift; sourceTree = "<group>"; };
 		44110B1E21ADD8BC00151388 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		443095C221DC057400E04A46 /* IMG_0856 2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "IMG_0856 2.JPG"; sourceTree = "<group>"; };
+		443095C421DC05D300E04A46 /* triangles.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = triangles.JPG; sourceTree = "<group>"; };
+		443095C621DC07CB00E04A46 /* chaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos.jpg; sourceTree = "<group>"; };
+		443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tutorial_background_2.JPG; sourceTree = "<group>"; };
+		443095CA21DC107300E04A46 /* chaos_xen_edit.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos_xen_edit.JPEG; sourceTree = "<group>"; };
+		443095CC21DC10DD00E04A46 /* camera_customJPG.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera_customJPG.JPG; sourceTree = "<group>"; };
 		444DCDA821D36B5B004408D9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCollectionViewLayout.swift; sourceTree = "<group>"; };
 		4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -244,6 +256,12 @@
 		446E74A721412FF300B326D9 /* FoodPictures */ = {
 			isa = PBXGroup;
 			children = (
+				443095CC21DC10DD00E04A46 /* camera_customJPG.JPG */,
+				443095CA21DC107300E04A46 /* chaos_xen_edit.JPEG */,
+				443095C621DC07CB00E04A46 /* chaos.jpg */,
+				443095C421DC05D300E04A46 /* triangles.JPG */,
+				443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */,
+				443095C221DC057400E04A46 /* IMG_0856 2.JPG */,
 				44B0541121CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png */,
 				44B0541321CE850F000BE527 /* stripes.png */,
 				44B0540F21CE2FBC000BE527 /* tick.png */,
@@ -382,12 +400,16 @@
 			files = (
 				44D8B3AD216240F30019077D /* veggienugget.JPG in Resources */,
 				44D8B38F2162408D0019077D /* cheeseandonioncrisps.JPG in Resources */,
+				443095C921DC0F3600E04A46 /* tutorial_background_2.JPG in Resources */,
 				446E749021412FD800B326D9 /* LaunchScreen.storyboard in Resources */,
 				44D8B397216240AC0019077D /* noodles.JPG in Resources */,
 				44D8B399216240B80019077D /* nuts.JPG in Resources */,
+				443095C521DC05D400E04A46 /* triangles.JPG in Resources */,
 				44B0541221CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png in Resources */,
 				446E748D21412FD800B326D9 /* Assets.xcassets in Resources */,
+				443095CB21DC107300E04A46 /* chaos_xen_edit.JPEG in Resources */,
 				44B0541421CE850F000BE527 /* stripes.png in Resources */,
+				443095C721DC07CB00E04A46 /* chaos.jpg in Resources */,
 				44D8B3872162407D0019077D /* bread.JPG in Resources */,
 				44D8B3A9216240EA0019077D /* tomatosoup.JPG in Resources */,
 				44D8B385216240790019077D /* apple.jpg in Resources */,
@@ -404,8 +426,10 @@
 				44D8B3AB216240EE0019077D /* tuna.JPG in Resources */,
 				44D8B39F216240CA0019077D /* readysaltedcrisps.JPG in Resources */,
 				44D8B389216240810019077D /* broccili.JPG in Resources */,
+				443095C321DC057400E04A46 /* IMG_0856 2.JPG in Resources */,
 				44D8B3A7216240E60019077D /* sweetcorn.JPG in Resources */,
 				44D8B39D216240C30019077D /* penne.JPG in Resources */,
+				443095CD21DC10DD00E04A46 /* camera_customJPG.JPG in Resources */,
 				44D8B3A1216240CE0019077D /* rice.JPG in Resources */,
 				44D8B3A3216240D70019077D /* ricecake.JPG in Resources */,
 				44D8B3832162403C0019077D /* FoodData.csv in Resources */,

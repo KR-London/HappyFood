@@ -12,12 +12,18 @@ protocol CommunicationChannel : class {
     func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
 }
 
+@IBDesignable
 class CustomViewController: UIViewController, CommunicationChannel {
     
     weak var communicationChannel: CommunicationChannel?
-
+    
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet weak var greenView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.addChild(greenView)
+        scrollView.contentSize = CGSize(width: 375, height: 1000)
         ///self.view.backgroundColor = UIColor.init(patternImage:#imageLiteral(resourceName: "stripes.png") )
         
       //  var backgroundStripes = UIImage(named: "stripes.png")
@@ -27,18 +33,18 @@ class CustomViewController: UIViewController, CommunicationChannel {
         
        
         
-        let mix = UIImage(named: "mix")
-        let scribblesImageView = UIImageView(image: mix!)
-        scribblesImageView.frame = CGRect(x: 0, y:-40, width: self.view.frame.width, height: 1.15*self.view.frame.height)
-        view.addSubview(scribblesImageView)
+      //  let mix = UIImage(named: "mix")
+       // let scribblesImageView = UIImageView(image: mix!)
+      //  scribblesImageView.frame = CGRect(x: 0, y:-40, width: self.view.frame.width, height: 1.15*self.view.frame.height)
+      //  view.addSubview(scribblesImageView)
         //view.sendSubviewToBack(scribblesImageView)
         
-        let imageName = "stripes.png"
-        let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image!)
-        imageView.frame = CGRect(x: 0, y: -30, width: self.view.frame.width , height: 1.2*self.view.frame.height)
-        view.addSubview(imageView)
-        view.sendSubviewToBack(imageView)
+//        let imageName = "stripes.png"
+//        let image = UIImage(named: imageName)
+//        let imageView = UIImageView(image: image!)
+//        imageView.frame = CGRect(x: 0, y: -30, width: self.view.frame.width , height: 1.2*self.view.frame.height)
+//        view.addSubview(imageView)
+//        view.sendSubviewToBack(imageView)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

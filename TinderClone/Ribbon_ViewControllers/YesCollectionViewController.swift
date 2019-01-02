@@ -30,6 +30,8 @@ class YesCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
      //   delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromGreenRibbon")
         loadItems()
+        
+        self.view.backgroundColor = UIColor.green
         foodArray = foodArray.filter{ $0.rating == 1 }
         yesCollectionView.dragDelegate = self
         yesCollectionView.dropDelegate = self
