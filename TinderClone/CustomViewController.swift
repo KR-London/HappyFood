@@ -20,12 +20,13 @@ class CustomViewController: UIViewController, CommunicationChannel {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var greenView: UIView!
     
+    @IBOutlet weak var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.addChild(greenView)
         scrollView.contentSize = CGSize(width: 375, height: 1000)
         ///self.view.backgroundColor = UIColor.init(patternImage:#imageLiteral(resourceName: "stripes.png") )
-        
+        self.view.addSubview(stackView)
       //  var backgroundStripes = UIImage(named: "stripes.png")
         //backgroundStripes = backgroundStripes?.resizeImage(targetSize: CGSize(width: self.view!.frame.width, height: self.view!.frame.height))
       //  self.view.sa

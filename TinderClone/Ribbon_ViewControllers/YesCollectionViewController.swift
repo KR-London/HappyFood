@@ -12,7 +12,7 @@ import MobileCoreServices
 
 private let yesReuseIdentifier = "yesCell"
  // var pets  =   ["Corner.png", "Cheese.png", "Blueberries.png"]
-var pets  =   ["1.png","Tomato.png", "Tasty.png", "Satsuma.png", "Jam.png", "Cream Cheese.png","Corner.png", "Cheese.png", "Blueberries.png"]
+//var pets  =   ["1.png","Tomato.png", "Tasty.png", "Satsuma.png", "Jam.png", "Cream Cheese.png","Corner.png", "Cheese.png", "Blueberries.png"]
 
 @IBDesignable
 class YesCollectionViewController: UICollectionViewController {

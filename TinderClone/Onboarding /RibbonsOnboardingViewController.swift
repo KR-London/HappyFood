@@ -11,6 +11,11 @@ import UIKit
 class RibbonsOnboardingViewController: UIViewController {
 
     
+    @IBAction func segueTrigger(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "trafficLightStoryboard") as! CustomViewController
+        self.present(newViewController, animated: true, completion: nil)
+    }
     
     
     
