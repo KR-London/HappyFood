@@ -1,23 +1,20 @@
-//
-//  Maybe2CollectionViewController.swift
-//  TinderClone
-//
-//  Created by Kate Roberts on 02/01/2019.
-//  Copyright © 2019 Kate Roberts. All rights reserved.
-//
-
 import UIKit
 import CoreData
 import MobileCoreServices
 
 import MobileCoreServices
 
-let maybe2ReuseIdentifier = "maybe2Cell"
+let maybe3ReuseIdentifier = "maybe3Cell"
 
 
-class Maybe2CollectionViewController: UICollectionViewController, CommunicationChannel {
+class Maybe3CollectionViewController: UICollectionViewController, CommunicationChannel {
     
-    @IBOutlet var maybe2CollectionView: UICollectionView!
+    
+    
+    
+     @IBOutlet var maybe3CollectionView: UICollectionView!
+    
+    
     var foodsTriedThisWeek: [(String?, IndexPath)]!
     weak var delegate: CommunicationChannel?
     var whereDidTheSegueComeFrom = ""
@@ -27,19 +24,19 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
     var foodArray: [Food]!
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
-  
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blue
         //        loadItems()
         //        foodArray = foodArray.filter{ $0.rating == 2 }
-
+        
         //MARK: Layout hack
         
-        maybe2CollectionView.dragDelegate = self
-        maybe2CollectionView.dropDelegate = self
-        maybe2CollectionView.dragInteractionEnabled = true
+        maybe3CollectionView.dragDelegate = self
+        maybe3CollectionView.dropDelegate = self
+        maybe3CollectionView.dragInteractionEnabled = true
         
         self.view.frame.size = CGSize(width: 250, height: 700)
         
@@ -67,7 +64,7 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
         var temp = [Food]()
         var whichAmberStripeAmIOn = 0
         
-        if whereDidTheSegueComeFrom == "Maybe2"{whichAmberStripeAmIOn = 1}
+        if whereDidTheSegueComeFrom == "Maybe3"{whichAmberStripeAmIOn = 1}
         
         for i in 0...(foodArray.count-1)
         {
@@ -81,25 +78,25 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
         foodArray = temp
         reloadInputViews()
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return foodArray.count
@@ -108,7 +105,7 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "maybe2Cell", for: indexPath) as! Maybe2CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "maybeCell", for: indexPath) as! MaybeCollectionViewCell
         
         // let cellContentsIndex = 2*indexPath.section + 1 + indexPath.row
         let cellContentsIndex =  indexPath.row
@@ -131,48 +128,48 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
             cell.layer.borderWidth = 0.0
         }
         // cell.foodName?.text = "Sec " + indexPath.section.description + "/Item " + indexPath.item.description
-       // cell.foodName?.text = plate.name
+        // cell.foodName?.text = plate.name
         return cell
     }
-//
-//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: maybe2ReuseIdentifier, for: indexPath)
-//
-//        // Configure the cell
-//
-//        return cell
-//    }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    //
+    //    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: maybe2ReuseIdentifier, for: indexPath)
+    //
+    //        // Configure the cell
+    //
+    //        return cell
+    //    }
     
-    }
-    */
+    // MARK: UICollectionViewDelegate
+    
+    /*
+     // Uncomment this method to specify if the specified item should be highlighted during tracking
+     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment this method to specify if the specified item should be selected
+     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+     
+     }
+     */
     
     func loadItems(){
         let request : NSFetchRequest<Food> = Food.fetchRequest()
@@ -229,7 +226,7 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
         //cell.layer.borderWidth = 0.0
         
         
-
+        
     }
     
     /// MARK: Drag and drop helper functions
@@ -247,11 +244,11 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
         dragItem.localObject =  sampledFood
         return [dragItem]
     }
-
+    
 }
 
 
-extension Maybe2CollectionViewController: UICollectionViewDragDelegate{
+extension Maybe3CollectionViewController: UICollectionViewDragDelegate{
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
     {
@@ -327,7 +324,7 @@ extension Maybe2CollectionViewController: UICollectionViewDragDelegate{
     }
 }
 
-extension Maybe2CollectionViewController: UICollectionViewDropDelegate{
+extension Maybe3CollectionViewController: UICollectionViewDropDelegate{
     
     public func canHandle(_ session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSString.self)
@@ -349,7 +346,7 @@ extension Maybe2CollectionViewController: UICollectionViewDropDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, performDropWith coordinator: UICollectionViewDropCoordinator) {
-
+        
         let destinationIndexPath: IndexPath
         if let indexPath = coordinator.destinationIndexPath{
             destinationIndexPath = indexPath
@@ -371,8 +368,8 @@ extension Maybe2CollectionViewController: UICollectionViewDropDelegate{
                     draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.first!
                     foodArray.insert(draggedFood, at: destinationIndexPath.row )
                     
-                     delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromAmberRibbon"+whereDidTheSegueComeFrom)
-                  //  foodArray.remove(at: item.sourceIndexPath!.row)
+                    delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromAmberRibbon"+whereDidTheSegueComeFrom)
+                    //  foodArray.remove(at: item.sourceIndexPath!.row)
                     //updateSourceCellWithASmiley(sourceIndexPath: item.sourceIndexPath!, sourceViewController: "test")
                 }
                 catch
@@ -380,7 +377,7 @@ extension Maybe2CollectionViewController: UICollectionViewDropDelegate{
                     print("Error fetching data \(error)")
                 }
                 DispatchQueue.main.async {
-                    self.maybe2CollectionView.insertItems(at: [destinationIndexPath])
+                    self.maybe3CollectionView.insertItems(at: [destinationIndexPath])
                 }
             }
             
@@ -391,73 +388,73 @@ extension Maybe2CollectionViewController: UICollectionViewDropDelegate{
         return 1
     }
     
-//    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-//        print("Message Received from \(sourceViewController)")
-//
-//        if sourceViewController == "deletetick"
-//        {
-//            //            // get the stats on this tick
-//            //            let indexPathOfThisTick = foodsTriedThisWeek[0].1
-//            //            var imageFileNameForTheFoodBehindThisTick = String()
-//            //
-//            //            let request : NSFetchRequest<Food> = Food.fetchRequest()
-//            //            do
-//            //            {
-//            //                var foodArrayFull = try context.fetch(request)
-//            //
-//            //                //// look up the image file name in the underlying database
-//            //                let updatedVersionOfThisFood = foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.filter{$0.image_file_name != "tick.png" }.first!
-//            //                imageFileNameForTheFoodBehindThisTick = updatedVersionOfThisFood.image_file_name!
-//            //
-//            //                /// remove the previously updated to avoid duplication
-//            //                foodArrayFull = Array(foodArrayFull.drop{$0 == updatedVersionOfThisFood})
-//            //
-//            //                /// change the database entry to have the tick entry restored back to previous state
-//            //                foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.first!.image_file_name = imageFileNameForTheFoodBehindThisTick
-//            //
-//            //                /// If this works correctly, I won;t have any duplicate entries now
-//            //
-//            //            }
-//            //            catch
-//            //            {
-//            //                print("Error fetching data \(error)")
-//            //            }
-//            //
-//            //            /// change the tick into the correct picture
-//            //
-//            //            let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
-//            //            cell.displayContent(image: "imageFileNameForTheFoodBehindThisTick", title: "foodsTriedThisWeek[0].0")
-//            //            cell.layer.borderWidth = 5.0
-//            //
-//            //            /// delete the alterantive entry from food array full. how do i do this without crashing....?
-//            //
-//            //            /// clean up foods tried this week
-//            //            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-//        }
-//        else{
-//            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek[0].0 }[0].image_file_name
-//            var rating = 2
-//            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
-//            if sourceViewController == "sentFromRedRibbon" { rating = 2}
-//
-//            /// here I create a new entry in the database for the tried food, with an updated rating
-//            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-//                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
-//                menuItem.image_file_name = triedFoodImage
-//                menuItem.name = foodsTriedThisWeek[0].0
-//                menuItem.rating = Int16(rating)
-//                foodArray.append(menuItem)
-//            }
-//
-//            /// here I update the picture with 'tick' image - but i leave the other data untouched, because I want to be able to restore it if this tick was placed in error.
-//            foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
-//
-//            let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
-//
-//            cell.displayContent(image: "tick.png", title: "")
-//            cell.layer.borderWidth = 0.0
-//        }
-//    }
+    //    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+    //        print("Message Received from \(sourceViewController)")
+    //
+    //        if sourceViewController == "deletetick"
+    //        {
+    //            //            // get the stats on this tick
+    //            //            let indexPathOfThisTick = foodsTriedThisWeek[0].1
+    //            //            var imageFileNameForTheFoodBehindThisTick = String()
+    //            //
+    //            //            let request : NSFetchRequest<Food> = Food.fetchRequest()
+    //            //            do
+    //            //            {
+    //            //                var foodArrayFull = try context.fetch(request)
+    //            //
+    //            //                //// look up the image file name in the underlying database
+    //            //                let updatedVersionOfThisFood = foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.filter{$0.image_file_name != "tick.png" }.first!
+    //            //                imageFileNameForTheFoodBehindThisTick = updatedVersionOfThisFood.image_file_name!
+    //            //
+    //            //                /// remove the previously updated to avoid duplication
+    //            //                foodArrayFull = Array(foodArrayFull.drop{$0 == updatedVersionOfThisFood})
+    //            //
+    //            //                /// change the database entry to have the tick entry restored back to previous state
+    //            //                foodArrayFull.filter{$0.name == foodsTriedThisWeek[0].0 }.first!.image_file_name = imageFileNameForTheFoodBehindThisTick
+    //            //
+    //            //                /// If this works correctly, I won;t have any duplicate entries now
+    //            //
+    //            //            }
+    //            //            catch
+    //            //            {
+    //            //                print("Error fetching data \(error)")
+    //            //            }
+    //            //
+    //            //            /// change the tick into the correct picture
+    //            //
+    //            //            let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+    //            //            cell.displayContent(image: "imageFileNameForTheFoodBehindThisTick", title: "foodsTriedThisWeek[0].0")
+    //            //            cell.layer.borderWidth = 5.0
+    //            //
+    //            //            /// delete the alterantive entry from food array full. how do i do this without crashing....?
+    //            //
+    //            //            /// clean up foods tried this week
+    //            //            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+    //        }
+    //        else{
+    //            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek[0].0 }[0].image_file_name
+    //            var rating = 2
+    //            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
+    //            if sourceViewController == "sentFromRedRibbon" { rating = 2}
+    //
+    //            /// here I create a new entry in the database for the tried food, with an updated rating
+    //            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+    //                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+    //                menuItem.image_file_name = triedFoodImage
+    //                menuItem.name = foodsTriedThisWeek[0].0
+    //                menuItem.rating = Int16(rating)
+    //                foodArray.append(menuItem)
+    //            }
+    //
+    //            /// here I update the picture with 'tick' image - but i leave the other data untouched, because I want to be able to restore it if this tick was placed in error.
+    //            foodArray[2*foodsTriedThisWeek[0].1.section + foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
+    //
+    //            let cell = self.maybeCollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+    //
+    //            cell.displayContent(image: "tick.png", title: "")
+    //            cell.layer.borderWidth = 0.0
+    //        }
+    //    }
 }
 
 

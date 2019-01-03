@@ -41,6 +41,7 @@
 		44B2707A21DD7C4600F6D424 /* mask1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707321DD7C4600F6D424 /* mask1.png */; };
 		44B2707B21DD7C4600F6D424 /* mask5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707421DD7C4600F6D424 /* mask5.png */; };
 		44B2707C21DD7C4600F6D424 /* mask7.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707521DD7C4600F6D424 /* mask7.png */; };
+		44B2708121DD8F9B00F6D424 /* Maybe3CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2708021DD8F9B00F6D424 /* Maybe3CollectionViewController.swift */; };
 		44B9A68E21CFE0B10019E8FE /* preViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9A68D21CFE0B10019E8FE /* preViewController.swift */; };
 		44D8B37F216216D60019077D /* YesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */; };
 		44D8B3832162403C0019077D /* FoodData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3822162403B0019077D /* FoodData.csv */; };
@@ -134,6 +135,7 @@
 		44B2707321DD7C4600F6D424 /* mask1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask1.png; sourceTree = "<group>"; };
 		44B2707421DD7C4600F6D424 /* mask5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask5.png; sourceTree = "<group>"; };
 		44B2707521DD7C4600F6D424 /* mask7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask7.png; sourceTree = "<group>"; };
+		44B2708021DD8F9B00F6D424 /* Maybe3CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maybe3CollectionViewController.swift; sourceTree = "<group>"; };
 		44B9A68D21CFE0B10019E8FE /* preViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preViewController.swift; sourceTree = "<group>"; };
 		44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44D8B3822162403B0019077D /* FoodData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodData.csv; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				4406F23421620B8F00155818 /* MaybeCollectionViewController.swift */,
 				44FC4E5D21DCE9E80028B667 /* Maybe2CollectionViewController.swift */,
+				44B2708021DD8F9B00F6D424 /* Maybe3CollectionViewController.swift */,
 				4406F23121620B8F00155818 /* NoCollectionViewController.swift */,
 				4406F23321620B8F00155818 /* YesCollectionViewController.swift */,
 			);
@@ -503,6 +506,7 @@
 				4406F23A21620B8F00155818 /* MaybeCollectionViewController.swift in Sources */,
 				4498109C2150F90200508599 /* CustomViewController.swift in Sources */,
 				44FC4E5C21DCDB100028B667 /* CameraButtonViewController.swift in Sources */,
+				44B2708121DD8F9B00F6D424 /* Maybe3CollectionViewController.swift in Sources */,
 				4406F23821620B8F00155818 /* noCollectionViewCell.swift in Sources */,
 				446E748521412FD800B326D9 /* ViewController.swift in Sources */,
 				446E748B21412FD800B326D9 /* TinderClone.xcdatamodeld in Sources */,

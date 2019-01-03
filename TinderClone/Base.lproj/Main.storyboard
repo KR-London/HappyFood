@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvP-Nr-5wE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QIS-GQ-rbd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="-5228" y="590.55472263868069"/>
         </scene>
-        <!--Maybe Collection View Controller-->
+        <!--Maybe3 Collection View Controller-->
         <scene sceneID="YMB-pY-4Rv">
             <objects>
-                <viewController storyboardIdentifier="maybeScreen" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jgg-xb-08k" customClass="MaybeCollectionViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="maybeScreen" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jgg-xb-08k" customClass="Maybe3CollectionViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="prototypes" springLoaded="YES" id="pJy-5m-aCQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -153,7 +153,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="maybe2Cell" id="mJp-1T-tFj" customClass="MaybeCollectionViewCell" customModule="TinderClone" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="maybeCell" id="mJp-1T-tFj" customClass="MaybeCollectionViewCell" customModule="TinderClone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="12.5" width="125" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -185,12 +185,12 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <size key="freeformSize" width="375" height="150"/>
                     <connections>
-                        <outlet property="maybeCollectionView" destination="pJy-5m-aCQ" id="QHA-9u-elZ"/>
+                        <outlet property="maybe3CollectionView" destination="pJy-5m-aCQ" id="RDy-tC-jYG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAH-zU-WeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1258.4000000000001" y="1368.2158920539732"/>
+            <point key="canvasLocation" x="-1262" y="1376"/>
         </scene>
         <!--Motivation View Controller-->
         <scene sceneID="Mc7-M4-gqX">
@@ -354,7 +354,7 @@
         <scene sceneID="sod-jK-MzP">
             <objects>
                 <viewController storyboardIdentifier="trafficLightStoryboard" id="fvP-Nr-5wE" customClass="CustomViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" directionalLockEnabled="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="white" id="sNz-Ql-ipX">
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" indicatorStyle="white" id="sNz-Ql-ipX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -400,7 +400,7 @@
                                             <constraint firstAttribute="height" constant="150" id="k9O-Ra-KHd"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="Pvy-78-vgp" kind="embed" identifier="EmbedAmber" id="XEz-0A-ZJj"/>
+                                            <segue destination="Jgg-xb-08k" kind="embed" id="T2y-Qx-FRz"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldp-hL-0a1">
@@ -651,7 +651,7 @@
             <objects>
                 <collectionViewController id="Pvy-78-vgp" customClass="Maybe2CollectionViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Z7d-rI-zHh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2XC-1Q-Uwu">
@@ -740,6 +740,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3t4-7g-KFS"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OM2-6Y-XmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -753,7 +754,4 @@
         <image name="triangles.JPG" width="3024" height="4032"/>
         <image name="tutorial_background_2.JPG" width="3024" height="4032"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="XEz-0A-ZJj"/>
-    </inferredMetricsTieBreakers>
 </document>
