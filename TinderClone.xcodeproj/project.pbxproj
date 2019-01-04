@@ -20,6 +20,8 @@
 		443095C921DC0F3600E04A46 /* tutorial_background_2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */; };
 		443095CB21DC107300E04A46 /* chaos_xen_edit.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 443095CA21DC107300E04A46 /* chaos_xen_edit.JPEG */; };
 		443095CD21DC10DD00E04A46 /* camera_customJPG.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095CC21DC10DD00E04A46 /* camera_customJPG.JPG */; };
+		4430A49D21DE144D0040EE4A /* front_logp.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4430A49C21DE144D0040EE4A /* front_logp.JPG */; };
+		4430A49F21DE14530040EE4A /* ribbons_watercolour.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4430A49E21DE14530040EE4A /* ribbons_watercolour.JPG */; };
 		444DCDA921D36B5B004408D9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444DCDA821D36B5B004408D9 /* Launch Screen.storyboard */; };
 		4451E2C621BABA37008BB36E /* NoCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */; };
 		4461FFE221B59DFD00354109 /* MaybeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */; };
@@ -99,6 +101,8 @@
 		443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tutorial_background_2.JPG; sourceTree = "<group>"; };
 		443095CA21DC107300E04A46 /* chaos_xen_edit.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos_xen_edit.JPEG; sourceTree = "<group>"; };
 		443095CC21DC10DD00E04A46 /* camera_customJPG.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera_customJPG.JPG; sourceTree = "<group>"; };
+		4430A49C21DE144D0040EE4A /* front_logp.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = front_logp.JPG; sourceTree = "<group>"; };
+		4430A49E21DE14530040EE4A /* ribbons_watercolour.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ribbons_watercolour.JPG; sourceTree = "<group>"; };
 		444DCDA821D36B5B004408D9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCollectionViewLayout.swift; sourceTree = "<group>"; };
 		4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			children = (
 				4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */,
 				4406F23221620B8F00155818 /* noCollectionViewCell.swift */,
+				44FC4E5F21DCF02A0028B667 /* Maybe2CollectionViewCell.swift */,
 				4406F23521620B8F00155818 /* YesCollectionViewCell.swift */,
 			);
 			path = Cell_Styles;
@@ -201,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */,
-				44FC4E5F21DCF02A0028B667 /* Maybe2CollectionViewCell.swift */,
 				4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */,
 				44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */,
 			);
@@ -301,7 +305,9 @@
 				44B0540F21CE2FBC000BE527 /* tick.png */,
 				44D8B384216240790019077D /* apple.jpg */,
 				446E74A821412FF300B326D9 /* chips.jpg */,
+				4430A49C21DE144D0040EE4A /* front_logp.JPG */,
 				44D8B38C216240890019077D /* cheese.JPG */,
+				4430A49E21DE14530040EE4A /* ribbons_watercolour.JPG */,
 				446E74A921412FF300B326D9 /* chocolate bar mars.jpg */,
 				44D8B390216240950019077D /* crisps.JPG */,
 				446E74AA21412FF300B326D9 /* chocolate bar.jpg */,
@@ -470,6 +476,8 @@
 				44D8B395216240A40019077D /* IMG_7457.JPG in Resources */,
 				444DCDA921D36B5B004408D9 /* Launch Screen.storyboard in Resources */,
 				44B0541021CE2FBC000BE527 /* tick.png in Resources */,
+				4430A49D21DE144D0040EE4A /* front_logp.JPG in Resources */,
+				4430A49F21DE14530040EE4A /* ribbons_watercolour.JPG in Resources */,
 				44D8B3932162409E0019077D /* egg.JPG in Resources */,
 				44D8B3AB216240EE0019077D /* tuna.JPG in Resources */,
 				44D8B39F216240CA0019077D /* readysaltedcrisps.JPG in Resources */,

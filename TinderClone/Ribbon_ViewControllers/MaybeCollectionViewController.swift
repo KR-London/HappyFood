@@ -26,7 +26,7 @@ class MaybeCollectionViewController: UICollectionViewController, CommunicationCh
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.yellow
+        //self.view.backgroundColor = UIColor.yellow
 //        loadItems()
 //        foodArray = foodArray.filter{ $0.rating == 2 }
         maybeCollectionView.dragDelegate = self

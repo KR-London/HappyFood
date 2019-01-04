@@ -31,7 +31,7 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blue
+        //self.view.backgroundColor = UIColor.blue
         //        loadItems()
         //        foodArray = foodArray.filter{ $0.rating == 2 }
 
