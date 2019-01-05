@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "targetCell"
 
@@ -16,8 +17,16 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
 
     weak var delegate: CommunicationChannel?
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var triedFood: [NSManagedObject] = []
+    var triedFoodArray: [TriedFood]!
+   // let datafilepath = FileManager.default.urls(for: .documentDirectory,
+                                               // in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -127,4 +136,21 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
         self.collectionView.reloadData()
     }
 
+    
+    func loadItems(){
+        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        do{
+            try     triedFood = context.fetch(request)
+        }
+        catch
+        {
+            print("Error fetching data \(error)")
+        }
+        
+        for i in 0 ... triedFood.count
+        {
+            let newFood = ( "test", IndexPath(item: 99, section: 99), "fromFileLoadingInTargetRibbon")
+          //  foodsTriedThisWeek.append(newFood)
+        }
+    }
 }

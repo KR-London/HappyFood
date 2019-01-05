@@ -18,15 +18,22 @@ var isPerformingSegue = false
 @IBDesignable
 class CustomViewController: UIViewController, CommunicationChannel {
     
+    //// this is what I use to co-ordinate my VCs
     weak var communicationChannelGreen: CommunicationChannel?
     weak var communicationChannelTarget: CommunicationChannel?
     weak var communicationChannelAmber3: CommunicationChannel?
     weak var communicationChannelAmber2: CommunicationChannel?
     weak var communicationChannelRed: CommunicationChannel?
     
+//    let path = NSHomeDirectory()+"/Documents/Storage.plist"
+//    var dictionary : NSMutableDictionary!
+//    let fileManager = FileManager.defaultManager()
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Food]!
+    var triedFood: [TriedFood]!
+    
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
@@ -38,7 +45,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
     @IBOutlet weak var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadItems()
         
        // let pinchRecogniser = UIPinchGestureRecognizer(target: self, action: "pinched:" )
        // self.view.addGestureRecognizer(pinchRecogniser)
@@ -140,6 +147,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
             
             case ("fromTargetRibbon", "droppingIntoGreen"):
                  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 
                 break
             case ("fromTargetRibbon", "droppingIntoTopMaybe"):
                 break
@@ -150,6 +158,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
             
             case ("fromTopMaybeRibbon", "droppingIntoGreen"): communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
                  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            
                 break
             case ("fromTopMaybeRibbon", "droppingIntoTarget"):
                 communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
@@ -184,8 +193,8 @@ class CustomViewController: UIViewController, CommunicationChannel {
             
             case ("fromRedRibbon", "droppingIntoGreen"):
                     communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                    
-                     communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+                    // communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
                    // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
                     break
             case ("fromRedRibbon", "droppingIntoTarget"):
@@ -219,6 +228,35 @@ class CustomViewController: UIViewController, CommunicationChannel {
    //     communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
     }
     
+    func doesThisGetATick(sourceIndexPath: IndexPath, from: String, to: String)
+    {
+       // var unique = true
+        /// check for uniqueness
+        for i in 0 ... foodsTriedThisWeek.count-1
+        {
+            if i > 0
+            {
+                if foodsTriedThisWeek[0].0 == foodsTriedThisWeek[i].0
+                {
+                    foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    return
+                   /// unique = false
+                }
+            }
+        }
+        
+        /// if it is unique, then give the use a smiley!
+        communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: to)
+        
+        /// and save down to coreData
+        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                let newFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+            
+                newFood.nameOfTriedFood = foodsTriedThisWeek[0].0
+                newFood.dateTried = nil
+        }
+    }
+    
     func maskImage(image:UIImage, mask:(UIImage))->UIImage{
         
         let imageReference = image.cgImage
@@ -237,6 +275,33 @@ class CustomViewController: UIViewController, CommunicationChannel {
         
         return maskedImage
     }
+    
+    
+    func loadItems(){
+        let request : NSFetchRequest<TriedFood> = TriedFood.fetchRequest()
+        do{
+            try
+                triedFood = context.fetch(request)
+        }
+        catch
+        {
+            print("Error fetching data \(error)")
+        }
+        
+        if triedFood != nil
+        {
+           
+            for i in 0 ... triedFood.count-1
+            {
+                if foodsTriedThisWeek == nil
+                {
+                    foodsTriedThisWeek = [( triedFood[i].nameOfTriedFood , IndexPath( item: 99, section: 99), "loadedFromFile")]
+                }
+                foodsTriedThisWeek.append(( triedFood[i].nameOfTriedFood , IndexPath( item: 99, section: 99), "loadedFromFile"))
+            }
+        }
+    }
+    
 }
 extension UIImage {
     func resizeImage(targetSize: CGSize) -> UIImage {
