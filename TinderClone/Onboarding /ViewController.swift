@@ -12,6 +12,8 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController{
+    
+    var counter = 0 
 
     @IBOutlet weak var instructions: UIImageView!
     @IBAction func resetButton(_ sender: Any) {
@@ -110,16 +112,18 @@ class ViewController: UIViewController{
         if unratedFood.count == 0 {
             
             transitionToRibbonsStoryboard()
-//            let alert =
-//            UIAlertAction("You've rated all the foods!")
-            noUnratedFood()
             return
             
         }
         if unratedFood.count > 1
         { /// load a picuture of a random one of these
-        currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
-        currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
+        //currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
+        
+      //  debugging
+        //currentlyPicturedFoodIndex = counter
+       // currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
+            currentlyPicturedFood = unratedFood.last
+      //  counter = counter + 1
         }
         else
         {
@@ -155,7 +159,8 @@ class ViewController: UIViewController{
     
     func preloadData () {
         // Retrieve data from the source file
-        if let contentsOfURL = Bundle.main.url(forResource: "FoodData", withExtension: "csv") {
+      if let contentsOfURL = Bundle.main.url(forResource: "FoodData", withExtension: "csv") {
+       // if let contentsOfURL = Bundle.main.url(forResource: "dummyData", withExtension: "txt") {
             
             // Remove all the menu items before preloading
             removeData()
@@ -269,23 +274,6 @@ class ViewController: UIViewController{
         return items
     }
     
-    func noUnratedFood()
-    {
-       
-//        let alert = UIAlertController(title: "You've rated all the food!", message: "Would you like to reload the blank database?", preferredStyle: .actionSheet)
-//        alert.addAction(UIAlertAction(title: "Reload", style: .default, handler: nil))
-//
-////        let secondFrame = CGRect(x: 120, y: 130, width: 250, height: 250)
-////        let secondView = UIView(frame: secondFrame)
-////        secondView.backgroundColor = UIColor.green
-////        view.addSubview(secondView)
-//
-//        self.view.addSubview(alert.view)
-//        //secondView.addSubview(alert.view)
-//        self.present(alert, animated: true, completion: nil)
-
-    }
-    
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
             //print("Swipe Right")
@@ -337,7 +325,7 @@ class ViewController: UIViewController{
         
        // performSegue(withIdentifier: "GoToMotivation", sender: self)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.performSegue(withIdentifier: "goToMotivation", sender: self)
         }
         

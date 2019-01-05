@@ -72,7 +72,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
         if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         {
-            let maskingImage = UIImage(named: "mask2.png")
+            let maskingImage = UIImage(named: "MASK.png")
             cameraImage.image = maskImage(image: userPickedImage, mask: maskingImage!)
            // cameraImage.image = userPickedImage
         }
@@ -183,6 +183,13 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
             menuItem.name = imageName
             menuItem.rating = Int16(rating)
             saveItems()
+        }
+        
+        /// if they indicate a definite prefernce - take this as a sign you liked it. Maybe as a sign you're just adding to database.
+        
+        if rating == 1 || rating == 3
+        {
+            foodsTriedThisWeek =  [( imageName, IndexPath.init(item: 99, section: 99), "fromCamera")] + (foodsTriedThisWeek ?? [])
         }
         
         cameraImage.image = nil

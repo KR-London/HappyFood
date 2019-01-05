@@ -14,6 +14,8 @@ var ticks = [String]()
 
 class TargetCollectionViewController: UICollectionViewController, CommunicationChannel {
 
+    weak var delegate: CommunicationChannel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,7 +54,7 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 3
     }
 
 
@@ -72,7 +74,11 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
         {
             if 2*indexPath.section + indexPath.row  < foodsTriedThisWeek.count
             {
-                cell.foodImage.image = UIImage(named: "tick.png")
+                cell.foodImage.image = UIImage(named: "Tick.jpeg")
+            }
+            else
+            {
+                cell.foodImage.image = nil
             }
         }
         // Configure the cell
@@ -116,7 +122,9 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         print("REACHED TARGET DELEGATE FUNC!")
-        self.loadView()
+        //self.collectionViewLayout.invalidateLayout()
+        //self.loadView()
+        self.collectionView.reloadData()
     }
 
 }

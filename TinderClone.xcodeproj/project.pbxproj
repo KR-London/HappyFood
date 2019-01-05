@@ -83,7 +83,8 @@
 		44F046AA21DFA25E0062C063 /* TargetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F046A921DFA25E0062C063 /* TargetCollectionViewCell.swift */; };
 		44F046AC21DFA32F0062C063 /* TargetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F046AB21DFA32F0062C063 /* TargetCollectionViewController.swift */; };
 		44F046AE21E0CDC10062C063 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F046AD21E0CDC10062C063 /* tick.png */; };
-		44F046B021E0CE130062C063 /* Tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F046AF21E0CE130062C063 /* Tick.png */; };
+		44F046B421E0CFDA0062C063 /* Tick.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44F046B321E0CFDA0062C063 /* Tick.jpeg */; };
+		44F046B621E0D5E30062C063 /* dummyData in Resources */ = {isa = PBXBuildFile; fileRef = 44F046B521E0D5E30062C063 /* dummyData */; };
 		44FC4E5C21DCDB100028B667 /* CameraButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC4E5B21DCDB100028B667 /* CameraButtonViewController.swift */; };
 		44FC4E5E21DCE9E80028B667 /* Maybe2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC4E5D21DCE9E80028B667 /* Maybe2CollectionViewController.swift */; };
 		44FC4E6021DCF02A0028B667 /* Maybe2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC4E5F21DCF02A0028B667 /* Maybe2CollectionViewCell.swift */; };
@@ -192,7 +193,8 @@
 		44F046A921DFA25E0062C063 /* TargetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCollectionViewCell.swift; sourceTree = "<group>"; };
 		44F046AB21DFA32F0062C063 /* TargetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCollectionViewController.swift; sourceTree = "<group>"; };
 		44F046AD21E0CDC10062C063 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
-		44F046AF21E0CE130062C063 /* Tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tick.png; path = ../../../Downloads/Tick.png; sourceTree = "<group>"; };
+		44F046B321E0CFDA0062C063 /* Tick.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tick.jpeg; sourceTree = "<group>"; };
+		44F046B521E0D5E30062C063 /* dummyData */ = {isa = PBXFileReference; explicitFileType = text; path = dummyData; sourceTree = "<group>"; };
 		44FC4E5B21DCDB100028B667 /* CameraButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonViewController.swift; sourceTree = "<group>"; };
 		44FC4E5D21DCE9E80028B667 /* Maybe2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maybe2CollectionViewController.swift; sourceTree = "<group>"; };
 		44FC4E5F21DCF02A0028B667 /* Maybe2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maybe2CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				446E748221412FD800B326D9 /* AppDelegate.swift */,
 				446E748921412FD800B326D9 /* TinderClone.xcdatamodeld */,
 				44D8B3822162403B0019077D /* FoodData.csv */,
+				44F046B521E0D5E30062C063 /* dummyData */,
 			);
 			path = Auxilliary_Files;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			children = (
 				443095CA21DC107300E04A46 /* chaos_xen_edit.JPEG */,
 				443095C621DC07CB00E04A46 /* chaos.jpg */,
+				44F046B321E0CFDA0062C063 /* Tick.jpeg */,
 				443095C421DC05D300E04A46 /* triangles.JPG */,
 				443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */,
 				443095C221DC057400E04A46 /* IMG_0856 2.JPG */,
@@ -329,7 +333,6 @@
 				44D8B38C216240890019077D /* cheese.JPG */,
 				4430A49E21DE14530040EE4A /* ribbons_watercolour.JPG */,
 				446E74A921412FF300B326D9 /* chocolate bar mars.jpg */,
-				44F046AF21E0CE130062C063 /* Tick.png */,
 				44D8B390216240950019077D /* crisps.JPG */,
 				446E74AA21412FF300B326D9 /* chocolate bar.jpg */,
 				44D8B394216240A40019077D /* IMG_7457.JPG */,
@@ -520,6 +523,7 @@
 				44B2707C21DD7C4600F6D424 /* mask7.png in Resources */,
 				44B2707921DD7C4600F6D424 /* mask4.png in Resources */,
 				44D8B3AF216240F80019077D /* walnuts.JPG in Resources */,
+				44F046B421E0CFDA0062C063 /* Tick.jpeg in Resources */,
 				44B711EF21DF612500537170 /* MASK_p.png in Resources */,
 				44B2707721DD7C4600F6D424 /* mask2.png in Resources */,
 				44B711F121DF626700537170 /* MASK_dp_small.png in Resources */,
@@ -528,13 +532,13 @@
 				44D8B395216240A40019077D /* IMG_7457.JPG in Resources */,
 				444DCDA921D36B5B004408D9 /* Launch Screen.storyboard in Resources */,
 				44F046A621DFA0360062C063 /* LoadingScreens.png in Resources */,
-				44F046B021E0CE130062C063 /* Tick.png in Resources */,
 				44B711F321DF65E000537170 /* MASK.png in Resources */,
 				4430A49D21DE144D0040EE4A /* front_logp.JPG in Resources */,
 				4430A49F21DE14530040EE4A /* ribbons_watercolour.JPG in Resources */,
 				44D8B3932162409E0019077D /* egg.JPG in Resources */,
 				44D8B3AB216240EE0019077D /* tuna.JPG in Resources */,
 				44B711ED21DF60AB00537170 /* MASK_dp.png in Resources */,
+				44F046B621E0D5E30062C063 /* dummyData in Resources */,
 				44D8B39F216240CA0019077D /* readysaltedcrisps.JPG in Resources */,
 				44D8B389216240810019077D /* broccili.JPG in Resources */,
 				443095C321DC057400E04A46 /* IMG_0856 2.JPG in Resources */,

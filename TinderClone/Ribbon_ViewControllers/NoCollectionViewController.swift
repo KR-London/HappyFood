@@ -13,9 +13,9 @@ import MobileCoreServices
 private let noReuseIdentifier = "noCell"
 
 @IBDesignable
-class NoCollectionViewController: UICollectionViewController {
-    
-   weak var delegate: CommunicationChannel?
+class NoCollectionViewController: UICollectionViewController, CommunicationChannel {
+  
+    weak var delegate: CommunicationChannel?
 
     
     fileprivate var longPressGesture: UILongPressGestureRecognizer!
@@ -181,7 +181,7 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
                     if filteredFood.count < 1 { return }
                     
                     draggedFood = filteredFood.first!
-                 
+                    draggedFood.rating = 3
                     foodArray.insert(draggedFood, at:  destinationIndexPath.row )
                 }
                 catch
@@ -242,13 +242,16 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
 //                        }
 //        }
 //}
+    
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        
+          print("communication channel to green message received")
+        
+        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+        foodArray = foodArray.filter{ $0.rating == 2 }
+        //self.reloadInputViews()
+        self.collectionView!.reloadData()
+        self.collectionView!.numberOfItems(inSection: 0)
+    }
 }
 
-//func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
-//{
-//    let item = self.items[indexPath.row]
-//    let itemProvider = NSItemProvider(object: item as NSString)
-//    let dragItem = UIDragItem(itemProvider: itemProvider)
-//    dragItem.localObject = item
-//    return [dragItem]
-//}

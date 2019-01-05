@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+import MobileCoreServices
 
 protocol CommunicationChannel : class {
     func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
@@ -16,9 +18,16 @@ var isPerformingSegue = false
 @IBDesignable
 class CustomViewController: UIViewController, CommunicationChannel {
     
-    weak var communicationChannelAmber2: CommunicationChannel?
-     weak var communicationChannelAmber3: CommunicationChannel?
+    weak var communicationChannelGreen: CommunicationChannel?
     weak var communicationChannelTarget: CommunicationChannel?
+    weak var communicationChannelAmber3: CommunicationChannel?
+    weak var communicationChannelAmber2: CommunicationChannel?
+    weak var communicationChannelRed: CommunicationChannel?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var food: [NSManagedObject] = []
+    var foodArray: [Food]!
+    let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
         self.performSegue(withIdentifier: "goToCamera", sender: self)
@@ -74,9 +83,11 @@ class CustomViewController: UIViewController, CommunicationChannel {
         if segue.identifier == "EmbedAmber3" {
             let  dvc = segue.destination as! Maybe3CollectionViewController
             communicationChannelAmber3 = dvc
+            dvc.delegate = self
         } else if segue.identifier == "EmbedGreen" {
             let dvc = segue.destination as! YesCollectionViewController
             dvc.delegate = self
+            communicationChannelGreen = dvc
         } else if segue.identifier == "EmbedRed" {
             let  dvc = segue.destination as! NoCollectionViewController
             dvc.delegate = self
@@ -85,13 +96,17 @@ class CustomViewController: UIViewController, CommunicationChannel {
         }
         else if segue.identifier == "EmbedAmber2"{
             let  dvc = segue.destination as! Maybe2CollectionViewController
+             dvc.delegate = self
             communicationChannelAmber2 = dvc
+           
           //  dvc.delegate = self
            // dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
         }
         else if segue.identifier == "EmbedTarget"{
             let targetViewController = segue.destination as! TargetCollectionViewController
+            targetViewController.delegate = self
             communicationChannelTarget = targetViewController
+          
            // let  dvc = segue.destination as! TargetCollectionViewController
             //  dvc.delegate = self
             // dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
@@ -109,10 +124,22 @@ class CustomViewController: UIViewController, CommunicationChannel {
         
         switch sourceSink
         {
-            case ("fromGreenRibbon", "droppingIntoTarget"): break
-            case ("fromGreenRibbon", "droppingIntoTopMaybe"): break
-            case ("fromGreenRibbon", "droppingIntoBottomMaybe"): break
-            case ("fromGreenRibbon", "droppingIntoRed"): break
+            case ("fromGreenRibbon", "droppingIntoTarget"):
+                communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                break
+            case ("fromGreenRibbon", "droppingIntoTopMaybe"):
+                communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                break
+            case ("fromGreenRibbon", "droppingIntoBottomMaybe"):
+                communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                break
+            case ("fromGreenRibbon", "droppingIntoRed"):
+                communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                break
             
             case ("fromTargetRibbon", "droppingIntoGreen"):
                  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
@@ -148,6 +175,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
                 break
             case ("fromBottomMaybeRibbon", "droppingIntoTarget"):
                 communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
                 break
             case ("fromBottomMaybeRibbon", "droppingIntoTopMaybe"):
                 communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
@@ -161,6 +189,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
                  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
                 break
             case ("fromRed", "droppingIntoTarget"):
+                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
                 break
             case ("fromRed", "droppingIntoTopMaybe"):
                //  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)

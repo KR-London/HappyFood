@@ -66,13 +66,16 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
         //print(foodArray.flatMap{$0.name})
         
         var temp = [Food]()
-
-        for i in 0...(foodArray.count-1)
+        
+        if foodArray != nil && foodArray.count > 1
         {
-            if i % 2 == 1
+            for i in 0...(foodArray.count-1)
             {
-                temp = temp + [foodArray[i]]
+                if i % 2 == 1
+                {
+                    temp = temp + [foodArray[i]]
                 // print( temp.flatMap{$0.name} )
+                }
             }
         }
         
@@ -196,41 +199,45 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         
         print("hello from amber 2")
-        if sourceIndexPath == IndexPath( item: 99, section: 99) {
-            whereDidTheSegueComeFrom = sourceViewController
-            return
-        }
-        
-        if foodsTriedThisWeek[0].2 == "fromBottomMaybeRibbon"
-        {
-            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
-            var rating = 2
-            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
-            if sourceViewController == "sentFromRedRibbon" { rating = 3}
-        
-            /// here I create a new entry in the database for the tried food, with an updated rating
-            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
-                menuItem.image_file_name = triedFoodImage
-                menuItem.name = foodsTriedThisWeek![0].0
-                menuItem.rating = Int16(rating)
-                foodArray.append(menuItem)
-            }
-        
-            /// here I remove the dragged item
-           // self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
-            //self.collectionView.reloadItems(at: [foodsTriedThisWeek[0].1])
-        
-            //cell.displayContent(image: "tick.png", title: "")
-            //cell.layer.borderWidth = 0.0
-            
-            foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-            foodArray = foodArray.filter{ $0.rating == 2 }
-            //self.reloadInputViews()
-            self.collectionView!.reloadData()
-            self.collectionView!.numberOfItems(inSection: 0)
-        
-           }
+//        if sourceIndexPath == IndexPath( item: 99, section: 99) {
+//            whereDidTheSegueComeFrom = sourceViewController
+//            return
+//        }
+        foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+        foodArray = foodArray.filter{ $0.rating == 2 }
+        //self.reloadInputViews()
+        self.collectionView!.reloadData()
+        self.collectionView!.numberOfItems(inSection: 0)
+//        if foodsTriedThisWeek[0].2 == "fromBottomMaybeRibbon"
+//        {
+//            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
+//            var rating = 2
+//            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
+//            if sourceViewController == "sentFromRedRibbon" { rating = 3}
+//
+//            /// here I create a new entry in the database for the tried food, with an updated rating
+//            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+//                menuItem.image_file_name = triedFoodImage
+//                menuItem.name = foodsTriedThisWeek![0].0
+//                menuItem.rating = Int16(rating)
+//                foodArray.append(menuItem)
+//            }
+//
+//            /// here I remove the dragged item
+//           // self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
+//            //self.collectionView.reloadItems(at: [foodsTriedThisWeek[0].1])
+//
+//            //cell.displayContent(image: "tick.png", title: "")
+//            //cell.layer.borderWidth = 0.0
+//
+//            foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+//            foodArray = foodArray.filter{ $0.rating == 2 }
+//            //self.reloadInputViews()
+//            self.collectionView!.reloadData()
+//            self.collectionView!.numberOfItems(inSection: 0)
+//
+//           }
 
     }
     
@@ -366,12 +373,15 @@ extension Maybe2CollectionViewController: UICollectionViewDropDelegate{
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
                 // print("Hello drsgged item. I've been expecting you!")
+                print("Hello drsgged item. I've been expecting you!")
+                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoBottomMaybe")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
                 do
                 {
                     let foodArrayFull = try context.fetch(request)
                     draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.first!
+                    draggedFood.rating = 2
                     foodArray.insert(draggedFood, at: destinationIndexPath.row )
                     
                      //delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromAmberRibbon"+whereDidTheSegueComeFrom)

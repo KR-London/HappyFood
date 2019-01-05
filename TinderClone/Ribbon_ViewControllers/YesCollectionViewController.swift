@@ -15,7 +15,8 @@ private let yesReuseIdentifier = "yesCell"
 //var pets  =   ["1.png","Tomato.png", "Tasty.png", "Satsuma.png", "Jam.png", "Cream Cheese.png","Corner.png", "Cheese.png", "Blueberries.png"]
 
 @IBDesignable
-class YesCollectionViewController: UICollectionViewController {
+class YesCollectionViewController: UICollectionViewController, CommunicationChannel {
+  
 
     weak var delegate: CommunicationChannel?
     fileprivate var longPressGesture: UILongPressGestureRecognizer!
@@ -162,7 +163,9 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                 {
                     let foodArrayFull = try context.fetch(request)
                     draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.filter{$0.image_file_name != "tick.png" }.first!
-                        foodArray.insert(draggedFood, at:  destinationIndexPath.row )
+                    draggedFood.rating = 1
+                    foodArray.insert(draggedFood, at:  destinationIndexPath.row )
+                   
                 }
                 catch
                 {
@@ -176,4 +179,51 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
             
         }
 }
+    
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        
+        print("communication channel to green message received")
+
+//            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
+//            var rating = 1
+//
+//            if sourceViewController == "droppingIntoBottomMaybe" { rating = 2}
+//            if sourceViewController == "droppingIntoTopMaybe" { rating = 2}
+//        if sourceViewController == "droppingIntoRed" { rating = 3}
+//
+//            /// here I create a new entry in the database for the tried food, with an updated rating
+//            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+//                menuItem.image_file_name = triedFoodImage
+//                menuItem.name = foodsTriedThisWeek![0].0
+//                menuItem.rating = Int16(rating)
+//                foodArray.append(menuItem)
+//            }
+//
+//            /// here I update the picture with 'tick' image - but i leave the other data untouched, because I want to be able to restore it if this tick was placed in error.
+            //foodArray[foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
+            //collectionView( maybe2CollectionView, cellForItemAt: foodsTriedThisWeek[0].1).delete(self)
+            //  self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
+            //  self.collectionView.reloadItems(at: [foodsTriedThisWeek[0].1])
+            //  collectionView(collectionView, cellForItemAt:
+            //maybe3CollectionView.cellForItem(at: foodsTriedThisWeek[0].1)?.delete(self)
+            //reloadInputViews()
+            //let cell = self.maybe2CollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! Maybe2CollectionViewCell
+            
+            //cell.displayContent(image: "tick.png", title: "")
+            //cell.layer.borderWidth = 0.0
+            
+            foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+            foodArray = foodArray.filter{ $0.rating == 1 }
+            //self.reloadInputViews()
+            self.collectionView!.reloadData()
+            self.collectionView!.numberOfItems(inSection: 0)
+            // self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
+            //self.collectionView(collectionView, cellForItemAt: foodsTriedThisWeek[0].1).
+            // let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "maybeCell", for: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+            
+            // cell.foodImage = nil
+            // cell.layer.borderWidth = 0.0
+            // cell.reloadInputViews()
+       }
 }

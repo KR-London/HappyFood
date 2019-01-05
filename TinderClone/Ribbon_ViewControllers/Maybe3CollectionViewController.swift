@@ -9,7 +9,7 @@ var foodsTriedThisWeek: [(String?, IndexPath, String)]!
 
 class Maybe3CollectionViewController: UICollectionViewController, CommunicationChannel {
     
-    
+    weak var delegate: CommunicationChannel?
     
     
      @IBOutlet var maybe3CollectionView: UICollectionView!
@@ -193,28 +193,28 @@ class Maybe3CollectionViewController: UICollectionViewController, CommunicationC
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         
-        print("hello from amber 3")
-        
-        if sourceIndexPath == IndexPath( item: 99, section: 99) {
-            whereDidTheSegueComeFrom = sourceViewController
-            return
-        }
-        
-        if foodsTriedThisWeek[0].2 == "fromTopMaybeRibbon"
-        {
-            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
-            var rating = 2
-            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
-            if sourceViewController == "sentFromRedRibbon" { rating = 3}
-        
-            /// here I create a new entry in the database for the tried food, with an updated rating
-            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
-                menuItem.image_file_name = triedFoodImage
-                menuItem.name = foodsTriedThisWeek![0].0
-                menuItem.rating = Int16(rating)
-                foodArray.append(menuItem)
-            }
+//        print("hello from amber 3")
+//
+//        if sourceIndexPath == IndexPath( item: 99, section: 99) {
+//            whereDidTheSegueComeFrom = sourceViewController
+//            return
+//        }
+//
+//        if foodsTriedThisWeek[0].2 == "fromTopMaybeRibbon"
+//        {
+//            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
+//            var rating = 2
+//            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
+//            if sourceViewController == "sentFromRedRibbon" { rating = 3}
+//
+//            /// here I create a new entry in the database for the tried food, with an updated rating
+//            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+//                menuItem.image_file_name = triedFoodImage
+//                menuItem.name = foodsTriedThisWeek![0].0
+//                menuItem.rating = Int16(rating)
+//                foodArray.append(menuItem)
+//            }
         
             /// here I update the picture with 'tick' image - but i leave the other data untouched, because I want to be able to restore it if this tick was placed in error.
             //foodArray[foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
@@ -241,7 +241,7 @@ class Maybe3CollectionViewController: UICollectionViewController, CommunicationC
             // cell.foodImage = nil
             // cell.layer.borderWidth = 0.0
             // cell.reloadInputViews()
-        }
+       // }
     }
     
     /// MARK: Drag and drop helper functions
@@ -375,12 +375,15 @@ extension Maybe3CollectionViewController: UICollectionViewDropDelegate{
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
                 // print("Hello drsgged item. I've been expecting you!")
+                print("Hello drsgged item. I've been expecting you!")
+                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoTopMaybe")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
                 do
                 {
                     let foodArrayFull = try context.fetch(request)
                     draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.first!
+                    draggedFood.rating = 2
                     foodArray.insert(draggedFood, at: destinationIndexPath.row )
                     
              //       delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromAmberRibbon"+whereDidTheSegueComeFrom)
