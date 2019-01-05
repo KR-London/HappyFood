@@ -5,7 +5,7 @@ import MobileCoreServices
 import MobileCoreServices
 
 let maybe3ReuseIdentifier = "maybe3Cell"
-
+var foodsTriedThisWeek: [(String?, IndexPath, String)]!
 
 class Maybe3CollectionViewController: UICollectionViewController, CommunicationChannel {
     
@@ -15,23 +15,21 @@ class Maybe3CollectionViewController: UICollectionViewController, CommunicationC
      @IBOutlet var maybe3CollectionView: UICollectionView!
     
     
-    var foodsTriedThisWeek: [(String?, IndexPath)]!
-    weak var delegate: CommunicationChannel?
+ 
+   // weak var delegate: CommunicationChannel?
     var whereDidTheSegueComeFrom = ""
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
     var foodArray: [Food]!
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.view.backgroundColor = UIColor.blue
         //        loadItems()
         //        foodArray = foodArray.filter{ $0.rating == 2 }
-        
+     //   self.view.backgroundColor = UIColor(patternImage: UIImage(named:"Maybe.png")!)
         //MARK: Layout hack
         
         maybe3CollectionView.dragDelegate = self
@@ -43,8 +41,8 @@ class Maybe3CollectionViewController: UICollectionViewController, CommunicationC
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         // let width = UIScreen.main.bounds.width
         
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 125, height: 125)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        layout.itemSize = CGSize(width: 100, height: 100)
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
@@ -59,16 +57,14 @@ class Maybe3CollectionViewController: UICollectionViewController, CommunicationC
         loadItems()
         foodArray = foodArray.filter{ $0.rating == 2}
         
-        //print(foodArray.flatMap{$0.name})
-        
         var temp = [Food]()
-        var whichAmberStripeAmIOn = 0
-        
-        if whereDidTheSegueComeFrom == "Maybe3"{whichAmberStripeAmIOn = 1}
-        
+        if foodArray != nil
+        {
+            if foodArray.count > 1
+            {
         for i in 0...(foodArray.count-1)
         {
-            if i % 2 == whichAmberStripeAmIOn
+            if i % 2 == 0
             {
                 temp = temp + [foodArray[i]]
                 // print( temp.flatMap{$0.name} )
@@ -77,7 +73,10 @@ class Maybe3CollectionViewController: UICollectionViewController, CommunicationC
         
         foodArray = temp
         reloadInputViews()
+            }
+        }
     }
+            
     
     /*
      // MARK: - Navigation
@@ -194,39 +193,55 @@ class Maybe3CollectionViewController: UICollectionViewController, CommunicationC
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         
+        print("hello from amber 3")
         
         if sourceIndexPath == IndexPath( item: 99, section: 99) {
             whereDidTheSegueComeFrom = sourceViewController
             return
         }
         
-        let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
-        var rating = 2
-        if sourceViewController == "sentFromGreenRibbon" { rating = 1}
-        if sourceViewController == "sentFromRedRibbon" { rating = 2}
+        if foodsTriedThisWeek[0].2 == "fromTopMaybeRibbon"
+        {
+            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
+            var rating = 2
+            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
+            if sourceViewController == "sentFromRedRibbon" { rating = 3}
         
-        /// here I create a new entry in the database for the tried food, with an updated rating
-        if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-            let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
-            menuItem.image_file_name = triedFoodImage
-            menuItem.name = foodsTriedThisWeek![0].0
-            menuItem.rating = Int16(rating)
-            foodArray.append(menuItem)
+            /// here I create a new entry in the database for the tried food, with an updated rating
+            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
+                menuItem.image_file_name = triedFoodImage
+                menuItem.name = foodsTriedThisWeek![0].0
+                menuItem.rating = Int16(rating)
+                foodArray.append(menuItem)
+            }
+        
+            /// here I update the picture with 'tick' image - but i leave the other data untouched, because I want to be able to restore it if this tick was placed in error.
+            //foodArray[foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
+                //collectionView( maybe2CollectionView, cellForItemAt: foodsTriedThisWeek[0].1).delete(self)
+          //  self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
+            //  self.collectionView.reloadItems(at: [foodsTriedThisWeek[0].1])
+            //  collectionView(collectionView, cellForItemAt:
+            //maybe3CollectionView.cellForItem(at: foodsTriedThisWeek[0].1)?.delete(self)
+            //reloadInputViews()
+            //let cell = self.maybe2CollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! Maybe2CollectionViewCell
+        
+            //cell.displayContent(image: "tick.png", title: "")
+            //cell.layer.borderWidth = 0.0
+        
+            foodArray.remove(at: foodsTriedThisWeek[0].1.row)
+            foodArray = foodArray.filter{ $0.rating == 2 }
+            //self.reloadInputViews()
+            self.collectionView!.reloadData()
+            self.collectionView!.numberOfItems(inSection: 0)
+            // self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
+            //self.collectionView(collectionView, cellForItemAt: foodsTriedThisWeek[0].1).
+            // let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "maybeCell", for: foodsTriedThisWeek[0].1) as! MaybeCollectionViewCell
+        
+            // cell.foodImage = nil
+            // cell.layer.borderWidth = 0.0
+            // cell.reloadInputViews()
         }
-        
-        /// here I update the picture with 'tick' image - but i leave the other data untouched, because I want to be able to restore it if this tick was placed in error.
-        //foodArray[foodsTriedThisWeek[0].1.row].image_file_name = "tick.png"
-        //collectionView( maybe2CollectionView, cellForItemAt: foodsTriedThisWeek[0].1).delete(self)
-        self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
-        self.collectionView.reloadItems(at: [foodsTriedThisWeek[0].1])
-        //reloadInputViews()
-        //let cell = self.maybe2CollectionView.cellForItem(at: foodsTriedThisWeek[0].1) as! Maybe2CollectionViewCell
-        
-        //cell.displayContent(image: "tick.png", title: "")
-        //cell.layer.borderWidth = 0.0
-        
-        
-        
     }
     
     /// MARK: Drag and drop helper functions
@@ -317,7 +332,7 @@ extension Maybe3CollectionViewController: UICollectionViewDragDelegate{
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].name ?? "no idea", indexPath)]
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].name ?? "no idea", indexPath, "fromTopMaybeRibbon")]
         print(foodsTriedThisWeek)
         return [dragItem]
         
@@ -368,7 +383,7 @@ extension Maybe3CollectionViewController: UICollectionViewDropDelegate{
                     draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.first!
                     foodArray.insert(draggedFood, at: destinationIndexPath.row )
                     
-                    delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromAmberRibbon"+whereDidTheSegueComeFrom)
+             //       delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromAmberRibbon"+whereDidTheSegueComeFrom)
                     //  foodArray.remove(at: item.sourceIndexPath!.row)
                     //updateSourceCellWithASmiley(sourceIndexPath: item.sourceIndexPath!, sourceViewController: "test")
                 }

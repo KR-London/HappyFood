@@ -31,7 +31,7 @@ class NoCollectionViewController: UICollectionViewController {
         //self.view.backgroundColor = UIColor.red
         //collectionView?.addInteraction( UIDragInteraction )
 
-        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named:"Bad.png")!)
         // Register cell classes
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: yesReuseIdentifier)
         loadItems()

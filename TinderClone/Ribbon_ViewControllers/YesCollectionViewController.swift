@@ -29,6 +29,7 @@ class YesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      //   delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromGreenRibbon")
+       // self.view.backgroundColor = UIColor(patternImage: UIImage(named:"Good.png")!)
         loadItems()
         
        // self.view.backgroundColor = UIColor.green

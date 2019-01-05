@@ -24,9 +24,9 @@ class CustomViewController: UIViewController, CommunicationChannel {
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.addChild(greenView)
-        scrollView.contentSize = CGSize(width: 375, height: 800)
+       // scrollView.contentSize = CGSize(width: 375, height: 800)
         ///self.view.backgroundColor = UIColor.init(patternImage:#imageLiteral(resourceName: "stripes.png") )
-        self.view.addSubview(stackView)
+       // self.view.addSubview(stackView)
       //  var backgroundStripes = UIImage(named: "stripes.png")
         //backgroundStripes = backgroundStripes?.resizeImage(targetSize: CGSize(width: self.view!.frame.width, height: self.view!.frame.height))
       //  self.view.sa
@@ -47,24 +47,35 @@ class CustomViewController: UIViewController, CommunicationChannel {
 //        view.addSubview(imageView)
 //        view.sendSubviewToBack(imageView)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(true)
+          self.view.addSubview(stackView)
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EmbedAmber" {
-            let  dvc = segue.destination as! Maybe2CollectionViewController
+        if segue.identifier == "EmbedAmber3" {
+            let  dvc = segue.destination as! Maybe3CollectionViewController
             communicationChannel = dvc
         } else if segue.identifier == "EmbedGreen" {
             let dvc = segue.destination as! YesCollectionViewController
             dvc.delegate = self
         } else if segue.identifier == "EmbedRed" {
             let  dvc = segue.destination as! NoCollectionViewController
-             dvc.delegate = self
+            dvc.delegate = self
             //print(dvc.delegate!)
             //communicationChannel = dvc
         }
         else if segue.identifier == "EmbedAmber2"{
             let  dvc = segue.destination as! Maybe2CollectionViewController
-            dvc.delegate = self
-            dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
+          //  dvc.delegate = self
+           // dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
+        }
+        else if segue.identifier == "EmbedTarget"{
+        //     let targetViewController = segue.destinationViewController as! TargetCollectionViewController
+           // let  dvc = segue.destination as! TargetCollectionViewController
+            //  dvc.delegate = self
+            // dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
         }
        //  imageView.sendSubviewToBack(view)
     }
@@ -75,6 +86,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
     
      func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
      {
+        
         communicationChannel?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
     }
     

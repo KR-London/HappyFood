@@ -60,7 +60,7 @@ class ViewController: UIViewController{
             currentlyPicturedFoodIndex = Int(arc4random_uniform(UInt32(unratedFood.count - 1)))
             currentlyPicturedFood = unratedFood[currentlyPicturedFoodIndex]
             let image = UIImage(named: currentlyPicturedFood.image_file_name!)
-            let maskingImage = UIImage(named: "mask2.png")
+            let maskingImage = UIImage(named: "MASK.png")
             foodImage.image = maskImage(image: image!, mask: maskingImage!)
             //foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
         }
@@ -123,7 +123,7 @@ class ViewController: UIViewController{
        // foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
         
         let image = UIImage(named: currentlyPicturedFood.image_file_name!)
-        let maskingImage = UIImage(named: "mask2.png")
+        let maskingImage = UIImage(named: "MASK.png")
         foodImage.image = maskImage(image: image!, mask: maskingImage!)
     }
     
