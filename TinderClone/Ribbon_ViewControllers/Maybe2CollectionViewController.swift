@@ -289,7 +289,7 @@ extension Maybe2CollectionViewController: UICollectionViewDragDelegate{
         //        }
         
         // let item = self.foodArray[2*indexPath.section + indexPath.row].image_file_name
-        let itemProvider = NSItemProvider(object: item! as! String as NSItemProviderWriting)
+        let itemProvider = NSItemProvider(object: item! as NSItemProviderWriting)
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item

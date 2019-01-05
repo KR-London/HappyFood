@@ -142,10 +142,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tutorial_background_2.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="hBo-ZS-9Oy">
-                                <rect key="frame" x="0.0" y="-3" width="375" height="670"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Fantastic! Now I know a bit about your likes and dislikes. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-Kh-qVu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Fantastic! Now I know a bit about your likes and dislikes. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-Kh-qVu">
                                 <rect key="frame" x="16" y="182" width="343" height="149"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -155,51 +152,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88t-sM-loC">
-                                <rect key="frame" x="16" y="372" width="343" height="30"/>
+                                <rect key="frame" x="16" y="372" width="25" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="yes" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes"/>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnW-9E-AsC">
-                                <rect key="frame" x="16" y="426" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.74117647060000003" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Submit a Motivation "/>
-                                <connections>
-                                    <action selector="submitMotivation:" destination="J19-kg-Wbr" eventType="touchUpInside" id="Nzo-Se-4gf"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U97-D0-iBS">
-                                <rect key="frame" x="16" y="529" width="343" height="30"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.74117647060000003" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="I'm ready to Happify my diet!"/>
-                                <connections>
-                                    <segue destination="lWt-dB-KTj" kind="presentation" identifier="goToRibbonsOnboarding" id="rLW-qx-MGR"/>
-                                </connections>
-                            </button>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3A3-2h-eGw">
-                                <rect key="frame" x="9" y="513" width="343" height="154"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">If you've got this far - you must be motivativated to expand your diet. Can you tell me why you want to challenge yourself to try new foods? You can add as many reasons as you want.  </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hBo-ZS-9Oy" firstAttribute="top" secondItem="AH0-0B-ihN" secondAttribute="topMargin" constant="-23" id="M01-jw-qFy"/>
-                            <constraint firstItem="hBo-ZS-9Oy" firstAttribute="centerX" secondItem="DnW-9E-AsC" secondAttribute="centerX" id="MR9-xw-dxC"/>
                             <constraint firstItem="88t-sM-loC" firstAttribute="top" secondItem="CqN-Kh-qVu" secondAttribute="bottom" constant="41" id="Tuh-ei-TWb"/>
-                            <constraint firstItem="hBo-ZS-9Oy" firstAttribute="bottom" secondItem="AH0-0B-ihN" secondAttribute="bottom" id="Twy-hV-nQw"/>
                             <constraint firstItem="CqN-Kh-qVu" firstAttribute="leading" secondItem="88t-sM-loC" secondAttribute="leading" id="bkX-Yy-0hD"/>
-                            <constraint firstItem="hBo-ZS-9Oy" firstAttribute="leading" secondItem="AH0-0B-ihN" secondAttribute="leading" id="cwV-Mm-kt1"/>
                             <constraint firstItem="CqN-Kh-qVu" firstAttribute="leading" secondItem="AH0-0B-ihN" secondAttribute="leadingMargin" id="eAR-MO-ckB"/>
-                            <constraint firstItem="CqN-Kh-qVu" firstAttribute="leading" secondItem="DnW-9E-AsC" secondAttribute="leading" id="ha5-wC-aDT"/>
-                            <constraint firstItem="hBo-ZS-9Oy" firstAttribute="centerX" secondItem="U97-D0-iBS" secondAttribute="centerX" id="iXC-yi-aOW"/>
-                            <constraint firstItem="hBo-ZS-9Oy" firstAttribute="centerX" secondItem="CqN-Kh-qVu" secondAttribute="centerX" id="kMj-84-epH"/>
-                            <constraint firstItem="hBo-ZS-9Oy" firstAttribute="centerX" secondItem="88t-sM-loC" secondAttribute="centerX" id="q6S-Vp-i0o"/>
-                            <constraint firstItem="CqN-Kh-qVu" firstAttribute="leading" secondItem="U97-D0-iBS" secondAttribute="leading" id="rH8-mJ-06i"/>
-                            <constraint firstAttribute="trailing" secondItem="hBo-ZS-9Oy" secondAttribute="trailing" id="yoJ-Gs-7q7"/>
                             <constraint firstItem="CqN-Kh-qVu" firstAttribute="top" secondItem="8hr-tt-DHI" secondAttribute="top" constant="162" id="zqq-pT-u4I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8hr-tt-DHI"/>
@@ -274,7 +237,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="R8Y-Sm-cmO" firstAttribute="top" secondItem="mbp-gk-0AK" secondAttribute="bottom" constant="8" symbolic="YES" id="2IP-om-RSu"/>
+                            <constraint firstItem="R8Y-Sm-cmO" firstAttribute="top" secondItem="mbp-gk-0AK" secondAttribute="bottom" constant="62" id="2IP-om-RSu"/>
                             <constraint firstItem="mbp-gk-0AK" firstAttribute="leading" secondItem="R8Y-Sm-cmO" secondAttribute="leading" id="6YV-Vj-jr5"/>
                             <constraint firstItem="mbp-gk-0AK" firstAttribute="leading" secondItem="Qic-BN-4Ub" secondAttribute="leading" constant="15" id="7IH-OX-Ack"/>
                             <constraint firstItem="d64-eM-5cJ" firstAttribute="trailing" secondItem="BHm-vP-E0M" secondAttribute="trailing" id="7mN-Zn-4js"/>
@@ -754,6 +717,5 @@
         <image name="camera_customJPG.JPG" width="4032" height="3024"/>
         <image name="chaos_xen_edit.JPEG" width="1946" height="3458"/>
         <image name="triangles.JPG" width="3024" height="4032"/>
-        <image name="tutorial_background_2.JPG" width="3024" height="4032"/>
     </resources>
 </document>

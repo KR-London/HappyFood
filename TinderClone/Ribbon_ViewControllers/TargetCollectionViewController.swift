@@ -144,10 +144,10 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
             print("Error fetching data \(error)")
         }
         
-        for i in 0 ... triedFood.count
-        {
-            let newFood = ( "test", IndexPath(item: 99, section: 99), "fromFileLoadingInTargetRibbon")
-          //  foodsTriedThisWeek.append(newFood)
-        }
+//        for i in 0 ... triedFood.count
+//        {
+//            let newFood = ( "test", IndexPath(item: 99, section: 99), "fromFileLoadingInTargetRibbon")
+//          //  foodsTriedThisWeek.append(newFood)
+//        }
     }
 }
