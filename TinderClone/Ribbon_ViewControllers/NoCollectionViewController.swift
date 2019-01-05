@@ -38,10 +38,18 @@ class NoCollectionViewController: UICollectionViewController {
         foodArray = foodArray.filter{ $0.rating == 3 }
       // delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
         //print("Message sent from No ribbon")
-        //noCollectionView.dragDelegate = self
+        //noCollectionView.dragDelegate = self 
         noCollectionView.dropDelegate = self
-       // noCollectionView.dragInteractionEnabled = true
+        noCollectionView.dragInteractionEnabled = true
         // Do any additional setup after loading the view.
+         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .horizontal
+        
+        collectionView!.collectionViewLayout = layout
     }
     
     // MARK: UICollectionViewDataSource
@@ -80,12 +88,13 @@ class NoCollectionViewController: UICollectionViewController {
         let sampledFood = foodArray[indexPath.section]
         let itemProvider = NSItemProvider()
         itemProvider.registerDataRepresentation(forTypeIdentifier: kUTTypePlainText as String, visibility: .all){completion in
-            let data = sampledFood.name?.data(using: .utf8)
+            let data = sampledFood.image_file_name?.data(using: .utf8)
             completion(data, nil)
             return nil
         }
        //  delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
         let dragItem = UIDragItem(itemProvider: itemProvider)
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromRed")] + ( foodsTriedThisWeek ?? [])
         dragItem.localObject =  sampledFood
         return [dragItem]
     }
@@ -158,7 +167,7 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
                 }
                 
                 
-                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
+                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoRed")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
                 do

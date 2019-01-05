@@ -10,7 +10,9 @@ import UIKit
 
 private let reuseIdentifier = "targetCell"
 
-class TargetCollectionViewController: UICollectionViewController {
+var ticks = [String]()
+
+class TargetCollectionViewController: UICollectionViewController, CommunicationChannel {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class TargetCollectionViewController: UICollectionViewController {
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
+       // layout.collectionView?.contentSize.height = 200
         
         collectionView!.collectionViewLayout = layout
     }
@@ -58,11 +61,16 @@ class TargetCollectionViewController: UICollectionViewController {
         return 2
     }
 
+    //// code in to read from "foods tried this week" and give picture overalaid with a tick for those
+    
+    /// actually - just tick for MVP
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TargetCollectionViewCell
+        
+       // cell.foodImage.image = UIImage(named: "tick.png")
         if foodsTriedThisWeek != nil
         {
-            if 2*indexPath.section + indexPath.row  < foodsTriedThisWeek.count - 1
+            if 2*indexPath.section + indexPath.row  < foodsTriedThisWeek.count
             {
                 cell.foodImage.image = UIImage(named: "tick.png")
             }
@@ -102,5 +110,13 @@ class TargetCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    
+    /// add an extra element & load a tick
+    
+    func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        print("REACHED TARGET DELEGATE FUNC!")
+        self.loadView()
+    }
 
 }

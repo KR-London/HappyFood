@@ -36,7 +36,7 @@ class YesCollectionViewController: UICollectionViewController {
         foodArray = foodArray.filter{ $0.rating == 1 }
         yesCollectionView.dragDelegate = self
         yesCollectionView.dropDelegate = self
-        yesCollectionView.dragInteractionEnabled = false
+        yesCollectionView.dragInteractionEnabled = true
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -102,13 +102,14 @@ extension YesCollectionViewController: UICollectionViewDragDelegate{
     
     func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
     {
-        let item = self.foodArray[indexPath.row].name
+        let item = self.foodArray[indexPath.row].image_file_name
         let itemProvider = NSItemProvider(object: item! as String as NSItemProviderWriting)
         
         //// add alternative with the encoding - or in fact replace this whoe lot with the encoding version.
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromGreenRibbon")] + ( foodsTriedThisWeek ?? [])
         return [dragItem]
     }
 }
@@ -154,7 +155,7 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                     return
                 }
                 //print("Hello drsgged item. I've been expecting you!")
-                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromGreenRibbon")
+                delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoGreen")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
                 do

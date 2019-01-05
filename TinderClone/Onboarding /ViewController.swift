@@ -13,6 +13,7 @@ import CoreData
 
 class ViewController: UIViewController{
 
+    @IBOutlet weak var instructions: UIImageView!
     @IBAction func resetButton(_ sender: Any) {
         preloadData()
     }
@@ -63,6 +64,7 @@ class ViewController: UIViewController{
             let maskingImage = UIImage(named: "MASK.png")
             foodImage.image = maskImage(image: image!, mask: maskingImage!)
             //foodImage.image = UIImage(named: currentlyPicturedFood.image_file_name!)
+  
         }
         
         /// define swipe directions
@@ -100,7 +102,10 @@ class ViewController: UIViewController{
         //        ///future self, please add some code to handle the case where there are no unrated foods/ to allow for previously rated foods to be presented.
         /// filter food array so you're only seeing unrated ones
         unratedFood = unratedFood.filter{$0 != currentlyPicturedFood}
-        
+        if instructions.alpha > 0
+        {
+            instructions.alpha = instructions.alpha - 0.1
+        }
        
         if unratedFood.count == 0 {
             

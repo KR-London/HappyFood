@@ -11,18 +11,35 @@ import UIKit
 protocol CommunicationChannel : class {
     func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
 }
+var isPerformingSegue = false
 
 @IBDesignable
 class CustomViewController: UIViewController, CommunicationChannel {
     
-    weak var communicationChannel: CommunicationChannel?
+    weak var communicationChannelAmber2: CommunicationChannel?
+     weak var communicationChannelAmber3: CommunicationChannel?
+    weak var communicationChannelTarget: CommunicationChannel?
     
+    @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
+        self.performSegue(withIdentifier: "goToCamera", sender: self)
+    }
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var greenView: UIView!
     
     @IBOutlet weak var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       // let pinchRecogniser = UIPinchGestureRecognizer(target: self, action: "pinched:" )
+       // self.view.addGestureRecognizer(pinchRecogniser)
+  //  }
+    
+  //  func pinched(recogniser: UIPinchGestureRecognizer) {
+     //   if recogniser.scale <= 0.2 && !isPerformingSegue {
+          //  self.performSegue(withIdentifier: "goToCamera", sender: self)
+        //    isPerformingSegue = true
+      //  }
         //self.addChild(greenView)
        // scrollView.contentSize = CGSize(width: 375, height: 800)
         ///self.view.backgroundColor = UIColor.init(patternImage:#imageLiteral(resourceName: "stripes.png") )
@@ -56,7 +73,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EmbedAmber3" {
             let  dvc = segue.destination as! Maybe3CollectionViewController
-            communicationChannel = dvc
+            communicationChannelAmber3 = dvc
         } else if segue.identifier == "EmbedGreen" {
             let dvc = segue.destination as! YesCollectionViewController
             dvc.delegate = self
@@ -68,11 +85,13 @@ class CustomViewController: UIViewController, CommunicationChannel {
         }
         else if segue.identifier == "EmbedAmber2"{
             let  dvc = segue.destination as! Maybe2CollectionViewController
+            communicationChannelAmber2 = dvc
           //  dvc.delegate = self
            // dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
         }
         else if segue.identifier == "EmbedTarget"{
-        //     let targetViewController = segue.destinationViewController as! TargetCollectionViewController
+            let targetViewController = segue.destination as! TargetCollectionViewController
+            communicationChannelTarget = targetViewController
            // let  dvc = segue.destination as! TargetCollectionViewController
             //  dvc.delegate = self
             // dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
@@ -81,13 +100,89 @@ class CustomViewController: UIViewController, CommunicationChannel {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
      func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
      {
         
-        communicationChannel?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+        let sourceSink = (from: foodsTriedThisWeek[0].2, to: sourceViewController)
+        
+        switch sourceSink
+        {
+            case ("fromGreenRibbon", "droppingIntoTarget"): break
+            case ("fromGreenRibbon", "droppingIntoTopMaybe"): break
+            case ("fromGreenRibbon", "droppingIntoBottomMaybe"): break
+            case ("fromGreenRibbon", "droppingIntoRed"): break
+            
+            case ("fromTargetRibbon", "droppingIntoGreen"):
+                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            case ("fromTargetRibbon", "droppingIntoTopMaybe"):
+                break
+            case ("fromTargetRibbon", "droppingIntoBottomMaybe"): break
+            case ("fromTargetRibbon", "droppingIntoRed"):
+                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            
+            case ("fromTopMaybeRibbon", "droppingIntoGreen"): communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            case ("fromTopMaybeRibbon", "droppingIntoTarget"):
+                communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                print(foodsTriedThisWeek)
+                break
+            case ("fromTopMaybeRibbon", "droppingIntoBottomMaybe"):
+                communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                print("fromTopMaybe droppingIntoIntoBottomMaybe \(String(describing: foodsTriedThisWeek))")
+                break
+            case ("fromTopMaybeRibbon", "droppingIntoRed"):
+                communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            
+            case ("fromBottomMaybeRibbon", "droppingIntoGreen"):
+                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            case ("fromBottomMaybeRibbon", "droppingIntoTarget"):
+                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            case ("fromBottomMaybeRibbon", "droppingIntoTopMaybe"):
+                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            case ("fromBottomMaybeRibbon", "droppingIntoRed"):
+                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            
+            case ("fromRed", "droppingIntoGreen"):
+                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            case ("fromRed", "droppingIntoTarget"):
+                break
+            case ("fromRed", "droppingIntoTopMaybe"):
+               //  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                break
+            case ("fromRed", "droppingIntoBottomMaybe"):
+                break
+            
+            default: return
+        }
+        
+        
+//        if sourceSink.from == "fromTopMaybeRibbon"
+//        {
+//            communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+//        }
+//        if sourceSink.from == "fromBottomMaybeRibbon"
+//        {
+//            communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+//        }
+        
+        
+   //     communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
     }
     
     func maskImage(image:UIImage, mask:(UIImage))->UIImage{

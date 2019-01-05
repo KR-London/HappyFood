@@ -332,8 +332,8 @@ extension Maybe3CollectionViewController: UICollectionViewDragDelegate{
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].name ?? "no idea", indexPath, "fromTopMaybeRibbon")]
-        print(foodsTriedThisWeek)
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].name ?? "no idea", indexPath, "fromTopMaybeRibbon")] + (foodsTriedThisWeek ?? [])
+        print("Food Tried This week \(foodsTriedThisWeek!)")
         return [dragItem]
         
     }
