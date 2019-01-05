@@ -332,7 +332,7 @@ extension Maybe3CollectionViewController: UICollectionViewDragDelegate{
         
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].name ?? "no idea", indexPath, "fromTopMaybeRibbon")] + (foodsTriedThisWeek ?? [])
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromTopMaybeRibbon")] + (foodsTriedThisWeek ?? [])
         print("Food Tried This week \(foodsTriedThisWeek!)")
         return [dragItem]
         
@@ -374,8 +374,6 @@ extension Maybe3CollectionViewController: UICollectionViewDropDelegate{
         
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
-                // print("Hello drsgged item. I've been expecting you!")
-                print("Hello drsgged item. I've been expecting you!")
                 delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoTopMaybe")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()
@@ -385,10 +383,6 @@ extension Maybe3CollectionViewController: UICollectionViewDropDelegate{
                     draggedFood = foodArrayFull.filter{$0.image_file_name == pet}.first!
                     draggedFood.rating = 2
                     foodArray.insert(draggedFood, at: destinationIndexPath.row )
-                    
-             //       delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromAmberRibbon"+whereDidTheSegueComeFrom)
-                    //  foodArray.remove(at: item.sourceIndexPath!.row)
-                    //updateSourceCellWithASmiley(sourceIndexPath: item.sourceIndexPath!, sourceViewController: "test")
                 }
                 catch
                 {

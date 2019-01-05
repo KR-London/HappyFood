@@ -197,48 +197,12 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
     }
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-        
-        print("hello from amber 2")
-//        if sourceIndexPath == IndexPath( item: 99, section: 99) {
-//            whereDidTheSegueComeFrom = sourceViewController
-//            return
-//        }
+
         foodArray.remove(at: foodsTriedThisWeek[0].1.row)
         foodArray = foodArray.filter{ $0.rating == 2 }
         //self.reloadInputViews()
         self.collectionView!.reloadData()
         self.collectionView!.numberOfItems(inSection: 0)
-//        if foodsTriedThisWeek[0].2 == "fromBottomMaybeRibbon"
-//        {
-//            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
-//            var rating = 2
-//            if sourceViewController == "sentFromGreenRibbon" { rating = 1}
-//            if sourceViewController == "sentFromRedRibbon" { rating = 3}
-//
-//            /// here I create a new entry in the database for the tried food, with an updated rating
-//            if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-//                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
-//                menuItem.image_file_name = triedFoodImage
-//                menuItem.name = foodsTriedThisWeek![0].0
-//                menuItem.rating = Int16(rating)
-//                foodArray.append(menuItem)
-//            }
-//
-//            /// here I remove the dragged item
-//           // self.collectionView.deleteItems(at: [foodsTriedThisWeek[0].1])
-//            //self.collectionView.reloadItems(at: [foodsTriedThisWeek[0].1])
-//
-//            //cell.displayContent(image: "tick.png", title: "")
-//            //cell.layer.borderWidth = 0.0
-//
-//            foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-//            foodArray = foodArray.filter{ $0.rating == 2 }
-//            //self.reloadInputViews()
-//            self.collectionView!.reloadData()
-//            self.collectionView!.numberOfItems(inSection: 0)
-//
-//           }
-
     }
     
     /// MARK: Drag and drop helper functions
@@ -330,8 +294,7 @@ extension Maybe2CollectionViewController: UICollectionViewDragDelegate{
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
         /// change this to an append, so this stores them all
-        foodsTriedThisWeek = [( self.foodArray[indexPath.row].name ?? "no idea", indexPath, "fromBottomMaybeRibbon")] + ( foodsTriedThisWeek ?? [])
-        print(foodsTriedThisWeek)
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromBottomMaybeRibbon")] + ( foodsTriedThisWeek ?? [])
         return [dragItem]
         
     }

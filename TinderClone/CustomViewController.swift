@@ -45,7 +45,11 @@ class CustomViewController: UIViewController, CommunicationChannel {
     @IBOutlet weak var stackView: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItems()
+        
+        if foodsTriedThisWeek == nil
+        {
+            loadItems()
+        }
         
        // let pinchRecogniser = UIPinchGestureRecognizer(target: self, action: "pinched:" )
        // self.view.addGestureRecognizer(pinchRecogniser)
@@ -128,6 +132,10 @@ class CustomViewController: UIViewController, CommunicationChannel {
         
         switch sourceSink
         {
+            case ("fromGreenRibbon", "droppingIntoGreen"):
+            communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            break
             case ("fromGreenRibbon", "droppingIntoTarget"):
                 communicationChannelGreen?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
                 foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
@@ -145,39 +153,57 @@ class CustomViewController: UIViewController, CommunicationChannel {
                 foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
                 break
             
+            case ( "fromTargetRibbon", "droppingIntoTarget"):
+            communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+            break
             case ("fromTargetRibbon", "droppingIntoGreen"):
                  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                 
+                 doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
                 break
             case ("fromTargetRibbon", "droppingIntoTopMaybe"):
-                break
-            case ("fromTargetRibbon", "droppingIntoBottomMaybe"): break
+                  foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    break
+            case ("fromTargetRibbon", "droppingIntoBottomMaybe"):
+                  foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    break
             case ("fromTargetRibbon", "droppingIntoRed"):
-                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
                 break
             
+        case ("fromTopMaybeRibbon", "droppingIntoTopMaybe"): communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+        //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+        //doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+            foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            break
             case ("fromTopMaybeRibbon", "droppingIntoGreen"): communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            
+                 //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
                 break
             case ("fromTopMaybeRibbon", "droppingIntoTarget"):
                 communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
                 foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-                print(foodsTriedThisWeek)
                 break
             case ("fromTopMaybeRibbon", "droppingIntoBottomMaybe"):
                 communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
                  foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-                print("fromTopMaybe droppingIntoIntoBottomMaybe \(String(describing: foodsTriedThisWeek))")
                 break
             case ("fromTopMaybeRibbon", "droppingIntoRed"):
                 communicationChannelAmber3?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                 doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
                 break
             
+            case ("fromBottomMaybeRibbon", "droppingIntoBottomMaybe"):
+            communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+            break
             case ("fromBottomMaybeRibbon", "droppingIntoGreen"):
                     communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                    communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                     doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
                     break
             case ("fromBottomMaybeRibbon", "droppingIntoTarget"):
                     communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
@@ -185,12 +211,20 @@ class CustomViewController: UIViewController, CommunicationChannel {
                     break
             case ("fromBottomMaybeRibbon", "droppingIntoTopMaybe"):
                     communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
                     break
             case ("fromBottomMaybeRibbon", "droppingIntoRed"):
                     communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                    communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                     doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
                     break
             
+            case ("fromRedRibbon", "droppingIntoRed"):
+            communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+            // communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+            // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+            break
             case ("fromRedRibbon", "droppingIntoGreen"):
                     communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
                     doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
@@ -230,7 +264,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
     
     func doesThisGetATick(sourceIndexPath: IndexPath, from: String, to: String)
     {
-       // var unique = true
+       var unique = [Int]()
         /// check for uniqueness
         for i in 0 ... foodsTriedThisWeek.count-1
         {
@@ -238,11 +272,19 @@ class CustomViewController: UIViewController, CommunicationChannel {
             {
                 if foodsTriedThisWeek[0].0 == foodsTriedThisWeek[i].0
                 {
-                    foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-                    return
-                   /// unique = false
-                }
+                   // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                   // return
+                    unique = [i] + unique            }
             }
+        }
+        
+        if unique.count > 0
+        {
+            for i in 0 ... unique.count - 1
+            {
+                foodsTriedThisWeek.remove(at: unique[i])
+            }
+            return
         }
         
         /// if it is unique, then give the use a smiley!
@@ -288,7 +330,7 @@ class CustomViewController: UIViewController, CommunicationChannel {
             print("Error fetching data \(error)")
         }
         
-        if triedFood != nil
+        if triedFood != nil && triedFood.count > 0 
         {
            
             for i in 0 ... triedFood.count-1
@@ -299,9 +341,33 @@ class CustomViewController: UIViewController, CommunicationChannel {
                 }
                 foodsTriedThisWeek.append(( triedFood[i].nameOfTriedFood , IndexPath( item: 99, section: 99), "loadedFromFile"))
             }
+            
+            var unique = [Int]()
+            /// check for uniqueness
+            for i in 0 ... foodsTriedThisWeek.count-1
+            {
+                if i > 0
+                {
+                    if foodsTriedThisWeek[0].0 == foodsTriedThisWeek[i].0
+                    {
+                        // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                        // return
+                        unique = [i] + unique            }
+                }
+            }
+            
+            if unique.count > 0
+            {
+                for i in 0 ... unique.count - 1
+                {
+                    foodsTriedThisWeek.remove(at: unique[i])
+                }
+                return
+            }
         }
+        
+
     }
-    
 }
 extension UIImage {
     func resizeImage(targetSize: CGSize) -> UIImage {

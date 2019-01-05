@@ -189,7 +189,7 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
         
         if rating == 1 || rating == 3
         {
-            foodsTriedThisWeek =  [( imageName, IndexPath.init(item: 99, section: 99), "fromCamera")] + (foodsTriedThisWeek ?? [])
+            foodsTriedThisWeek =  [( imagePath, IndexPath.init(item: 99, section: 99), "fromCamera")] + (foodsTriedThisWeek ?? [])
         }
         
         cameraImage.image = nil

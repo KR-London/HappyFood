@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         
         if launchedBefore{
-            print("not first launch")
             self.window = UIWindow(frame: UIScreen.main.bounds)
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -35,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else
         {
-            print("First launch")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             self.window = UIWindow(frame: UIScreen.main.bounds)
             

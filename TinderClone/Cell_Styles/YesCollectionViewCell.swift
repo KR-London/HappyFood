@@ -26,13 +26,33 @@ class YesCollectionViewCell: UICollectionViewCell {
     
     public func displayContent(image: String)
     {
-        foodImage.image = UIImage(named: image)
+        foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
+       // foodImage.image = UIImage(named: image)
     }
     
     func setup(){
         self.layer.borderWidth = 0.0
         self.layer.borderColor = UIColor.green.cgColor
         self.layer.cornerRadius = 5.0
+    }
+    
+    func maskImage(image:UIImage, mask:(UIImage))->UIImage{
+        
+        let imageReference = image.cgImage
+        let maskReference = mask.cgImage
+        
+        let imageMask = CGImage(maskWidth: maskReference!.width,
+                                height: maskReference!.height,
+                                bitsPerComponent: maskReference!.bitsPerComponent,
+                                bitsPerPixel: maskReference!.bitsPerPixel,
+                                bytesPerRow: maskReference!.bytesPerRow,
+                                provider: maskReference!.dataProvider!, decode: nil, shouldInterpolate: true)
+        
+        let maskedReference = imageReference!.masking(imageMask!)
+        
+        let maskedImage = UIImage(cgImage:maskedReference!)
+        
+        return maskedImage
     }
     
 }

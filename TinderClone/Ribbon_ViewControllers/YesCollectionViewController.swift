@@ -60,8 +60,6 @@ class YesCollectionViewController: UICollectionViewController, CommunicationChan
             let plate = foodArray[cellContentsIndex]
             cell.displayContent(image: plate.image_file_name!)
         }
-       // cell.foodName?.text = "Sec " + indexPath.section.description + "/Item " + indexPath.item.description
-        //cell.foodName?.text = plate.name
         return cell
     }
     

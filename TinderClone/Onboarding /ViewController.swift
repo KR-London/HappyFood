@@ -35,28 +35,12 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(datafilepath!)
         preloadData()
         loadItems()
         unratedFood = foodArray.filter{$0.rating == 0}
         if unratedFood.count == 0
         {
             transitionToRibbonsStoryboard()
-           // noUnratedFood()
-//                let alert = UIAlertController(title: "You've rated all the food!", message: "Would you like to reload the blank database?", preferredStyle: .actionSheet)
-//                let action = UIAlertAction(title: "Reload", style: .default){ (action) in self.preloadData(); print("I'm in the closure") }
-//                alert.addAction(action)
-
-            
-            //        let secondFrame = CGRect(x: 120, y: 130, width: 250, height: 250)
-            //        let secondView = UIView(frame: secondFrame)
-            //        secondView.backgroundColor = UIColor.green
-            //        view.addSubview(secondView)
-            
-             //   view.addSubview(alert.view)
-                //secondView.addSubview(alert.view)
-               // present(alert, animated: true, completion: nil)
-               // self.show(alert, sender: alert)
         }
         else
         {
@@ -270,7 +254,6 @@ class ViewController: UIViewController{
                 items?.append(item )
             }
         }
-        //print(items)
         return items
     }
     

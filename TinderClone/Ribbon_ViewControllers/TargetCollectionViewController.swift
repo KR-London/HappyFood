@@ -130,9 +130,6 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
     /// add an extra element & load a tick
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-        print("REACHED TARGET DELEGATE FUNC!")
-        //self.collectionViewLayout.invalidateLayout()
-        //self.loadView()
         self.collectionView.reloadData()
     }
 

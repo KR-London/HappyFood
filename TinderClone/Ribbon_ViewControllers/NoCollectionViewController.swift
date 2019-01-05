@@ -162,7 +162,6 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
                 if pet == "" {return}
                 if pet == "tick.png"
                 {
-                    print("Oh no you don't!")
                     return
                 }
                 
