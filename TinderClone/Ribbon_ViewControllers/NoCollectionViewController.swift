@@ -18,7 +18,7 @@ class NoCollectionViewController: UICollectionViewController, CommunicationChann
     weak var delegate: CommunicationChannel?
 
     
-    fileprivate var longPressGesture: UILongPressGestureRecognizer!
+  //  fileprivate var longPressGesture: UILongPressGestureRecognizer!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var food: [NSManagedObject] = []
@@ -38,7 +38,7 @@ class NoCollectionViewController: UICollectionViewController, CommunicationChann
         foodArray = foodArray.filter{ $0.rating == 3 }
       // delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "sentFromRedRibbon")
         //print("Message sent from No ribbon")
-        //noCollectionView.dragDelegate = self 
+        noCollectionView.dragDelegate = self 
         noCollectionView.dropDelegate = self
         noCollectionView.dragInteractionEnabled = true
         // Do any additional setup after loading the view.
@@ -245,13 +245,28 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         
-          print("communication channel to green message received")
+          print("communication channel to red message received")
         
         foodArray.remove(at: foodsTriedThisWeek[0].1.row)
-        foodArray = foodArray.filter{ $0.rating == 2 }
+        foodArray = foodArray.filter{ $0.rating == 3 }
         //self.reloadInputViews()
         self.collectionView!.reloadData()
         self.collectionView!.numberOfItems(inSection: 0)
     }
 }
 
+extension NoCollectionViewController: UICollectionViewDragDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem]
+    {
+        let item = self.foodArray[indexPath.row].image_file_name
+        let itemProvider = NSItemProvider(object: item! as String as NSItemProviderWriting)
+        
+        //// add alternative with the encoding - or in fact replace this whoe lot with the encoding version.
+        
+        let dragItem = UIDragItem(itemProvider: itemProvider)
+        dragItem.localObject = item
+        foodsTriedThisWeek = [( self.foodArray[indexPath.row].image_file_name ?? "no idea", indexPath, "fromRedRibbon")] + ( foodsTriedThisWeek ?? [])
+        return [dragItem]
+    }
+}

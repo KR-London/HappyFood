@@ -56,7 +56,8 @@ class CustomViewController: UIViewController, CommunicationChannel {
       //  var backgroundStripes = UIImage(named: "stripes.png")
         //backgroundStripes = backgroundStripes?.resizeImage(targetSize: CGSize(width: self.view!.frame.width, height: self.view!.frame.height))
       //  self.view.sa
-     //   backgroundColor = UIColor.init(patternImage:backgroundStripes! )
+        let maybe = UIImage(named: "Maybe.png")
+        self.view.backgroundColor = UIColor.init(patternImage: maybe! )
         
        
         
@@ -91,16 +92,12 @@ class CustomViewController: UIViewController, CommunicationChannel {
         } else if segue.identifier == "EmbedRed" {
             let  dvc = segue.destination as! NoCollectionViewController
             dvc.delegate = self
-            //print(dvc.delegate!)
-            //communicationChannel = dvc
+            communicationChannelRed = dvc
         }
         else if segue.identifier == "EmbedAmber2"{
             let  dvc = segue.destination as! Maybe2CollectionViewController
              dvc.delegate = self
             communicationChannelAmber2 = dvc
-           
-          //  dvc.delegate = self
-           // dvc.updateSourceCellWithASmiley(sourceIndexPath: IndexPath( item: 99, section: 99) , sourceViewController: "Maybe2")
         }
         else if segue.identifier == "EmbedTarget"{
             let targetViewController = segue.destination as! TargetCollectionViewController
@@ -170,32 +167,40 @@ class CustomViewController: UIViewController, CommunicationChannel {
                 break
             
             case ("fromBottomMaybeRibbon", "droppingIntoGreen"):
-                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                break
+                    communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    break
             case ("fromBottomMaybeRibbon", "droppingIntoTarget"):
-                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-                break
+                    communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    break
             case ("fromBottomMaybeRibbon", "droppingIntoTopMaybe"):
-                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                break
+                    communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    break
             case ("fromBottomMaybeRibbon", "droppingIntoRed"):
-                communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                break
+                    communicationChannelAmber2?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    break
             
-            case ("fromRed", "droppingIntoGreen"):
-                 communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                break
-            case ("fromRed", "droppingIntoTarget"):
-                foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
-                break
-            case ("fromRed", "droppingIntoTopMaybe"):
-               //  communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-                break
-            case ("fromRed", "droppingIntoBottomMaybe"):
-                break
+            case ("fromRedRibbon", "droppingIntoGreen"):
+                    communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    
+                     communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                   // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    break
+            case ("fromRedRibbon", "droppingIntoTarget"):
+                    communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    break
+            case ("fromRedRibbon", "droppingIntoTopMaybe"):
+                    //communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    break
+            case ("fromRedRibbon", "droppingIntoBottomMaybe"):
+                    communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
+                    foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+                    break
             
             default: return
         }
