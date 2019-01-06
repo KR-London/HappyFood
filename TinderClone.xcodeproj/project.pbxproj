@@ -47,6 +47,7 @@
 		44B711F121DF626700537170 /* MASK_dp_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B711F021DF626700537170 /* MASK_dp_small.png */; };
 		44B711F321DF65E000537170 /* MASK.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B711F221DF65E000537170 /* MASK.png */; };
 		44B9A68E21CFE0B10019E8FE /* preViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B9A68D21CFE0B10019E8FE /* preViewController.swift */; };
+		44D749E321E1E1AD00071C4D /* Chaos_ Chaos_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D749E221E1E1AD00071C4D /* Chaos_ Chaos_2.png */; };
 		44D8B37F216216D60019077D /* YesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */; };
 		44D8B3832162403C0019077D /* FoodData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3822162403B0019077D /* FoodData.csv */; };
 		44D8B385216240790019077D /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B384216240790019077D /* apple.jpg */; };
@@ -156,6 +157,7 @@
 		44B711F021DF626700537170 /* MASK_dp_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK_dp_small.png; sourceTree = "<group>"; };
 		44B711F221DF65E000537170 /* MASK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK.png; sourceTree = "<group>"; };
 		44B9A68D21CFE0B10019E8FE /* preViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preViewController.swift; sourceTree = "<group>"; };
+		44D749E221E1E1AD00071C4D /* Chaos_ Chaos_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chaos_ Chaos_2.png"; sourceTree = "<group>"; };
 		44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44D8B3822162403B0019077D /* FoodData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodData.csv; sourceTree = "<group>"; };
 		44D8B384216240790019077D /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			children = (
 				44F0469B21DF77510062C063 /* Maybe.png */,
 				44F0469921DF774B0062C063 /* Good.png */,
+				44D749E221E1E1AD00071C4D /* Chaos_ Chaos_2.png */,
 				44F0469F21DF775D0062C063 /* Camera.png */,
 				44F0469721DF77280062C063 /* Target.png */,
 				44F046A421DF77DA0062C063 /* ribbons_watercolour.JPG */,
@@ -496,6 +499,7 @@
 			files = (
 				44D8B3AD216240F30019077D /* veggienugget.JPG in Resources */,
 				44D8B38F2162408D0019077D /* cheeseandonioncrisps.JPG in Resources */,
+				44D749E321E1E1AD00071C4D /* Chaos_ Chaos_2.png in Resources */,
 				44F046AE21E0CDC10062C063 /* tick.png in Resources */,
 				44F0469C21DF77510062C063 /* Maybe.png in Resources */,
 				443095C921DC0F3600E04A46 /* tutorial_background_2.JPG in Resources */,

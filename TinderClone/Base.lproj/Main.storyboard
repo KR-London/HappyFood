@@ -142,39 +142,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" text="Fantastic! Now I know a bit about your likes and dislikes. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-Kh-qVu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chaos_ Chaos_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="HEX-kL-y2S">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Fantastic! Now I know a bit about your likes and dislikes. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-Kh-qVu">
                                 <rect key="frame" x="16" y="182" width="343" height="149"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="FCW-n0-ZT5"/>
                                 </constraints>
+                                <color key="textColor" red="0.41960784313725491" green="0.31372549019607843" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="88t-sM-loC">
-                                <rect key="frame" x="16" y="372" width="25" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="yes" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="88t-sM-loC" firstAttribute="top" secondItem="CqN-Kh-qVu" secondAttribute="bottom" constant="41" id="Tuh-ei-TWb"/>
-                            <constraint firstItem="CqN-Kh-qVu" firstAttribute="leading" secondItem="88t-sM-loC" secondAttribute="leading" id="bkX-Yy-0hD"/>
+                            <constraint firstItem="HEX-kL-y2S" firstAttribute="top" secondItem="AH0-0B-ihN" secondAttribute="top" id="H6V-Jd-Mgg"/>
+                            <constraint firstAttribute="trailing" secondItem="HEX-kL-y2S" secondAttribute="trailing" id="S23-rG-MlH"/>
+                            <constraint firstItem="HEX-kL-y2S" firstAttribute="bottom" secondItem="8hr-tt-DHI" secondAttribute="bottom" id="ZNu-e2-ioV"/>
                             <constraint firstItem="CqN-Kh-qVu" firstAttribute="leading" secondItem="AH0-0B-ihN" secondAttribute="leadingMargin" id="eAR-MO-ckB"/>
+                            <constraint firstItem="HEX-kL-y2S" firstAttribute="centerX" secondItem="CqN-Kh-qVu" secondAttribute="centerX" id="lCE-mj-GTr"/>
+                            <constraint firstItem="HEX-kL-y2S" firstAttribute="leading" secondItem="AH0-0B-ihN" secondAttribute="leading" id="r7b-7r-ljp"/>
                             <constraint firstItem="CqN-Kh-qVu" firstAttribute="top" secondItem="8hr-tt-DHI" secondAttribute="top" constant="162" id="zqq-pT-u4I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8hr-tt-DHI"/>
                     </view>
                     <navigationItem key="navigationItem" id="fyP-83-bcr"/>
                     <connections>
-                        <outlet property="motivationInputField" destination="88t-sM-loC" id="Jtd-KL-aj0"/>
+                        <segue destination="lWt-dB-KTj" kind="presentation" identifier="goToRibbonsOnboarding" id="HU3-JC-Qex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvL-6y-96p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2594.4000000000001" y="334.18290854572717"/>
+            <point key="canvasLocation" x="-2687" y="408"/>
         </scene>
         <!--Ribbons Onboarding View Controller-->
         <scene sceneID="8JY-Yc-5Uo">
@@ -193,13 +194,13 @@
                                     <constraint firstAttribute="height" constant="116" id="XAd-Tz-weO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.36078431372549019" green="0.2627450980392157" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinch out to add a new food to the database with your phone camera" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbp-gk-0AK">
                                 <rect key="frame" x="15" y="261" width="342" height="84"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.36078431372549019" green="0.2627450980392157" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set targets - or freestyle. Just keep trying!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8Y-Sm-cmO">
@@ -208,7 +209,7 @@
                                     <constraint firstAttribute="height" constant="102" id="gq5-oG-RxJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.36078431372549019" green="0.2627450980392157" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press and drag UP if you like it. DOWN if you don't." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHm-vP-E0M">
@@ -217,18 +218,20 @@
                                     <constraint firstAttribute="height" constant="91" id="XmH-KF-LFl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.36078431372549019" green="0.2627450980392157" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b3-7a-1lI">
                                 <rect key="frame" x="63" y="512" width="248" height="100"/>
-                                <color key="backgroundColor" red="0.96470588239999999" green="0.74901960779999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.94901960784313721" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BY7-Ml-VfL"/>
                                     <constraint firstAttribute="width" constant="248" id="yIp-a5-NJe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Happy My Food!"/>
+                                <state key="normal" title="Happy My Food!">
+                                    <color key="titleColor" red="0.31764705882352939" green="0.21176470588235294" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="segueTrigger:" destination="lWt-dB-KTj" eventType="touchUpInside" id="YMr-7U-08V"/>
                                     <segue destination="fvP-Nr-5wE" kind="presentation" id="nb5-q7-QX4"/>
@@ -710,6 +713,7 @@
     <resources>
         <image name="Bad.png" width="2100" height="658"/>
         <image name="Camera.png" width="1417" height="920"/>
+        <image name="Chaos_ Chaos_2.png" width="3023" height="4032"/>
         <image name="Good.png" width="2100" height="658"/>
         <image name="LoadingScreens.png" width="2700" height="4800"/>
         <image name="Target.png" width="2100" height="658"/>
