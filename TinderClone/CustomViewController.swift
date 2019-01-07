@@ -88,7 +88,19 @@ class CustomViewController: UIViewController, CommunicationChannel {
     
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(true)
-          self.view.addSubview(stackView)
+           // self.scrollView.sizeThatFits(CGSize(width: 200, height: 1000) )
+            //self.view.addSubview(stackView)
+            scrollView.contentSize = stackView.bounds.size
+            scrollView.addSubview(stackView)
+        
+//        scrollView = UIScrollView(frame: view.bounds)
+//        scrollView.backgroundColor = UIColor.blackColor()
+//        scrollView.contentSize = imageView.bounds.size
+//        scrollView.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
+//
+//        scrollView.addSubview(imageView)
+//        view.addSubview(scrollView)
+
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -221,9 +233,9 @@ class CustomViewController: UIViewController, CommunicationChannel {
             
             case ("fromRedRibbon", "droppingIntoRed"):
             communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
+            //doesThisGetATick(sourceIndexPath: sourceIndexPath, from: sourceSink.from, to: sourceSink.to)
             // communicationChannelTarget?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)
-            // foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
+             foodsTriedThisWeek = Array(foodsTriedThisWeek.dropFirst())
             break
             case ("fromRedRibbon", "droppingIntoGreen"):
                     communicationChannelRed?.updateSourceCellWithASmiley(sourceIndexPath: sourceIndexPath, sourceViewController: sourceViewController)

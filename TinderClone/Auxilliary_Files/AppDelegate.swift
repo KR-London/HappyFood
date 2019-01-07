@@ -24,25 +24,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if launchedBefore{
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            
+
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
+
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "trafficLightStoryboard" )
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
-            
+
         }
         else
         {
             UserDefaults.standard.set(true, forKey: "launchedBefore")
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            
+
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
+
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "readySteadySwipe" )
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
-            
+
         }
         
     

@@ -271,6 +271,7 @@ extension Maybe3CollectionViewController: UICollectionViewDragDelegate{
         if indexPath.row >= self.foodArray.count
         {return []  }
         
+        
         let item = self.foodArray[indexPath.row].image_file_name
         
         //            /// if I'm dragging a tick, I'm going to interpret that as the user not wanting the tick

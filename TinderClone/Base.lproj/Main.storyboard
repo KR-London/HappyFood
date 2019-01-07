@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Thingy" translatesAutoresizingMaskIntoConstraints="NO" id="OAG-Jt-ur8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangles.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="EXz-XI-Gag">
                                 <rect key="frame" x="-27" y="0.0" width="429" height="738"/>
                             </imageView>
@@ -33,8 +36,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qak-Mj-NUi">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qak-Mj-NUi">
                                 <rect key="frame" x="0.0" y="32" width="375" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="J19-kg-Wbr" kind="presentation" identifier="goToMotivation" id="d5i-zG-Hpf"/>
@@ -45,10 +49,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciy-Bk-g5O">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciy-Bk-g5O">
                                 <rect key="frame" x="0.0" y="626" width="375" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </button>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-qp-p1U">
+                                <rect key="frame" x="54" y="190" width="277" height="291"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="E3a-Yv-GtK"/>
+                                    <constraint firstAttribute="height" constant="291" id="ft8-tS-Ard"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLV-Hi-zQR">
                                 <rect key="frame" x="26" y="543" width="333" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -59,20 +72,6 @@
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jl5-ZZ-Etq"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lrt-qp-p1U">
-                                <rect key="frame" x="54" y="190" width="277" height="291"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="277" id="E3a-Yv-GtK"/>
-                                    <constraint firstAttribute="height" constant="291" id="ft8-tS-Ard"/>
-                                </constraints>
-                            </imageView>
-                            <imageView opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Thingy2" translatesAutoresizingMaskIntoConstraints="NO" id="OAG-Jt-ur8">
-                                <rect key="frame" x="-27" y="-174" width="429" height="943"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="943" id="h8b-P3-qwA"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
@@ -80,18 +79,17 @@
                         </accessibility>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="OAG-Jt-ur8" firstAttribute="centerX" secondItem="qak-Mj-NUi" secondAttribute="centerX" id="3Yk-Dz-WDH"/>
                             <constraint firstItem="EXz-XI-Gag" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5eJ-nc-0KQ"/>
                             <constraint firstItem="EXz-XI-Gag" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" priority="985" id="7gj-Uk-6Su"/>
-                            <constraint firstItem="OAG-Jt-ur8" firstAttribute="trailing" secondItem="EXz-XI-Gag" secondAttribute="trailing" id="Cbh-5a-Bcs"/>
-                            <constraint firstItem="OAG-Jt-ur8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-174" id="SHx-Er-Uyq"/>
+                            <constraint firstItem="EXz-XI-Gag" firstAttribute="top" secondItem="OAG-Jt-ur8" secondAttribute="bottom" id="OWt-gP-vWu"/>
+                            <constraint firstItem="OAG-Jt-ur8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Oot-Xb-0mv"/>
                             <constraint firstItem="lrt-qp-p1U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="5" id="UMV-ce-luw"/>
                             <constraint firstItem="EXz-XI-Gag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-43" id="cA7-dP-Hk9"/>
-                            <constraint firstItem="OAG-Jt-ur8" firstAttribute="leading" secondItem="EXz-XI-Gag" secondAttribute="leading" id="cPz-8c-bty"/>
                             <constraint firstItem="EXz-XI-Gag" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="e4j-43-IfB"/>
-                            <constraint firstItem="OAG-Jt-ur8" firstAttribute="centerX" secondItem="ciy-Bk-g5O" secondAttribute="centerX" id="mKX-ta-g1k"/>
+                            <constraint firstAttribute="trailing" secondItem="OAG-Jt-ur8" secondAttribute="trailing" id="pKf-0R-nZm"/>
                             <constraint firstItem="lrt-qp-p1U" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="2" id="qpg-6b-fW5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="EXz-XI-Gag" secondAttribute="bottom" constant="-71" id="r7i-Of-enh"/>
+                            <constraint firstItem="OAG-Jt-ur8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="veE-Gu-SVb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -103,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3434" y="239"/>
+            <point key="canvasLocation" x="-3434.4000000000001" y="238.83058470764618"/>
         </scene>
         <!--Pre View Controller-->
         <scene sceneID="jSc-RV-fbg">
@@ -717,7 +715,7 @@
         <image name="Good.png" width="2100" height="658"/>
         <image name="LoadingScreens.png" width="2700" height="4800"/>
         <image name="Target.png" width="2100" height="658"/>
-        <image name="Thingy2" width="850" height="1726"/>
+        <image name="Thingy" width="16" height="16"/>
         <image name="camera_customJPG.JPG" width="4032" height="3024"/>
         <image name="chaos_xen_edit.JPEG" width="1946" height="3458"/>
         <image name="triangles.JPG" width="3024" height="4032"/>
