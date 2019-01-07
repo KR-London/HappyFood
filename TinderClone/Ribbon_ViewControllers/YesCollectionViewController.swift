@@ -150,7 +150,7 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
                 if pet == "tick.png"
                 {
                     //delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "deletetick")
-                    print("Oh no you don't!")
+                    //print("Oh no you don't!")
                     return
                 }
                 //print("Hello drsgged item. I've been expecting you!")
@@ -180,7 +180,7 @@ extension YesCollectionViewController: UICollectionViewDropDelegate{
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         
-        print("communication channel to green message received")
+       // print("communication channel to green message received")
 
 //            let triedFoodImage = foodArray.filter{ $0.name == foodsTriedThisWeek![0].0 }[0].image_file_name
 //            var rating = 1

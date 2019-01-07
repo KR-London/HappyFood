@@ -18,6 +18,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var instructions: UIImageView!
     @IBAction func resetButton(_ sender: Any) {
         preloadData()
+        foodsTriedThisWeek = [(String?, IndexPath, String)]()
     }
     //@IBAction func buttonRHSpressed(_ sender: Any) {
 //      //  performSegue.withIdentifier("goToMotivation")

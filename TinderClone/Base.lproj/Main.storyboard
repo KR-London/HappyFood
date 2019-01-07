@@ -684,6 +684,18 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GU4-UJ-xw9">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-Nv-iC1">
+                                            <rect key="frame" x="8" y="11" width="26" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.8980392157" green="0.84313725490000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <state key="normal" title="X">
+                                                <color key="titleColor" red="0.41960784309999999" green="0.31372549020000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="removeBtnClick:" destination="aXj-2J-hHz" eventType="touchUpInside" id="iSe-ks-Atw"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <constraints>
@@ -694,6 +706,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="foodImage" destination="GU4-UJ-xw9" id="VGw-8X-Ozk"/>
+                                    <outlet property="removeBtnClick" destination="5d1-Nv-iC1" id="5sR-H9-CEa"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -705,7 +718,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n36-pu-1bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="804"/>
+            <point key="canvasLocation" x="149.59999999999999" y="802.39880059970017"/>
         </scene>
     </scenes>
     <resources>

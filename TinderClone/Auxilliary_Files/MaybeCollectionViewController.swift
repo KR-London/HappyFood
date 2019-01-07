@@ -228,7 +228,7 @@ extension MaybeCollectionViewController: UICollectionViewDragDelegate{
         let dragItem = UIDragItem(itemProvider: itemProvider)
         dragItem.localObject = item
         foodsTriedThisWeek = [( self.foodArray[2*indexPath.section + indexPath.row].name ?? "no idea", indexPath)]
-        print(foodsTriedThisWeek)
+        //print(foodsTriedThisWeek)
         return [dragItem]
         
     }
@@ -299,7 +299,7 @@ extension MaybeCollectionViewController: UICollectionViewDropDelegate{
     }
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
-        print("Message Received from \(sourceViewController)")
+        //print("Message Received from \(sourceViewController)")
 
         if sourceViewController == "deletetick"
         {

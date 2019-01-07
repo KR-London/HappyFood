@@ -244,7 +244,7 @@ extension NoCollectionViewController: UICollectionViewDropDelegate{
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
         
-          print("communication channel to red message received")
+          //print("communication channel to red message received")
         
         foodArray.remove(at: foodsTriedThisWeek[0].1.row)
         foodArray = foodArray.filter{ $0.rating == 3 }

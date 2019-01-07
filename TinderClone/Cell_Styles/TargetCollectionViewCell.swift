@@ -9,6 +9,10 @@
 import UIKit
 
 class TargetCollectionViewCell: UICollectionViewCell {
+    
+    var isAnimate = false
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -21,6 +25,11 @@ class TargetCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var foodImage: UIImageView!
     
+    @IBOutlet weak var removeBtnClick: UIButton!
+    
+    
+    
+    
     public func displayContent(image: String)
     {
         foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
@@ -31,6 +40,10 @@ class TargetCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.cornerRadius = 40.0
+        if removeBtnClick != nil
+        {
+            removeBtnClick.isHidden = true
+        }
     }
     
     func maskImage(image:UIImage, mask:(UIImage))->UIImage{
@@ -50,6 +63,35 @@ class TargetCollectionViewCell: UICollectionViewCell {
         let maskedImage = UIImage(cgImage:maskedReference!)
         
         return maskedImage
+    }
+    
+    func startAnimate() {
+        let shakeAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        shakeAnimation.duration = 0.05
+        shakeAnimation.repeatCount = 4
+        shakeAnimation.autoreverses = true
+        shakeAnimation.duration = 0.2
+        shakeAnimation.repeatCount = 99999
+        
+        let startAngle: Float = (-2) * 3.14159/180
+        let stopAngle = -startAngle
+        
+        shakeAnimation.fromValue = NSNumber(value: startAngle as Float)
+        shakeAnimation.toValue = NSNumber(value: 3 * stopAngle as Float)
+        shakeAnimation.autoreverses = true
+        shakeAnimation.timeOffset = 290 * drand48()
+        
+        let layer: CALayer = self.layer
+        layer.add(shakeAnimation, forKey:"animate")
+        self.removeBtnClick.isHidden = false 
+        isAnimate = true
+    }
+    
+    func stopAnimate() {
+        let layer: CALayer = self.layer
+        layer.removeAnimation(forKey: "animate")
+        self.removeBtnClick.isHidden = true
+        isAnimate = false
     }
     
 }

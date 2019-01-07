@@ -341,7 +341,7 @@ extension Maybe2CollectionViewController: UICollectionViewDropDelegate{
         for item in coordinator.items{
             if let pet = item.dragItem.localObject as? String{
                 // print("Hello drsgged item. I've been expecting you!")
-                print("Hello drsgged item. I've been expecting you!")
+                //print("Hello drsgged item. I've been expecting you!")
                 delegate?.updateSourceCellWithASmiley(sourceIndexPath: IndexPath.init(item: 0, section: 0), sourceViewController: "droppingIntoBottomMaybe")
                 var draggedFood: Food
                 let request : NSFetchRequest<Food> = Food.fetchRequest()

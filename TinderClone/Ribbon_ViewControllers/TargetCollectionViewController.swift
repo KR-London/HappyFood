@@ -23,11 +23,37 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
    // let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                                // in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
+    /// these variables help me to delete cells
+    var longPressGesture = UILongPressGestureRecognizer()
+    var isAnimate: Bool! = true
+    var longPressedEnabled = false
+    @IBAction func removeBtnClick(_ sender: UIButton) {
+        if foodsTriedThisWeek != nil
+        {
+            let hitPoint = sender.convert(CGPoint.zero, to: self.collectionView)
+            let hitIndex = self.collectionView.indexPathForItem(at: hitPoint)
+        
+            /// remove the tried food and refresh the collection view
+            let indexOfThisFood = 2*(hitIndex?.section)! + (hitIndex?.row)!
+        
+            if indexOfThisFood < foodsTriedThisWeek.count
+            {
+                foodsTriedThisWeek.remove(at: indexOfThisFood)
+                self.collectionView.reloadData()
+            }
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //adding longpress gesture over UICollectionView
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+        self.view.addGestureRecognizer(longPressGesture)
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -79,11 +105,19 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TargetCollectionViewCell
         
        // cell.foodImage.image = UIImage(named: "tick.png")
+        
+        cell.removeBtnClick.isHidden = true
+        
         if foodsTriedThisWeek != nil
         {
             if 2*indexPath.section + indexPath.row  < foodsTriedThisWeek.count
             {
                 cell.foodImage.image = UIImage(named: "Tick.jpeg")
+                if longPressedEnabled   {
+                    cell.startAnimate()
+                }else{
+                    cell.stopAnimate()
+                }
             }
             else
             {
@@ -91,6 +125,13 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
             }
         }
         // Configure the cell
+        
+        /// this tells it to wobble if I've long pressed!
+//        if longPressedEnabled   {
+//            cell.startAnimate()
+//        }else{
+//            cell.stopAnimate()
+//        }
     
         return cell
     }
@@ -150,4 +191,40 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
 //          //  foodsTriedThisWeek.append(newFood)
 //        }
     }
+    
+    @objc func longTap(_ gesture: UIGestureRecognizer){
+        print("Long tap detected")
+        switch(gesture.state) {
+        case .began:
+                print(".began")
+                guard let selectedIndexPath = self.collectionView.indexPathForItem(at: gesture.location(in: self.collectionView))
+                    else { return }
+                self.collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+            break
+//            guard let selectedIndexPath = imgcollection.indexPathForItem(at: gesture.location(in: imgcollection)) else {
+//                return
+//            }
+//            imgcollection.beginInteractiveMovementForItem(at: selectedIndexPath)
+        case .changed:
+               print(".changed")
+               self.collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+            break
+//            imgcollection.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
+        case .ended:
+               print(".ended")
+               self.collectionView.endInteractiveMovement()
+               //           // doneBtn.isHidden = false
+               longPressedEnabled = !longPressedEnabled
+               self.collectionView.reloadData()
+            break
+            
+        default:
+            self.collectionView.cancelInteractiveMovement()
+            break
+            
+        }
+    }
+    
+ 
+
 }
