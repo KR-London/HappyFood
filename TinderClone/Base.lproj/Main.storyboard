@@ -683,23 +683,22 @@
                                                 <action selector="removeBtnClick:" destination="aXj-2J-hHz" eventType="touchUpInside" id="iSe-ks-Atw"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="tick.png" translatesAutoresizingMaskIntoConstraints="NO" id="k0L-aP-p13">
-                                            <rect key="frame" x="8" y="8" width="84" height="92"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MnO-Kc-YWr">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="k0L-aP-p13" secondAttribute="trailing" id="50a-V0-twA"/>
                                     <constraint firstItem="GU4-UJ-xw9" firstAttribute="leading" secondItem="hCO-Z1-wAs" secondAttribute="leading" id="6Am-Hr-1D4"/>
                                     <constraint firstAttribute="trailing" secondItem="GU4-UJ-xw9" secondAttribute="trailing" id="6zu-FL-pCL"/>
-                                    <constraint firstItem="k0L-aP-p13" firstAttribute="leading" secondItem="hCO-Z1-wAs" secondAttribute="leadingMargin" id="Mhi-MP-ITP"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="k0L-aP-p13" secondAttribute="bottom" constant="-8" id="NHr-mj-pXb"/>
                                     <constraint firstAttribute="bottom" secondItem="GU4-UJ-xw9" secondAttribute="bottom" id="SgQ-5i-Tyu"/>
                                     <constraint firstItem="GU4-UJ-xw9" firstAttribute="top" secondItem="hCO-Z1-wAs" secondAttribute="top" id="nCp-dN-0SD"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="foodImage" destination="GU4-UJ-xw9" id="VGw-8X-Ozk"/>
                                     <outlet property="removeBtnClick" destination="5d1-Nv-iC1" id="5sR-H9-CEa"/>
+                                    <outlet property="tickImage" destination="MnO-Kc-YWr" id="osJ-Rd-oG6"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -725,6 +724,7 @@
         <image name="camera_customJPG.JPG" width="4032" height="3024"/>
         <image name="chaos_xen_edit.JPEG" width="1946" height="3458"/>
         <image name="cross.png" width="167" height="168"/>
+        <image name="tick.jpg" width="172" height="172"/>
         <image name="tick.png" width="1801" height="1458"/>
         <image name="triangles.JPG" width="3024" height="4032"/>
     </resources>

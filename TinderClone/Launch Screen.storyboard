@@ -20,8 +20,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front_logp.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="mxE-dB-P8v">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Empowering teens with restrictive eating patterns. " textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-AG-bDO">
-                                <rect key="frame" x="68" y="258" width="238" height="150"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empowering teens with restrictive eating patterns. " textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="eaU-AG-bDO">
+                                <rect key="frame" x="68" y="258" width="239" height="151"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -29,12 +29,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="eaU-AG-bDO" firstAttribute="centerX" secondItem="mxE-dB-P8v" secondAttribute="centerX" id="BtT-rL-f1O"/>
+                            <constraint firstItem="eaU-AG-bDO" firstAttribute="centerY" secondItem="mxE-dB-P8v" secondAttribute="centerY" id="CwT-jT-Z7x"/>
                             <constraint firstItem="mxE-dB-P8v" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" id="FGd-fb-aXu"/>
+                            <constraint firstItem="eaU-AG-bDO" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="68" id="ONT-jM-7La"/>
+                            <constraint firstItem="eaU-AG-bDO" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="238" id="Prr-Fp-9dC"/>
                             <constraint firstItem="mxE-dB-P8v" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="VOF-XG-F9D"/>
-                            <constraint firstItem="eaU-AG-bDO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="68" id="kXy-Td-xPo"/>
                             <constraint firstItem="mxE-dB-P8v" firstAttribute="trailing" secondItem="Bcu-3y-fUS" secondAttribute="trailing" id="lGu-OV-qEZ"/>
                             <constraint firstItem="mxE-dB-P8v" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="rnP-xA-UW0"/>
-                            <constraint firstAttribute="trailing" secondItem="eaU-AG-bDO" secondAttribute="trailing" constant="69" id="vaa-m2-UgK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>

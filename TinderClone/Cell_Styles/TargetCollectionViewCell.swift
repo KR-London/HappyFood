@@ -27,6 +27,7 @@ class TargetCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var removeBtnClick: UIButton!
     
+    @IBOutlet weak var tickImage: UIImageView!
     
     
     
@@ -44,6 +45,11 @@ class TargetCollectionViewCell: UICollectionViewCell {
         {
             removeBtnClick.isHidden = true
         }
+        
+//        if tickImage != nil
+//        {
+//            tickImage.isHidden = true
+//        }
     }
     
     func maskImage(image:UIImage, mask:(UIImage))->UIImage{

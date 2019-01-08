@@ -35,10 +35,59 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
         
             /// remove the tried food and refresh the collection view
             let indexOfThisFood = 2*(hitIndex?.section)! + (hitIndex?.row)!
+            
+            
         
             if indexOfThisFood < foodsTriedThisWeek.count
             {
+                
+                ///delete from core data
+                
+                if let dataAppDelegatde = UIApplication.shared.delegate as? AppDelegate {
+                    
+                    
+                    let mngdCntxt = dataAppDelegatde.persistentContainer.viewContext
+                    
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TriedFood")
+                    
+                    let predicate = NSPredicate(format: "nameOfTriedFood = %@", foodsTriedThisWeek![indexOfThisFood].0!)
+                    
+                    fetchRequest.predicate = predicate
+                    do{
+                        let result = try mngdCntxt.fetch(fetchRequest)
+                        
+                        print(result.count)
+                        
+                        if result.count > 0{
+                            for object in result {
+                                print(object)
+                                mngdCntxt.delete(object as! NSManagedObject)
+                            }
+                        }
+                    }catch{
+                        
+                    }
+                }
+                
+//                if let anyItem = foodsTriedThisWeek as? NSManagedObject {
+//                    managedObjectContext.delete(anyItem)
+//                }
+                
                 foodsTriedThisWeek.remove(at: indexOfThisFood)
+                
+                
+                //// save down update to core data
+                
+                /// and save down to coreData
+//                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//                    let newFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
+//
+//                    newFood.nameOfTriedFood = foodsTriedThisWeek[0].0
+//                    newFood.dateTried = nil
+//                }
+//
+                
+               
                 self.collectionView.reloadData()
             }
         }
@@ -105,11 +154,15 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TargetCollectionViewCell
         
        // cell.foodImage.image = UIImage(named: "tick.png")
+        cell.tickImage.isHidden = true
         
         cell.removeBtnClick.isHidden = true
         
+        
+        
         if foodsTriedThisWeek != nil
         {
+
             if 2*indexPath.section + indexPath.row  < foodsTriedThisWeek.count
             {
                 
@@ -117,17 +170,26 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
                 
                 cell.foodImage.image = tickedImage
                 
+                cell.tickImage.isHidden = false
+                
                 //"tick.jpg"
                 if longPressedEnabled   {
                     cell.startAnimate()
-                }else{
-                    cell.stopAnimate()
+                    cell.tickImage.isHidden = true
+                }
+                else{
+                      longPressedEnabled = false
                 }
             }
             else
             {
                 cell.foodImage.image = nil
+                longPressedEnabled = false
             }
+        }
+        else
+        {
+          // cell.stopAnimate()
         }
         // Configure the cell
         
