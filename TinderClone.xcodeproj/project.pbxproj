@@ -76,6 +76,9 @@
 		44EABBD3214D61AA006AB475 /* Snippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EABBD2214D61AA006AB475 /* Snippets.swift */; };
 		44EB2D5421D4F8EE0041B8FC /* RibbonsOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB2D5321D4F8EE0041B8FC /* RibbonsOnboardingViewController.swift */; };
 		44EB2D5621D4FD4E0041B8FC /* MotivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB2D5521D4FD4D0041B8FC /* MotivationViewController.swift */; };
+		44EC776C21E47D7E00DB77F6 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EC776B21E47D7E00DB77F6 /* cross.png */; };
+		44EC776E21E47D8400DB77F6 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EC776D21E47D8300DB77F6 /* tick.png */; };
+		44EC777021E47EA900DB77F6 /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44EC776F21E47EA900DB77F6 /* tick.jpg */; };
 		44F0469821DF77280062C063 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469721DF77280062C063 /* Target.png */; };
 		44F0469A21DF774B0062C063 /* Good.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469921DF774B0062C063 /* Good.png */; };
 		44F0469C21DF77510062C063 /* Maybe.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469B21DF77510062C063 /* Maybe.png */; };
@@ -187,6 +190,9 @@
 		44EABBD2214D61AA006AB475 /* Snippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippets.swift; sourceTree = "<group>"; };
 		44EB2D5321D4F8EE0041B8FC /* RibbonsOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RibbonsOnboardingViewController.swift; sourceTree = "<group>"; };
 		44EB2D5521D4FD4D0041B8FC /* MotivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationViewController.swift; sourceTree = "<group>"; };
+		44EC776B21E47D7E00DB77F6 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		44EC776D21E47D8300DB77F6 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		44EC776F21E47EA900DB77F6 /* tick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick.jpg; sourceTree = "<group>"; };
 		44F0469721DF77280062C063 /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Target.png; path = ../Target.png; sourceTree = "<group>"; };
 		44F0469921DF774B0062C063 /* Good.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Good.png; sourceTree = "<group>"; };
 		44F0469B21DF77510062C063 /* Maybe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maybe.png; sourceTree = "<group>"; };
@@ -404,6 +410,9 @@
 			isa = PBXGroup;
 			children = (
 				44F0469B21DF77510062C063 /* Maybe.png */,
+				44EC776D21E47D8300DB77F6 /* tick.png */,
+				44EC776F21E47EA900DB77F6 /* tick.jpg */,
+				44EC776B21E47D7E00DB77F6 /* cross.png */,
 				44F0469921DF774B0062C063 /* Good.png */,
 				44D749E221E1E1AD00071C4D /* Chaos_ Chaos_2.png */,
 				44F0469F21DF775D0062C063 /* Camera.png */,
@@ -526,6 +535,7 @@
 				44D8B38D216240890019077D /* cheese.JPG in Resources */,
 				44F046A021DF775D0062C063 /* Camera.png in Resources */,
 				44B2707621DD7C4600F6D424 /* mask6.png in Resources */,
+				44EC776E21E47D8400DB77F6 /* tick.png in Resources */,
 				44B2707B21DD7C4600F6D424 /* mask5.png in Resources */,
 				44B2707C21DD7C4600F6D424 /* mask7.png in Resources */,
 				44B2707921DD7C4600F6D424 /* mask4.png in Resources */,
@@ -543,6 +553,7 @@
 				4430A49D21DE144D0040EE4A /* front_logp.JPG in Resources */,
 				4430A49F21DE14530040EE4A /* ribbons_watercolour.JPG in Resources */,
 				44D8B3932162409E0019077D /* egg.JPG in Resources */,
+				44EC776C21E47D7E00DB77F6 /* cross.png in Resources */,
 				44D8B3AB216240EE0019077D /* tuna.JPG in Resources */,
 				44B711ED21DF60AB00537170 /* MASK_dp.png in Resources */,
 				44F046B621E0D5E30062C063 /* dummyData in Resources */,
@@ -553,6 +564,7 @@
 				44D8B39D216240C30019077D /* penne.JPG in Resources */,
 				44D8B3A1216240CE0019077D /* rice.JPG in Resources */,
 				44F0469E21DF77570062C063 /* Bad.png in Resources */,
+				44EC777021E47EA900DB77F6 /* tick.jpg in Resources */,
 				44D8B3A3216240D70019077D /* ricecake.JPG in Resources */,
 				44F0469A21DF774B0062C063 /* Good.png in Resources */,
 				44D8B3832162403C0019077D /* FoodData.csv in Resources */,
