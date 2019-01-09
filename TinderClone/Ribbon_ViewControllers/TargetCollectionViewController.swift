@@ -37,59 +37,59 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
             let indexOfThisFood = 2*(hitIndex?.section)! + (hitIndex?.row)!
             
             
-        /// This is bugging out on the reak device. Bring it back eventually 
-//            if indexOfThisFood < foodsTriedThisWeek.count
-//            {
+        /// This is bugging out on the reak device. Bring it back eventually
+            if indexOfThisFood < foodsTriedThisWeek.count
+            {
+
+                ///delete from core data
+
+                if let dataAppDelegatde = UIApplication.shared.delegate as? AppDelegate {
+
+
+                    let mngdCntxt = dataAppDelegatde.persistentContainer.viewContext
+
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TriedFood")
+
+                    let predicate = NSPredicate(format: "nameOfTriedFood = %@", foodsTriedThisWeek![indexOfThisFood].0!)
+
+                    fetchRequest.predicate = predicate
+                    do{
+                        let result = try mngdCntxt.fetch(fetchRequest)
+
+                        print(result.count)
+
+                        if result.count > 0{
+                            for object in result {
+                                print(object)
+                                mngdCntxt.delete(object as! NSManagedObject)
+                            }
+                        }
+                    }catch{
+
+                    }
+                }
+
+//                if let anyItem = foodsTriedThisWeek as? NSManagedObject {
+//                    managedObjectContext.delete(anyItem)
+//                }
+
+                foodsTriedThisWeek.remove(at: indexOfThisFood)
+
+
+                //// save down update to core data
+
+                /// and save down to coreData
+//                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+//                    let newFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
 //
-//                ///delete from core data
-//
-//                if let dataAppDelegatde = UIApplication.shared.delegate as? AppDelegate {
-//
-//
-//                    let mngdCntxt = dataAppDelegatde.persistentContainer.viewContext
-//
-//                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TriedFood")
-//
-//                    let predicate = NSPredicate(format: "nameOfTriedFood = %@", foodsTriedThisWeek![indexOfThisFood].0!)
-//
-//                    fetchRequest.predicate = predicate
-//                    do{
-//                        let result = try mngdCntxt.fetch(fetchRequest)
-//
-//                        print(result.count)
-//
-//                        if result.count > 0{
-//                            for object in result {
-//                                print(object)
-//                                mngdCntxt.delete(object as! NSManagedObject)
-//                            }
-//                        }
-//                    }catch{
-//
-//                    }
+//                    newFood.nameOfTriedFood = foodsTriedThisWeek[0].0
+//                    newFood.dateTried = nil
 //                }
 //
-////                if let anyItem = foodsTriedThisWeek as? NSManagedObject {
-////                    managedObjectContext.delete(anyItem)
-////                }
-//
-//                foodsTriedThisWeek.remove(at: indexOfThisFood)
-//
-//
-//                //// save down update to core data
-//
-//                /// and save down to coreData
-////                if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-////                    let newFood = NSEntityDescription.insertNewObject(forEntityName: "TriedFood", into: managedObjectContext) as! TriedFood
-////
-////                    newFood.nameOfTriedFood = foodsTriedThisWeek[0].0
-////                    newFood.dateTried = nil
-////                }
-////
-//
-//
-//                self.collectionView.reloadData()
-//            }
+
+
+                self.collectionView.reloadData()
+            }
         }
         
     }
@@ -122,6 +122,8 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
        // layout.collectionView?.contentSize.height = 200
         
         collectionView!.collectionViewLayout = layout
+        
+       
     }
 
     /*
@@ -201,6 +203,8 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
 //        }
     
         return cell
+        
+
     }
 
     // MARK: UICollectionViewDelegate

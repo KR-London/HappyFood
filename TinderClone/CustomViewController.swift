@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import MobileCoreServices
 
+var celebrationTiggered = false
+
 protocol CommunicationChannel : class {
     func updateSourceCellWithASmiley( sourceIndexPath: IndexPath, sourceViewController: String )
 }
@@ -260,6 +262,15 @@ class CustomViewController: UIViewController, CommunicationChannel {
             default: return
         }
         
+        
+        if foodsTriedThisWeek != nil && celebrationTiggered == false
+        {
+            if foodsTriedThisWeek.count >= 6
+            {
+                performSegue(withIdentifier: "celebrationScreen", sender: self)
+                celebrationTiggered = true
+            }
+        }
         
 //        if sourceSink.from == "fromTopMaybeRibbon"
 //        {

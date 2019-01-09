@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QIS-GQ-rbd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvP-Nr-5wE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3434.4000000000001" y="238.83058470764618"/>
+            <point key="canvasLocation" x="-3150" y="292"/>
         </scene>
         <!--Pre View Controller-->
         <scene sceneID="jSc-RV-fbg">
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NO-NZ-wyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4270" y="150"/>
+            <point key="canvasLocation" x="-3881" y="176"/>
         </scene>
         <!--Motivation View Controller-->
         <scene sceneID="Mc7-M4-gqX">
@@ -140,7 +140,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chaos_ Chaos_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="HEX-kL-y2S">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chaos_ Chaos_.png" translatesAutoresizingMaskIntoConstraints="NO" id="HEX-kL-y2S">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Fantastic! Now I know a bit about your likes and dislikes. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-Kh-qVu">
@@ -173,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvL-6y-96p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2687" y="408"/>
+            <point key="canvasLocation" x="-2431" y="403"/>
         </scene>
         <!--Ribbons Onboarding View Controller-->
         <scene sceneID="8JY-Yc-5Uo">
@@ -251,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVL-w1-VlZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1874.4000000000001" y="512.29385307346331"/>
+            <point key="canvasLocation" x="-1702" y="504"/>
         </scene>
         <!--Custom View Controller-->
         <scene sceneID="sod-jK-MzP">
@@ -332,6 +332,7 @@
                         <outlet property="scrollView" destination="sNz-Ql-ipX" id="hmK-YT-V3n"/>
                         <outlet property="stackView" destination="NzU-Z0-56R" id="vd7-UE-AaD"/>
                         <segue destination="xvS-Nx-P72" kind="presentation" identifier="goToCamera" id="c3h-fy-B5W"/>
+                        <segue destination="Xcx-aS-lCj" kind="presentation" identifier="celebrationScreen" id="qAl-bD-TP4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCB-M2-w4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,7 +342,71 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-972" y="663.41829085457277"/>
+            <point key="canvasLocation" x="-980" y="667"/>
+        </scene>
+        <!--Celebration View Controller-->
+        <scene sceneID="RNf-a4-sPS">
+            <objects>
+                <viewController storyboardIdentifier="celebrationScreen" id="Xcx-aS-lCj" customClass="CelebrationViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B82-WV-6fb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chaos_ Chaos_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="cGH-xF-dgc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WELL DONE! " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9R-Ok-8Mq">
+                                <rect key="frame" x="34" y="33" width="306" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <color key="textColor" red="0.36078431370000003" green="0.26274509800000001" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyh-WB-Zhm">
+                                <rect key="frame" x="34" y="269" width="306" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">“Maybe the hardest part of life is just having the courage to try.” 
+― Rachel Hollis, Party Girl</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.36078431370000003" green="0.26274509800000001" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-zi-y1Y">
+                                <rect key="frame" x="49" y="400" width="291" height="171"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="ehr-d8-VaY" kind="embed" id="bfJ-A0-qI8"/>
+                                </connections>
+                            </containerView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fn-UF-Sei">
+                                <rect key="frame" x="113" y="603" width="149" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt;&lt;&lt; Back"/>
+                                <connections>
+                                    <segue destination="fvP-Nr-5wE" kind="presentation" identifier="toTrafficLightStoryboard" id="P2w-s1-x5W"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You tried 6 new foods this week !" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrk-Aw-fjA">
+                                <rect key="frame" x="16" y="164" width="343" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.36078431370000003" green="0.26274509800000001" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cGH-xF-dgc" firstAttribute="leading" secondItem="LuE-0C-b6l" secondAttribute="leading" id="Moz-Wt-eDX"/>
+                            <constraint firstItem="cGH-xF-dgc" firstAttribute="top" secondItem="B82-WV-6fb" secondAttribute="top" id="Z28-pW-d3A"/>
+                            <constraint firstItem="LuE-0C-b6l" firstAttribute="bottom" secondItem="cGH-xF-dgc" secondAttribute="bottom" id="lZ9-zM-E2D"/>
+                            <constraint firstItem="LuE-0C-b6l" firstAttribute="trailing" secondItem="cGH-xF-dgc" secondAttribute="trailing" id="woa-zb-npz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LuE-0C-b6l"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePQ-aL-ert" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-980" y="-131.78410794602701"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="rYs-PZ-5d8">
@@ -400,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6r-0K-PE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="239"/>
+            <point key="canvasLocation" x="-95" y="292"/>
         </scene>
         <!--No Collection View Controller-->
         <scene sceneID="cHh-wO-dHa">
@@ -710,12 +775,61 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n36-pu-1bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149.59999999999999" y="802.39880059970017"/>
+            <point key="canvasLocation" x="-95" y="803"/>
+        </scene>
+        <!--Celebration Collection View Controller-->
+        <scene sceneID="EYZ-bd-Eef">
+            <objects>
+                <collectionViewController id="ehr-d8-VaY" customClass="CelebrationCollectionViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" id="ciu-da-abD">
+                        <rect key="frame" x="0.0" y="0.0" width="291" height="171"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QMA-V6-vxO">
+                            <size key="itemSize" width="86" height="79"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="celebrationCell" id="1u0-Yz-shp" customClass="CelebrationCollectionViewCell" customModule="TinderClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="86" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="86" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Wb-X5-7e0">
+                                            <rect key="frame" x="0.0" y="0.0" width="2" height="0.0"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2Wb-X5-7e0" secondAttribute="trailing" id="5dv-3m-nhW"/>
+                                    <constraint firstItem="2Wb-X5-7e0" firstAttribute="leading" secondItem="1u0-Yz-shp" secondAttribute="leading" id="XnA-N2-BQp"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Wb-X5-7e0" secondAttribute="bottom" id="Yut-fH-GUn"/>
+                                    <constraint firstItem="2Wb-X5-7e0" firstAttribute="top" secondItem="1u0-Yz-shp" secondAttribute="top" id="sdF-4f-P8B"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="foodImage" destination="2Wb-X5-7e0" id="9KL-oM-8AJ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ehr-d8-VaY" id="OrX-hR-RxO"/>
+                            <outlet property="delegate" destination="ehr-d8-VaY" id="NkI-L2-tw0"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v62-4V-Cpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-96.799999999999997" y="-398.05097451274366"/>
         </scene>
     </scenes>
     <resources>
         <image name="Bad.png" width="2100" height="658"/>
         <image name="Camera.png" width="1417" height="920"/>
+        <image name="Chaos_ Chaos_.png" width="3023" height="4031"/>
         <image name="Chaos_ Chaos_2.png" width="3023" height="4032"/>
         <image name="Good.png" width="2100" height="658"/>
         <image name="LoadingScreens.png" width="2700" height="4800"/>
@@ -728,4 +842,7 @@
         <image name="tick.png" width="1801" height="1458"/>
         <image name="triangles.JPG" width="3024" height="4032"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="P2w-s1-x5W"/>
+    </inferredMetricsTieBreakers>
 </document>

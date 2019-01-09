@@ -46,6 +46,7 @@ class TargetCollectionViewCell: UICollectionViewCell {
             removeBtnClick.isHidden = true
         }
         
+        
 //        if tickImage != nil
 //        {
 //            tickImage.isHidden = true

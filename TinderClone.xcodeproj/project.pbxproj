@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4400ABE721E5F461000433E0 /* Chaos_ Chaos_.png in Resources */ = {isa = PBXBuildFile; fileRef = 4400ABE621E5F461000433E0 /* Chaos_ Chaos_.png */; };
+		4400ABE921E5F5B9000433E0 /* CelebrationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400ABE821E5F5B9000433E0 /* CelebrationCollectionViewController.swift */; };
+		4400ABEB21E5F75C000433E0 /* CelebrationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400ABEA21E5F75C000433E0 /* CelebrationCollectionViewCell.swift */; };
+		4400ABEF21E5FABC000433E0 /* CelebrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400ABEE21E5FABC000433E0 /* CelebrationViewController.swift */; };
 		4406F23721620B8F00155818 /* NoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23121620B8F00155818 /* NoCollectionViewController.swift */; };
 		4406F23821620B8F00155818 /* noCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23221620B8F00155818 /* noCollectionViewCell.swift */; };
 		4406F23921620B8F00155818 /* YesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4406F23321620B8F00155818 /* YesCollectionViewController.swift */; };
@@ -115,6 +119,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4400ABE621E5F461000433E0 /* Chaos_ Chaos_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chaos_ Chaos_.png"; sourceTree = "<group>"; };
+		4400ABE821E5F5B9000433E0 /* CelebrationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationCollectionViewController.swift; sourceTree = "<group>"; };
+		4400ABEA21E5F75C000433E0 /* CelebrationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationCollectionViewCell.swift; sourceTree = "<group>"; };
+		4400ABEE21E5FABC000433E0 /* CelebrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationViewController.swift; sourceTree = "<group>"; };
 		4406F23121620B8F00155818 /* NoCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoCollectionViewController.swift; sourceTree = "<group>"; };
 		4406F23221620B8F00155818 /* noCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = noCollectionViewCell.swift; sourceTree = "<group>"; };
 		4406F23321620B8F00155818 /* YesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesCollectionViewController.swift; sourceTree = "<group>"; };
@@ -254,6 +262,7 @@
 				44FC4E5F21DCF02A0028B667 /* Maybe2CollectionViewCell.swift */,
 				4406F23521620B8F00155818 /* YesCollectionViewCell.swift */,
 				44F046A921DFA25E0062C063 /* TargetCollectionViewCell.swift */,
+				4400ABEA21E5F75C000433E0 /* CelebrationCollectionViewCell.swift */,
 			);
 			path = Cell_Styles;
 			sourceTree = "<group>";
@@ -320,6 +329,8 @@
 				44EB2D4E21D4F74B0041B8FC /* Onboarding  */,
 				4498109B2150F90200508599 /* CustomViewController.swift */,
 				44110B1E21ADD8BC00151388 /* CameraViewController.swift */,
+				4400ABEE21E5FABC000433E0 /* CelebrationViewController.swift */,
+				4400ABE821E5F5B9000433E0 /* CelebrationCollectionViewController.swift */,
 				4451E2C821BABBF4008BB36E /* Cell_Styles */,
 				4451E2C921BABC3C008BB36E /* Layout_Styles */,
 				4451E2CA21BABC4D008BB36E /* Ribbon_ViewControllers */,
@@ -440,6 +451,7 @@
 				44F0469B21DF77510062C063 /* Maybe.png */,
 				44EC776F21E47EA900DB77F6 /* tick.jpg */,
 				44EC776B21E47D7E00DB77F6 /* cross.png */,
+				4400ABE621E5F461000433E0 /* Chaos_ Chaos_.png */,
 				44F0469921DF774B0062C063 /* Good.png */,
 				44D749E221E1E1AD00071C4D /* Chaos_ Chaos_2.png */,
 				44F0469F21DF775D0062C063 /* Camera.png */,
@@ -570,6 +582,7 @@
 				44B2707921DD7C4600F6D424 /* mask4.png in Resources */,
 				44D8B3AF216240F80019077D /* walnuts.JPG in Resources */,
 				44F046B421E0CFDA0062C063 /* Tick.jpeg in Resources */,
+				4400ABE721E5F461000433E0 /* Chaos_ Chaos_.png in Resources */,
 				441AC33321E4E1D60034A5F7 /* bread-breakfast-eat-33309.jpg in Resources */,
 				44B711EF21DF612500537170 /* MASK_p.png in Resources */,
 				44B2707721DD7C4600F6D424 /* mask2.png in Resources */,
@@ -624,8 +637,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4406F23921620B8F00155818 /* YesCollectionViewController.swift in Sources */,
+				4400ABEB21E5F75C000433E0 /* CelebrationCollectionViewCell.swift in Sources */,
 				4406F23C21620B8F00155818 /* MaybeCollectionViewCell.swift in Sources */,
 				44FC4E6021DCF02A0028B667 /* Maybe2CollectionViewCell.swift in Sources */,
+				4400ABE921E5F5B9000433E0 /* CelebrationCollectionViewController.swift in Sources */,
 				44D8B37F216216D60019077D /* YesCollectionViewLayout.swift in Sources */,
 				4406F23A21620B8F00155818 /* MaybeCollectionViewController.swift in Sources */,
 				4498109C2150F90200508599 /* CustomViewController.swift in Sources */,
@@ -633,6 +648,7 @@
 				44B2708121DD8F9B00F6D424 /* Maybe3CollectionViewController.swift in Sources */,
 				4406F23821620B8F00155818 /* noCollectionViewCell.swift in Sources */,
 				446E748521412FD800B326D9 /* ViewController.swift in Sources */,
+				4400ABEF21E5FABC000433E0 /* CelebrationViewController.swift in Sources */,
 				44F046AC21DFA32F0062C063 /* TargetCollectionViewController.swift in Sources */,
 				446E748B21412FD800B326D9 /* TinderClone.xcdatamodeld in Sources */,
 				44B9A68E21CFE0B10019E8FE /* preViewController.swift in Sources */,
