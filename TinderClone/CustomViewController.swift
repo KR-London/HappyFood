@@ -38,6 +38,10 @@ class CustomViewController: UIViewController, CommunicationChannel {
     
     let datafilepath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
+    @IBAction func scrollToGreen(_ sender: UIScreenEdgePanGestureRecognizer) {
+        
+        self.performSegue(withIdentifier: "goToAllGood", sender: self)
+    }
     @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
         self.performSegue(withIdentifier: "goToCamera", sender: self)
     }

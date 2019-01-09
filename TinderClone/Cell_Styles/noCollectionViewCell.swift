@@ -27,7 +27,10 @@ class noCollectionViewCell: UICollectionViewCell {
     
     public func displayContent(image: String, title: String)
     {
-        foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
+//        if foodImage.image != nil
+//        {
+            foodImage.image = maskImage(image: UIImage(named: image)!, mask: UIImage(named: "MASK.png")! )
+        //}
         //foodImage.image = UIImage(named: image)
       //  foodName.text = title
        // print("No ribbon should display \(title)")

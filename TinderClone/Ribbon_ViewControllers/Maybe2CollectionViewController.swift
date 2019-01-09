@@ -103,7 +103,11 @@ class Maybe2CollectionViewController: UICollectionViewController, CommunicationC
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return foodArray.count
+       if foodArray != nil
+       {
+            return foodArray.count
+        }
+        return 0 
     }
     
     

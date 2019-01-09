@@ -9,12 +9,30 @@
 import UIKit
 import CoreData
 import Foundation
+import Darwin
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+  //  var haveIjustComeFrom
+    
     @IBAction func takeAnotherPhoto(_ sender: UIButton) {
+        
+        imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var cameraRollButton: UIButton!
+    
+    @IBAction func pickFromCameraRoll(_ sender: Any) {
+        
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    
+    
     
     @IBAction func segueTrigger(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -28,7 +46,18 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     var foodArray: [Food]!
     let datafilepath = FileManager.default.urls(for: .documentDirectory,
                                 in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-
+    
+    @IBAction func deletePic(_ sender: UIButton) {
+        cameraImage.image = nil
+        
+        cameraRollButton.isHidden = false
+        cameraButton.isHidden = false
+        deleteButton.isHidden = true
+    }
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    
     @IBOutlet weak var cameraImage: UIImageView!
     
     let imagePicker = UIImagePickerController()
@@ -36,12 +65,14 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        deleteButton.isHidden = true
+   
+  
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         
         present(imagePicker, animated: true, completion: nil)
-        
         ///imagePickerController(imagePicker, didFinishPickingMediaWithInfo: <#T##[UIImagePickerController.InfoKey : Any]#>)
         
         /// define swipe directions
@@ -68,13 +99,23 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 // Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        cameraButton.isHidden = true
+        cameraRollButton.isHidden = true
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
         if let userPickedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
         {
             let maskingImage = UIImage(named: "MASK.png")
-            cameraImage.image = maskImage(image: userPickedImage, mask: maskingImage!)
+            
+            let pic = userPickedImage.fixOrientation()
+            
+            cameraImage.image = maskImage(image: pic!, mask: maskingImage!)
+          // cameraImage.transform.rotated(by: CGFloat(Double.pi/2.0))
+            //cameraImage.image = cameraImage
+            //cameraImage.
            // cameraImage.image = userPickedImage
+            
+            deleteButton.isHidden = false
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
@@ -124,9 +165,17 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
     
 @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        cameraButton.isHidden = false
+        deleteButton.isHidden = true
         if gesture.direction == UISwipeGestureRecognizer.Direction.right {
-            cameraImage.image = nil
-        
+           // cameraImage.image = nil
+            //deleteButton.isHidden = true
+           // cameraButton.titleLabel!.text = "Hello"
+          
+            if let newPic = cameraImage.image{
+                let seconds = String(Date.timeIntervalSinceReferenceDate).filter{$0 != "."}
+                appsAndBiscuits(imageName: seconds, image: newPic, rating:  2)
+            }
          }
         else if gesture.direction == UISwipeGestureRecognizer.Direction.left {
              if let newPic = cameraImage.image{
@@ -147,6 +196,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
             appsAndBiscuits(imageName: seconds, image: newPic, rating:  3)
             }
         }
+    
     }
 
 // Helper function inserted by Swift 4.2 migrator.
@@ -170,7 +220,9 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
         
         /// get the png data for this image
         
-        let data = UIImage.pngData(image)
+        let image2 = image.resizeImage(targetSize: CGSize(width: 500, height: 300))
+        
+        let data = UIImage.pngData(image2)
         
         fileManager.createFile(atPath: imagePath as String, contents: data(), attributes: nil)
         
@@ -214,4 +266,65 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
         return maskedImage
     }
 
+}
+
+extension UIImage {
+    
+    func fixOrientation() -> UIImage? {
+        
+        if (imageOrientation == .up) { return self }
+        
+        var transform = CGAffineTransform.identity
+        
+        switch imageOrientation {
+        case .left, .leftMirrored:
+            transform = transform.translatedBy(x: size.width, y: 0.0)
+            transform = transform.rotated(by: .pi / 2.0)
+        case .right, .rightMirrored:
+            transform = transform.translatedBy(x: 0.0, y: size.height)
+            transform = transform.rotated(by: -.pi / 2.0)
+        case .down, .downMirrored:
+            transform = transform.translatedBy(x: size.width, y: size.height)
+            transform = transform.rotated(by: .pi)
+        default:
+            break
+        }
+        
+        switch imageOrientation {
+        case .upMirrored, .downMirrored:
+            transform = transform.translatedBy(x: size.width, y: 0.0)
+            transform = transform.scaledBy(x: -1.0, y: 1.0)
+        case .leftMirrored, .rightMirrored:
+            transform = transform.translatedBy(x: size.height, y: 0.0)
+            transform = transform.scaledBy(x: -1.0, y: 1.0)
+        default:
+            break
+        }
+        
+        guard let cgImg = cgImage else { return nil }
+        
+        if let context = CGContext(data: nil,
+                                   width: Int(size.width), height: Int(size.height),
+                                   bitsPerComponent: cgImg.bitsPerComponent,
+                                   bytesPerRow: 0, space: cgImg.colorSpace!,
+                                   bitmapInfo: cgImg.bitmapInfo.rawValue) {
+            
+            context.concatenate(transform)
+            
+            if imageOrientation == .left || imageOrientation == .leftMirrored ||
+                imageOrientation == .right || imageOrientation == .rightMirrored {
+                context.draw(cgImg, in: CGRect(x: 0.0, y: 0.0, width: size.height, height: size.width))
+            } else {
+                context.draw(cgImg, in: CGRect(x: 0.0 , y: 0.0, width: size.width, height: size.height))
+            }
+            
+            if let contextImage = context.makeImage() {
+                return UIImage(cgImage: contextImage)
+            }
+            
+        }
+        
+        return nil
+    }
+    
 }
