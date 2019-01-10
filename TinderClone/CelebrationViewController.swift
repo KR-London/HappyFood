@@ -12,7 +12,7 @@ class CelebrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
             self.performSegue(withIdentifier: "toTrafficLightStoryboard", sender: self)
         }
         // Do any additional setup after loading the view.

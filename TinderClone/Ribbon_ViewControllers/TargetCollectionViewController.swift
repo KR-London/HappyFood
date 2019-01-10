@@ -11,7 +11,8 @@ import CoreData
 
 private let reuseIdentifier = "targetCell"
 
-var ticks = [String]()
+//var ticks = [String]()
+var visibleTicks = Int()
 
 class TargetCollectionViewController: UICollectionViewController, CommunicationChannel {
 
@@ -97,6 +98,8 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        visibleTicks = triedFood.count
         
         //adding longpress gesture over UICollectionView
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
@@ -242,7 +245,25 @@ class TargetCollectionViewController: UICollectionViewController, CommunicationC
     /// add an extra element & load a tick
     
     func updateSourceCellWithASmiley(sourceIndexPath: IndexPath, sourceViewController: String) {
+        
+        /// healthy case at this stage is visible ticks == foodsTriedThisWeek.count - 1
+        //// this is a subroutine to reconcile if foodsTried This week has got messy due to failed drops
+        if  visibleTicks < foodsTriedThisWeek.count - 1
+        {
+            /// clean data
+            
+            /// i want to keep the first element - that's the one that's triggered this call
+            let numberOfItemsToDelete = foodsTriedThisWeek.count - visibleTicks
+            
+            let currentFood = foodsTriedThisWeek[0]
+        
+            foodsTriedThisWeek = [currentFood] + Array(foodsTriedThisWeek.dropFirst(numberOfItemsToDelete))
+            
+            
+        }
+        
         self.collectionView.reloadData()
+        visibleTicks = foodsTriedThisWeek.count
     }
 
     

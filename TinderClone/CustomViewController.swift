@@ -311,7 +311,12 @@ class CustomViewController: UIViewController, CommunicationChannel {
             {
                 foodsTriedThisWeek.remove(at: unique[i])
             }
-            return
+            
+            /// this is the bug. A failed drop gives an extra 'food tried this week' - but can end up with no tick allocated at this stage.
+            if visibleTicks == foodsTriedThisWeek.count
+            {
+                return
+            }
         }
         
         /// if it is unique, then give the use a smiley!
