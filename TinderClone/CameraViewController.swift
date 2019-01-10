@@ -68,11 +68,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         deleteButton.isHidden = true
    
   
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
-        
-        present(imagePicker, animated: true, completion: nil)
+//        imagePicker.delegate = self
+//        imagePicker.sourceType = .camera
+//        imagePicker.allowsEditing = false
+//        
+//        present(imagePicker, animated: true, completion: nil)
         ///imagePickerController(imagePicker, didFinishPickingMediaWithInfo: <#T##[UIImagePickerController.InfoKey : Any]#>)
         
         /// define swipe directions
