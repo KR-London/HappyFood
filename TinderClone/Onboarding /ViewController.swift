@@ -10,6 +10,8 @@
 
 import UIKit
 import CoreData
+//import TouchVisualizer
+
 
 class ViewController: UIViewController{
     

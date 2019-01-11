@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //preloadData()
         
+        
+        
 //        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
 //        
 //        if launchedBefore{

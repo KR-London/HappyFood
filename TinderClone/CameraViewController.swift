@@ -10,10 +10,11 @@ import UIKit
 import CoreData
 import Foundation
 import Darwin
+ let imagePicker = UIImagePickerController()
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-  //  var haveIjustComeFrom
+   
     
     @IBAction func takeAnotherPhoto(_ sender: UIButton) {
         
@@ -60,7 +61,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var cameraImage: UIImageView!
     
-    let imagePicker = UIImagePickerController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
