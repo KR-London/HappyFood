@@ -20,7 +20,6 @@
 		44110B1F21ADD8BC00151388 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44110B1E21ADD8BC00151388 /* CameraViewController.swift */; };
 		441AC32921E4E12E0034A5F7 /* courgette.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC32821E4E12E0034A5F7 /* courgette.jpg */; };
 		441AC32B21E4E1350034A5F7 /* pancakes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC32A21E4E1350034A5F7 /* pancakes.jpg */; };
-		441AC32F21E4E19F0034A5F7 /* broccoli.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC32E21E4E19E0034A5F7 /* broccoli.jpg */; };
 		441AC33121E4E1AC0034A5F7 /* bananas-bunch-food-41957.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC33021E4E1AB0034A5F7 /* bananas-bunch-food-41957.jpg */; };
 		441AC33321E4E1D60034A5F7 /* bread-breakfast-eat-33309.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC33221E4E1D60034A5F7 /* bread-breakfast-eat-33309.jpg */; };
 		441AC33521E4E1EE0034A5F7 /* apple-food-fruit-39803.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC33421E4E1EE0034A5F7 /* apple-food-fruit-39803.jpg */; };
@@ -29,15 +28,21 @@
 		441AC33B21E4E2820034A5F7 /* board-close-up-cooking-373019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC33A21E4E2820034A5F7 /* board-close-up-cooking-373019.jpg */; };
 		441AC33D21E4E3620034A5F7 /* blur-close-up-cooking-161533.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC33C21E4E3620034A5F7 /* blur-close-up-cooking-161533.jpg */; };
 		441AC33F21E4E3990034A5F7 /* raspberry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 441AC33E21E4E3990034A5F7 /* raspberry.jpg */; };
-		443095C321DC057400E04A46 /* IMG_0856 2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095C221DC057400E04A46 /* IMG_0856 2.JPG */; };
 		443095C521DC05D400E04A46 /* triangles.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095C421DC05D300E04A46 /* triangles.JPG */; };
 		443095C721DC07CB00E04A46 /* chaos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 443095C621DC07CB00E04A46 /* chaos.jpg */; };
 		443095C921DC0F3600E04A46 /* tutorial_background_2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */; };
-		4430A49D21DE144D0040EE4A /* front_logp.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4430A49C21DE144D0040EE4A /* front_logp.JPG */; };
-		4430A49F21DE14530040EE4A /* ribbons_watercolour.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4430A49E21DE14530040EE4A /* ribbons_watercolour.JPG */; };
 		444DCDA921D36B5B004408D9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 444DCDA821D36B5B004408D9 /* Launch Screen.storyboard */; };
 		4451E2C621BABA37008BB36E /* NoCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */; };
 		4461FFE221B59DFD00354109 /* MaybeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */; };
+		446963E221E95F5C00D5B240 /* Camera-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963E121E95F5C00D5B240 /* Camera-2.png */; };
+		446963E421E95F6D00D5B240 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963E321E95F6D00D5B240 /* back.png */; };
+		446963E821E95F8D00D5B240 /* roll.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963E721E95F8D00D5B240 /* roll.png */; };
+		446963EA21E95F9F00D5B240 /* trying.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963E921E95F9F00D5B240 /* trying.png */; };
+		446963EC21E9609F00D5B240 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963EB21E9609E00D5B240 /* 2.png */; };
+		446963EE21E960B000D5B240 /* Loading Screens1.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963ED21E960B000D5B240 /* Loading Screens1.png */; };
+		446963F021E9652F00D5B240 /* hahahahahahaha.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963EF21E9652F00D5B240 /* hahahahahahaha.png */; };
+		446963F221E966C300D5B240 /* broccoli.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 446963F121E966C300D5B240 /* broccoli.jpg */; };
+		446963F421E966E300D5B240 /* takeThis.png in Resources */ = {isa = PBXBuildFile; fileRef = 446963F321E966E300D5B240 /* takeThis.png */; };
 		446E748321412FD800B326D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E748221412FD800B326D9 /* AppDelegate.swift */; };
 		446E748521412FD800B326D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E748421412FD800B326D9 /* ViewController.swift */; };
 		446E748821412FD800B326D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446E748621412FD800B326D9 /* Main.storyboard */; };
@@ -46,15 +51,6 @@
 		446E749021412FD800B326D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 446E748E21412FD800B326D9 /* LaunchScreen.storyboard */; };
 		446E749B21412FD800B326D9 /* TinderCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446E749A21412FD800B326D9 /* TinderCloneTests.swift */; };
 		4498109C2150F90200508599 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4498109B2150F90200508599 /* CustomViewController.swift */; };
-		44B0541221CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B0541121CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png */; };
-		44B0541421CE850F000BE527 /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B0541321CE850F000BE527 /* stripes.png */; };
-		44B2707621DD7C4600F6D424 /* mask6.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2706F21DD7C4500F6D424 /* mask6.png */; };
-		44B2707721DD7C4600F6D424 /* mask2.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707021DD7C4600F6D424 /* mask2.png */; };
-		44B2707821DD7C4600F6D424 /* mask3.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707121DD7C4600F6D424 /* mask3.png */; };
-		44B2707921DD7C4600F6D424 /* mask4.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707221DD7C4600F6D424 /* mask4.png */; };
-		44B2707A21DD7C4600F6D424 /* mask1.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707321DD7C4600F6D424 /* mask1.png */; };
-		44B2707B21DD7C4600F6D424 /* mask5.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707421DD7C4600F6D424 /* mask5.png */; };
-		44B2707C21DD7C4600F6D424 /* mask7.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B2707521DD7C4600F6D424 /* mask7.png */; };
 		44B2708121DD8F9B00F6D424 /* Maybe3CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B2708021DD8F9B00F6D424 /* Maybe3CollectionViewController.swift */; };
 		44B711ED21DF60AB00537170 /* MASK_dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B711EC21DF60AA00537170 /* MASK_dp.png */; };
 		44B711EF21DF612500537170 /* MASK_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 44B711EE21DF612500537170 /* MASK_p.png */; };
@@ -65,13 +61,9 @@
 		44D749E521E1FBF200071C4D /* Thingy.png in Resources */ = {isa = PBXBuildFile; fileRef = 44D749E421E1FBF200071C4D /* Thingy.png */; };
 		44D8B37F216216D60019077D /* YesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */; };
 		44D8B3832162403C0019077D /* FoodData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3822162403B0019077D /* FoodData.csv */; };
-		44D8B385216240790019077D /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B384216240790019077D /* apple.jpg */; };
 		44D8B3872162407D0019077D /* bread.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3862162407C0019077D /* bread.JPG */; };
-		44D8B389216240810019077D /* broccili.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B388216240810019077D /* broccili.JPG */; };
 		44D8B38B216240850019077D /* carrot.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B38A216240840019077D /* carrot.JPG */; };
-		44D8B38D216240890019077D /* cheese.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B38C216240890019077D /* cheese.JPG */; };
 		44D8B38F2162408D0019077D /* cheeseandonioncrisps.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B38E2162408D0019077D /* cheeseandonioncrisps.JPG */; };
-		44D8B391216240950019077D /* crisps.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B390216240950019077D /* crisps.JPG */; };
 		44D8B3932162409E0019077D /* egg.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3922162409E0019077D /* egg.JPG */; };
 		44D8B395216240A40019077D /* IMG_7457.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B394216240A40019077D /* IMG_7457.JPG */; };
 		44D8B397216240AC0019077D /* noodles.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B396216240AC0019077D /* noodles.JPG */; };
@@ -80,10 +72,7 @@
 		44D8B39D216240C30019077D /* penne.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B39C216240C30019077D /* penne.JPG */; };
 		44D8B39F216240CA0019077D /* readysaltedcrisps.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B39E216240CA0019077D /* readysaltedcrisps.JPG */; };
 		44D8B3A1216240CE0019077D /* rice.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3A0216240CE0019077D /* rice.JPG */; };
-		44D8B3A3216240D70019077D /* ricecake.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3A2216240D60019077D /* ricecake.JPG */; };
-		44D8B3A5216240DB0019077D /* saltandvinegarcrisps.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3A4216240DB0019077D /* saltandvinegarcrisps.JPG */; };
 		44D8B3A7216240E60019077D /* sweetcorn.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3A6216240E60019077D /* sweetcorn.JPG */; };
-		44D8B3A9216240EA0019077D /* tomatosoup.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3A8216240EA0019077D /* tomatosoup.JPG */; };
 		44D8B3AB216240EE0019077D /* tuna.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3AA216240EE0019077D /* tuna.JPG */; };
 		44D8B3AD216240F30019077D /* veggienugget.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3AC216240F20019077D /* veggienugget.JPG */; };
 		44D8B3AF216240F80019077D /* walnuts.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 44D8B3AE216240F80019077D /* walnuts.JPG */; };
@@ -92,16 +81,12 @@
 		44EB2D5621D4FD4E0041B8FC /* MotivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB2D5521D4FD4D0041B8FC /* MotivationViewController.swift */; };
 		44EC776C21E47D7E00DB77F6 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 44EC776B21E47D7E00DB77F6 /* cross.png */; };
 		44EC777021E47EA900DB77F6 /* tick.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44EC776F21E47EA900DB77F6 /* tick.jpg */; };
-		44F0469821DF77280062C063 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469721DF77280062C063 /* Target.png */; };
 		44F0469A21DF774B0062C063 /* Good.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469921DF774B0062C063 /* Good.png */; };
 		44F0469C21DF77510062C063 /* Maybe.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469B21DF77510062C063 /* Maybe.png */; };
 		44F0469E21DF77570062C063 /* Bad.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469D21DF77570062C063 /* Bad.png */; };
 		44F046A021DF775D0062C063 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F0469F21DF775D0062C063 /* Camera.png */; };
-		44F046A621DFA0360062C063 /* LoadingScreens.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F046A521DFA0360062C063 /* LoadingScreens.png */; };
 		44F046AA21DFA25E0062C063 /* TargetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F046A921DFA25E0062C063 /* TargetCollectionViewCell.swift */; };
 		44F046AC21DFA32F0062C063 /* TargetCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F046AB21DFA32F0062C063 /* TargetCollectionViewController.swift */; };
-		44F046AE21E0CDC10062C063 /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 44F046AD21E0CDC10062C063 /* tick.png */; };
-		44F046B421E0CFDA0062C063 /* Tick.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 44F046B321E0CFDA0062C063 /* Tick.jpeg */; };
 		44F046B621E0D5E30062C063 /* dummyData in Resources */ = {isa = PBXBuildFile; fileRef = 44F046B521E0D5E30062C063 /* dummyData */; };
 		44FC4E5C21DCDB100028B667 /* CameraButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC4E5B21DCDB100028B667 /* CameraButtonViewController.swift */; };
 		44FC4E5E21DCE9E80028B667 /* Maybe2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC4E5D21DCE9E80028B667 /* Maybe2CollectionViewController.swift */; };
@@ -132,7 +117,6 @@
 		44110B1E21ADD8BC00151388 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		441AC32821E4E12E0034A5F7 /* courgette.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = courgette.jpg; sourceTree = "<group>"; };
 		441AC32A21E4E1350034A5F7 /* pancakes.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pancakes.jpg; sourceTree = "<group>"; };
-		441AC32E21E4E19E0034A5F7 /* broccoli.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broccoli.jpg; sourceTree = "<group>"; };
 		441AC33021E4E1AB0034A5F7 /* bananas-bunch-food-41957.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bananas-bunch-food-41957.jpg"; sourceTree = "<group>"; };
 		441AC33221E4E1D60034A5F7 /* bread-breakfast-eat-33309.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bread-breakfast-eat-33309.jpg"; sourceTree = "<group>"; };
 		441AC33421E4E1EE0034A5F7 /* apple-food-fruit-39803.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "apple-food-fruit-39803.jpg"; sourceTree = "<group>"; };
@@ -141,15 +125,21 @@
 		441AC33A21E4E2820034A5F7 /* board-close-up-cooking-373019.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "board-close-up-cooking-373019.jpg"; sourceTree = "<group>"; };
 		441AC33C21E4E3620034A5F7 /* blur-close-up-cooking-161533.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blur-close-up-cooking-161533.jpg"; sourceTree = "<group>"; };
 		441AC33E21E4E3990034A5F7 /* raspberry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = raspberry.jpg; sourceTree = "<group>"; };
-		443095C221DC057400E04A46 /* IMG_0856 2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "IMG_0856 2.JPG"; sourceTree = "<group>"; };
 		443095C421DC05D300E04A46 /* triangles.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = triangles.JPG; sourceTree = "<group>"; };
 		443095C621DC07CB00E04A46 /* chaos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chaos.jpg; sourceTree = "<group>"; };
 		443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tutorial_background_2.JPG; sourceTree = "<group>"; };
-		4430A49C21DE144D0040EE4A /* front_logp.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = front_logp.JPG; sourceTree = "<group>"; };
-		4430A49E21DE14530040EE4A /* ribbons_watercolour.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ribbons_watercolour.JPG; sourceTree = "<group>"; };
 		444DCDA821D36B5B004408D9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4451E2C521BABA37008BB36E /* NoCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCollectionViewLayout.swift; sourceTree = "<group>"; };
 		4461FFE121B59DFD00354109 /* MaybeCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeCollectionViewLayout.swift; sourceTree = "<group>"; };
+		446963E121E95F5C00D5B240 /* Camera-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera-2.png"; sourceTree = "<group>"; };
+		446963E321E95F6D00D5B240 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		446963E721E95F8D00D5B240 /* roll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roll.png; sourceTree = "<group>"; };
+		446963E921E95F9F00D5B240 /* trying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trying.png; sourceTree = "<group>"; };
+		446963EB21E9609E00D5B240 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		446963ED21E960B000D5B240 /* Loading Screens1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Loading Screens1.png"; sourceTree = "<group>"; };
+		446963EF21E9652F00D5B240 /* hahahahahahaha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hahahahahahaha.png; sourceTree = "<group>"; };
+		446963F121E966C300D5B240 /* broccoli.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broccoli.jpg; sourceTree = "<group>"; };
+		446963F321E966E300D5B240 /* takeThis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = takeThis.png; sourceTree = "<group>"; };
 		446E747F21412FD800B326D9 /* TinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		446E748221412FD800B326D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		446E748421412FD800B326D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,9 +151,6 @@
 		446E749621412FD800B326D9 /* TinderCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinderCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		446E749A21412FD800B326D9 /* TinderCloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneTests.swift; sourceTree = "<group>"; };
 		446E749C21412FD800B326D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		446E74A821412FF300B326D9 /* chips.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chips.jpg; sourceTree = "<group>"; };
-		446E74A921412FF300B326D9 /* chocolate bar mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "chocolate bar mars.jpg"; sourceTree = "<group>"; };
-		446E74AA21412FF300B326D9 /* chocolate bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "chocolate bar.jpg"; sourceTree = "<group>"; };
 		446E74AB21412FF300B326D9 /* chocolate muffin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "chocolate muffin.jpg"; sourceTree = "<group>"; };
 		446E74AC21412FF300B326D9 /* french fries.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "french fries.jpg"; sourceTree = "<group>"; };
 		446E74AD21412FF300B326D9 /* hamburger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hamburger.jpg; sourceTree = "<group>"; };
@@ -173,15 +160,6 @@
 		446E74B121412FF300B326D9 /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
 		446E74B221412FF300B326D9 /* steak.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steak.jpg; sourceTree = "<group>"; };
 		4498109B2150F90200508599 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		44B0541121CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2018-11-29 at 12.32.47.png"; sourceTree = "<group>"; };
-		44B0541321CE850F000BE527 /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
-		44B2706F21DD7C4500F6D424 /* mask6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask6.png; sourceTree = "<group>"; };
-		44B2707021DD7C4600F6D424 /* mask2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask2.png; sourceTree = "<group>"; };
-		44B2707121DD7C4600F6D424 /* mask3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask3.png; sourceTree = "<group>"; };
-		44B2707221DD7C4600F6D424 /* mask4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask4.png; sourceTree = "<group>"; };
-		44B2707321DD7C4600F6D424 /* mask1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask1.png; sourceTree = "<group>"; };
-		44B2707421DD7C4600F6D424 /* mask5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask5.png; sourceTree = "<group>"; };
-		44B2707521DD7C4600F6D424 /* mask7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask7.png; sourceTree = "<group>"; };
 		44B2708021DD8F9B00F6D424 /* Maybe3CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maybe3CollectionViewController.swift; sourceTree = "<group>"; };
 		44B711EC21DF60AA00537170 /* MASK_dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK_dp.png; sourceTree = "<group>"; };
 		44B711EE21DF612500537170 /* MASK_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MASK_p.png; sourceTree = "<group>"; };
@@ -192,13 +170,9 @@
 		44D749E421E1FBF200071C4D /* Thingy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thingy.png; sourceTree = "<group>"; };
 		44D8B37E216216D60019077D /* YesCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesCollectionViewLayout.swift; sourceTree = "<group>"; };
 		44D8B3822162403B0019077D /* FoodData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FoodData.csv; sourceTree = "<group>"; };
-		44D8B384216240790019077D /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = apple.jpg; sourceTree = "<group>"; };
 		44D8B3862162407C0019077D /* bread.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bread.JPG; sourceTree = "<group>"; };
-		44D8B388216240810019077D /* broccili.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = broccili.JPG; sourceTree = "<group>"; };
 		44D8B38A216240840019077D /* carrot.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carrot.JPG; sourceTree = "<group>"; };
-		44D8B38C216240890019077D /* cheese.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cheese.JPG; sourceTree = "<group>"; };
 		44D8B38E2162408D0019077D /* cheeseandonioncrisps.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cheeseandonioncrisps.JPG; sourceTree = "<group>"; };
-		44D8B390216240950019077D /* crisps.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crisps.JPG; sourceTree = "<group>"; };
 		44D8B3922162409E0019077D /* egg.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = egg.JPG; sourceTree = "<group>"; };
 		44D8B394216240A40019077D /* IMG_7457.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_7457.JPG; sourceTree = "<group>"; };
 		44D8B396216240AC0019077D /* noodles.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noodles.JPG; sourceTree = "<group>"; };
@@ -207,10 +181,7 @@
 		44D8B39C216240C30019077D /* penne.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = penne.JPG; sourceTree = "<group>"; };
 		44D8B39E216240CA0019077D /* readysaltedcrisps.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = readysaltedcrisps.JPG; sourceTree = "<group>"; };
 		44D8B3A0216240CE0019077D /* rice.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rice.JPG; sourceTree = "<group>"; };
-		44D8B3A2216240D60019077D /* ricecake.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ricecake.JPG; sourceTree = "<group>"; };
-		44D8B3A4216240DB0019077D /* saltandvinegarcrisps.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saltandvinegarcrisps.JPG; sourceTree = "<group>"; };
 		44D8B3A6216240E60019077D /* sweetcorn.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sweetcorn.JPG; sourceTree = "<group>"; };
-		44D8B3A8216240EA0019077D /* tomatosoup.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tomatosoup.JPG; sourceTree = "<group>"; };
 		44D8B3AA216240EE0019077D /* tuna.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tuna.JPG; sourceTree = "<group>"; };
 		44D8B3AC216240F20019077D /* veggienugget.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = veggienugget.JPG; sourceTree = "<group>"; };
 		44D8B3AE216240F80019077D /* walnuts.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = walnuts.JPG; sourceTree = "<group>"; };
@@ -219,17 +190,12 @@
 		44EB2D5521D4FD4D0041B8FC /* MotivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationViewController.swift; sourceTree = "<group>"; };
 		44EC776B21E47D7E00DB77F6 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
 		44EC776F21E47EA900DB77F6 /* tick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tick.jpg; sourceTree = "<group>"; };
-		44F0469721DF77280062C063 /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Target.png; path = ../Target.png; sourceTree = "<group>"; };
 		44F0469921DF774B0062C063 /* Good.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Good.png; sourceTree = "<group>"; };
 		44F0469B21DF77510062C063 /* Maybe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maybe.png; sourceTree = "<group>"; };
 		44F0469D21DF77570062C063 /* Bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bad.png; sourceTree = "<group>"; };
 		44F0469F21DF775D0062C063 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
-		44F046A421DF77DA0062C063 /* ribbons_watercolour.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ribbons_watercolour.JPG; sourceTree = "<group>"; };
-		44F046A521DFA0360062C063 /* LoadingScreens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingScreens.png; sourceTree = "<group>"; };
 		44F046A921DFA25E0062C063 /* TargetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCollectionViewCell.swift; sourceTree = "<group>"; };
 		44F046AB21DFA32F0062C063 /* TargetCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCollectionViewController.swift; sourceTree = "<group>"; };
-		44F046AD21E0CDC10062C063 /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
-		44F046B321E0CFDA0062C063 /* Tick.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tick.jpeg; sourceTree = "<group>"; };
 		44F046B521E0D5E30062C063 /* dummyData */ = {isa = PBXFileReference; explicitFileType = text; path = dummyData; sourceTree = "<group>"; };
 		44FC4E5B21DCDB100028B667 /* CameraButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraButtonViewController.swift; sourceTree = "<group>"; };
 		44FC4E5D21DCE9E80028B667 /* Maybe2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maybe2CollectionViewController.swift; sourceTree = "<group>"; };
@@ -359,27 +325,13 @@
 			children = (
 				441AC32821E4E12E0034A5F7 /* courgette.jpg */,
 				443095C621DC07CB00E04A46 /* chaos.jpg */,
-				44F046B321E0CFDA0062C063 /* Tick.jpeg */,
 				443095C421DC05D300E04A46 /* triangles.JPG */,
 				443095C821DC0F3500E04A46 /* tutorial_background_2.JPG */,
-				443095C221DC057400E04A46 /* IMG_0856 2.JPG */,
-				44B0541121CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png */,
-				44B0541321CE850F000BE527 /* stripes.png */,
-				44D8B384216240790019077D /* apple.jpg */,
-				44F046AD21E0CDC10062C063 /* tick.png */,
-				446E74A821412FF300B326D9 /* chips.jpg */,
-				4430A49C21DE144D0040EE4A /* front_logp.JPG */,
-				44D8B38C216240890019077D /* cheese.JPG */,
-				4430A49E21DE14530040EE4A /* ribbons_watercolour.JPG */,
-				446E74A921412FF300B326D9 /* chocolate bar mars.jpg */,
-				441AC32E21E4E19E0034A5F7 /* broccoli.jpg */,
-				44D8B390216240950019077D /* crisps.JPG */,
-				446E74AA21412FF300B326D9 /* chocolate bar.jpg */,
+				446963F121E966C300D5B240 /* broccoli.jpg */,
 				44D8B394216240A40019077D /* IMG_7457.JPG */,
 				441AC33021E4E1AB0034A5F7 /* bananas-bunch-food-41957.jpg */,
 				441AC33A21E4E2820034A5F7 /* board-close-up-cooking-373019.jpg */,
 				441AC33621E4E20F0034A5F7 /* blur-close-up-corn-603030.jpg */,
-				44D8B388216240810019077D /* broccili.JPG */,
 				441AC33421E4E1EE0034A5F7 /* apple-food-fruit-39803.jpg */,
 				441AC33821E4E25F0034A5F7 /* baked-bread-breakfast-209206.jpg */,
 				44D8B3A0216240CE0019077D /* rice.JPG */,
@@ -388,9 +340,6 @@
 				44D8B38E2162408D0019077D /* cheeseandonioncrisps.JPG */,
 				44D8B39A216240BD0019077D /* olives.JPG */,
 				441AC33C21E4E3620034A5F7 /* blur-close-up-cooking-161533.jpg */,
-				44D8B3A2216240D60019077D /* ricecake.JPG */,
-				44D8B3A8216240EA0019077D /* tomatosoup.JPG */,
-				44D8B3A4216240DB0019077D /* saltandvinegarcrisps.JPG */,
 				44D749E421E1FBF200071C4D /* Thingy.png */,
 				441AC33E21E4E3990034A5F7 /* raspberry.jpg */,
 				44D8B39E216240CA0019077D /* readysaltedcrisps.JPG */,
@@ -421,15 +370,9 @@
 			children = (
 				44B711F021DF626700537170 /* MASK_dp_small.png */,
 				44B711F221DF65E000537170 /* MASK.png */,
+				446963F321E966E300D5B240 /* takeThis.png */,
 				44B711EE21DF612500537170 /* MASK_p.png */,
 				44B711EC21DF60AA00537170 /* MASK_dp.png */,
-				44B2707121DD7C4600F6D424 /* mask3.png */,
-				44B2707221DD7C4600F6D424 /* mask4.png */,
-				44B2707421DD7C4600F6D424 /* mask5.png */,
-				44B2706F21DD7C4500F6D424 /* mask6.png */,
-				44B2707521DD7C4600F6D424 /* mask7.png */,
-				44B2707021DD7C4600F6D424 /* mask2.png */,
-				44B2707321DD7C4600F6D424 /* mask1.png */,
 			);
 			path = Masks;
 			sourceTree = "<group>";
@@ -451,13 +394,17 @@
 				44F0469B21DF77510062C063 /* Maybe.png */,
 				44EC776F21E47EA900DB77F6 /* tick.jpg */,
 				44EC776B21E47D7E00DB77F6 /* cross.png */,
+				446963EB21E9609E00D5B240 /* 2.png */,
+				446963E321E95F6D00D5B240 /* back.png */,
 				4400ABE621E5F461000433E0 /* Chaos_ Chaos_.png */,
+				446963EF21E9652F00D5B240 /* hahahahahahaha.png */,
+				446963E121E95F5C00D5B240 /* Camera-2.png */,
 				44F0469921DF774B0062C063 /* Good.png */,
+				446963ED21E960B000D5B240 /* Loading Screens1.png */,
 				44D749E221E1E1AD00071C4D /* Chaos_ Chaos_2.png */,
 				44F0469F21DF775D0062C063 /* Camera.png */,
-				44F0469721DF77280062C063 /* Target.png */,
-				44F046A421DF77DA0062C063 /* ribbons_watercolour.JPG */,
-				44F046A521DFA0360062C063 /* LoadingScreens.png */,
+				446963E721E95F8D00D5B240 /* roll.png */,
+				446963E921E95F9F00D5B240 /* trying.png */,
 				44F0469D21DF77570062C063 /* Bad.png */,
 			);
 			path = RibbonBackgrounds;
@@ -550,55 +497,41 @@
 			files = (
 				44D8B3AD216240F30019077D /* veggienugget.JPG in Resources */,
 				44D8B38F2162408D0019077D /* cheeseandonioncrisps.JPG in Resources */,
+				446963EC21E9609F00D5B240 /* 2.png in Resources */,
 				44D749E321E1E1AD00071C4D /* Chaos_ Chaos_2.png in Resources */,
-				44F046AE21E0CDC10062C063 /* tick.png in Resources */,
+				446963F421E966E300D5B240 /* takeThis.png in Resources */,
 				441AC32B21E4E1350034A5F7 /* pancakes.jpg in Resources */,
 				44F0469C21DF77510062C063 /* Maybe.png in Resources */,
 				441AC33D21E4E3620034A5F7 /* blur-close-up-cooking-161533.jpg in Resources */,
+				446963F221E966C300D5B240 /* broccoli.jpg in Resources */,
 				443095C921DC0F3600E04A46 /* tutorial_background_2.JPG in Resources */,
 				446E749021412FD800B326D9 /* LaunchScreen.storyboard in Resources */,
 				44D8B397216240AC0019077D /* noodles.JPG in Resources */,
 				44D8B399216240B80019077D /* nuts.JPG in Resources */,
 				443095C521DC05D400E04A46 /* triangles.JPG in Resources */,
+				446963F021E9652F00D5B240 /* hahahahahahaha.png in Resources */,
 				441AC32921E4E12E0034A5F7 /* courgette.jpg in Resources */,
-				44B0541221CE83E6000BE527 /* Screen Shot 2018-11-29 at 12.32.47.png in Resources */,
 				441AC33F21E4E3990034A5F7 /* raspberry.jpg in Resources */,
 				446E748D21412FD800B326D9 /* Assets.xcassets in Resources */,
-				44B2707A21DD7C4600F6D424 /* mask1.png in Resources */,
-				44B0541421CE850F000BE527 /* stripes.png in Resources */,
-				44F0469821DF77280062C063 /* Target.png in Resources */,
 				443095C721DC07CB00E04A46 /* chaos.jpg in Resources */,
-				44B2707821DD7C4600F6D424 /* mask3.png in Resources */,
 				44D8B3872162407D0019077D /* bread.JPG in Resources */,
-				44D8B3A9216240EA0019077D /* tomatosoup.JPG in Resources */,
-				44D8B385216240790019077D /* apple.jpg in Resources */,
-				44D8B391216240950019077D /* crisps.JPG in Resources */,
 				44D8B38B216240850019077D /* carrot.JPG in Resources */,
-				44D8B38D216240890019077D /* cheese.JPG in Resources */,
 				44F046A021DF775D0062C063 /* Camera.png in Resources */,
-				44B2707621DD7C4600F6D424 /* mask6.png in Resources */,
-				44B2707B21DD7C4600F6D424 /* mask5.png in Resources */,
-				44B2707C21DD7C4600F6D424 /* mask7.png in Resources */,
-				44B2707921DD7C4600F6D424 /* mask4.png in Resources */,
 				44D8B3AF216240F80019077D /* walnuts.JPG in Resources */,
-				44F046B421E0CFDA0062C063 /* Tick.jpeg in Resources */,
 				4400ABE721E5F461000433E0 /* Chaos_ Chaos_.png in Resources */,
 				441AC33321E4E1D60034A5F7 /* bread-breakfast-eat-33309.jpg in Resources */,
 				44B711EF21DF612500537170 /* MASK_p.png in Resources */,
-				44B2707721DD7C4600F6D424 /* mask2.png in Resources */,
+				446963EA21E95F9F00D5B240 /* trying.png in Resources */,
 				44B711F121DF626700537170 /* MASK_dp_small.png in Resources */,
 				446E748821412FD800B326D9 /* Main.storyboard in Resources */,
 				44D8B39B216240BE0019077D /* olives.JPG in Resources */,
-				441AC32F21E4E19F0034A5F7 /* broccoli.jpg in Resources */,
 				441AC33B21E4E2820034A5F7 /* board-close-up-cooking-373019.jpg in Resources */,
 				44D8B395216240A40019077D /* IMG_7457.JPG in Resources */,
 				441AC33721E4E20F0034A5F7 /* blur-close-up-corn-603030.jpg in Resources */,
 				441AC33121E4E1AC0034A5F7 /* bananas-bunch-food-41957.jpg in Resources */,
+				446963E821E95F8D00D5B240 /* roll.png in Resources */,
 				444DCDA921D36B5B004408D9 /* Launch Screen.storyboard in Resources */,
-				44F046A621DFA0360062C063 /* LoadingScreens.png in Resources */,
 				44B711F321DF65E000537170 /* MASK.png in Resources */,
-				4430A49D21DE144D0040EE4A /* front_logp.JPG in Resources */,
-				4430A49F21DE14530040EE4A /* ribbons_watercolour.JPG in Resources */,
 				44D8B3932162409E0019077D /* egg.JPG in Resources */,
 				44EC776C21E47D7E00DB77F6 /* cross.png in Resources */,
 				44D8B3AB216240EE0019077D /* tuna.JPG in Resources */,
@@ -606,19 +539,18 @@
 				44F046B621E0D5E30062C063 /* dummyData in Resources */,
 				44D8B39F216240CA0019077D /* readysaltedcrisps.JPG in Resources */,
 				441AC33521E4E1EE0034A5F7 /* apple-food-fruit-39803.jpg in Resources */,
-				44D8B389216240810019077D /* broccili.JPG in Resources */,
-				443095C321DC057400E04A46 /* IMG_0856 2.JPG in Resources */,
 				44D8B3A7216240E60019077D /* sweetcorn.JPG in Resources */,
 				441AC33921E4E25F0034A5F7 /* baked-bread-breakfast-209206.jpg in Resources */,
+				446963E221E95F5C00D5B240 /* Camera-2.png in Resources */,
 				44D8B39D216240C30019077D /* penne.JPG in Resources */,
 				44D8B3A1216240CE0019077D /* rice.JPG in Resources */,
 				44F0469E21DF77570062C063 /* Bad.png in Resources */,
+				446963EE21E960B000D5B240 /* Loading Screens1.png in Resources */,
 				44EC777021E47EA900DB77F6 /* tick.jpg in Resources */,
-				44D8B3A3216240D70019077D /* ricecake.JPG in Resources */,
 				44F0469A21DF774B0062C063 /* Good.png in Resources */,
+				446963E421E95F6D00D5B240 /* back.png in Resources */,
 				44D8B3832162403C0019077D /* FoodData.csv in Resources */,
 				44D749E521E1FBF200071C4D /* Thingy.png in Resources */,
-				44D8B3A5216240DB0019077D /* saltandvinegarcrisps.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -70,7 +70,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
   
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         
         present(imagePicker, animated: true, completion: nil)
         ///imagePickerController(imagePicker, didFinishPickingMediaWithInfo: <#T##[UIImagePickerController.InfoKey : Any]#>)
@@ -107,13 +107,15 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         {
             let maskingImage = UIImage(named: "MASK.png")
             
-            let pic = userPickedImage.fixOrientation()
+            var pic = userPickedImage.fixOrientation()
+           pic = pic!.resizeImage(targetSize: CGSize(width: 500, height:300))
             
-            cameraImage.image = maskImage(image: pic!, mask: maskingImage!)
-          // cameraImage.transform.rotated(by: CGFloat(Double.pi/2.0))
-            //cameraImage.image = cameraImage
-            //cameraImage.
-           // cameraImage.image = userPickedImage
+            cameraImage.image = pic
+            //cameraImage.image = maskImage(image: pic!, mask: maskingImage!)
+            //  cameraImage.transform.rotated(by: CGFloat(Double.pi/2.0))
+            //  cameraImage.image = cameraImage
+            //  cameraImage.
+            //  cameraImage.image = userPickedImage
             
             deleteButton.isHidden = false
         }
@@ -128,41 +130,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             
         }
     }
-    
-//    let fileDirectory  : URL =  {
-//        return FileManager.default
-//    }
-//    func saveImageToDocuments(image: UIImage, fileNameWithExtension: String){
-//        let imagePath =  FileManager.default.urls(for: .documentDirectory,
-//                                        in: .userDomainMask).first?.appendingPathComponent("\(fileNameWithExtension)")
-//        let imageData = UIImage.pngData(image)
-//        try! imageData()?.write(to: imagePath!)
-//
-//         if let managedObjectContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-//                let menuItem = NSEntityDescription.insertNewObject(forEntityName: "Food", into: managedObjectContext) as! Food
-//                menuItem.image_file_name = "dopey.png"
-//                menuItem.name = "dopey"
-//                menuItem.rating = Int16(2)
-//                saveItems()
-//        }
-//        testIamge.image = UIImage(named: "dopey.png" )
-//
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    /// Put in gesture handler code
-    /// make sure the image is trimmed to be a square
-    
-    
     
 @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         cameraButton.isHidden = false
@@ -245,6 +212,8 @@ fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePicke
         }
         
         cameraImage.image = nil
+        cameraRollButton.isHidden = false
+        
     }
     
     func maskImage(image:UIImage, mask:(UIImage))->UIImage{
@@ -328,3 +297,5 @@ extension UIImage {
     }
     
 }
+
+
