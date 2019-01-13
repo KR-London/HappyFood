@@ -110,8 +110,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             var pic = userPickedImage.fixOrientation()
            pic = pic!.resizeImage(targetSize: CGSize(width: 500, height:300))
             
-            cameraImage.image = pic
-            //cameraImage.image = maskImage(image: pic!, mask: maskingImage!)
+           // cameraImage.image = pic
+           cameraImage.image = maskImage(image: pic!, mask: maskingImage!)
             //  cameraImage.transform.rotated(by: CGFloat(Double.pi/2.0))
             //  cameraImage.image = cameraImage
             //  cameraImage.
