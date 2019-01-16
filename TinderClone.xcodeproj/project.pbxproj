@@ -208,7 +208,6 @@
 		4451E2C821BABBF4008BB36E /* Cell_Styles */ = {
 			isa = PBXGroup;
 			children = (
-				4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */,
 				4406F23221620B8F00155818 /* noCollectionViewCell.swift */,
 				44FC4E5F21DCF02A0028B667 /* Maybe2CollectionViewCell.swift */,
 				4406F23521620B8F00155818 /* YesCollectionViewCell.swift */,
@@ -281,6 +280,7 @@
 				4498109B2150F90200508599 /* CustomViewController.swift */,
 				44110B1E21ADD8BC00151388 /* CameraViewController.swift */,
 				4400ABEE21E5FABC000433E0 /* CelebrationViewController.swift */,
+				4406F23621620B8F00155818 /* MaybeCollectionViewCell.swift */,
 				4400ABE821E5F5B9000433E0 /* CelebrationCollectionViewController.swift */,
 				4451E2C821BABBF4008BB36E /* Cell_Styles */,
 				4451E2C921BABC3C008BB36E /* Layout_Styles */,

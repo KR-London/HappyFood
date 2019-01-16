@@ -499,13 +499,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fe7-A4-tAb">
-                                <rect key="frame" x="45" y="241" width="288" height="179"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="KK5-ZE-9mD"/>
-                                    <constraint firstAttribute="width" constant="288" id="SU8-Ce-PCz"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW3-vr-T76">
                                 <rect key="frame" x="95" y="314" width="189" height="160"/>
                                 <constraints>
@@ -542,6 +535,13 @@
                                     <action selector="segueTrigger:" destination="xvS-Nx-P72" eventType="touchUpInside" id="TJe-Js-QPj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fe7-A4-tAb">
+                                <rect key="frame" x="68" y="244" width="239" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="KK5-ZE-9mD"/>
+                                    <constraint firstAttribute="width" constant="288" id="SU8-Ce-PCz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -576,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6r-0K-PE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="176"/>
+            <point key="canvasLocation" x="288.80000000000001" y="175.86206896551727"/>
         </scene>
         <!--No Collection View Controller-->
         <scene sceneID="cHh-wO-dHa">

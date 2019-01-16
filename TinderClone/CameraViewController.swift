@@ -69,10 +69,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
    
   
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = true
+       // imagePicker.sourceType = .camera
+        //imagePicker.allowsEditing = true
         
-        present(imagePicker, animated: true, completion: nil)
+        //present(imagePicker, animated: true, completion: nil)
         ///imagePickerController(imagePicker, didFinishPickingMediaWithInfo: <#T##[UIImagePickerController.InfoKey : Any]#>)
         
         /// define swipe directions
